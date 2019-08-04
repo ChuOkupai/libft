@@ -6,7 +6,7 @@
 /*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/03 22:57:54 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/03 23:54:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/04 17:20:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,17 @@ void			ft_putstr_non_printable(char *str);
 
 void			ft_sort_int_tab(int *tab, int size);
 
+char			**ft_split(char *str, char *charset);
+
 char			*ft_strcat(char *dest, char *src);
 
 int				ft_strcmp(char *s1, char *s2);
 
 char			*ft_strcpy(char *dest, char *src);
+
+char			*ft_strdup(char *src);
+
+char			*ft_strjoin(int size, char **strs, char *sep);
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 

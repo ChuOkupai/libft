@@ -7,9 +7,12 @@ SRCS		= ft_atoi_base.c \
 			  ft_putstr.c \
 			  ft_putstr_non_printable.c \
 			  ft_sort_int_tab.c \
+			  ft_split.c \
 			  ft_strcat.c \
 			  ft_strcmp.c \
+			  ft_strdup.c \
 			  ft_strcpy.c \
+			  ft_strjoin.c \
 			  ft_strlcat.c \
 			  ft_strlcpy.c \
 			  ft_strlen.c \
