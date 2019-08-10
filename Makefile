@@ -56,7 +56,7 @@ $(OBJ_DIR):
 	mkdir $@
 
 $(OBJ_DIR)/%.o: %.c | $(DEP_DIR) $(OBJ_DIR)
-	@echo '$(CC) $<'
+	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 -include $(DEP)
