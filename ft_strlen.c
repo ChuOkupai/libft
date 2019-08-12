@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/03 03:11:19 by asoursou          #+#    #+#             */
-/*   Updated: 2019/07/03 15:18:43 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 06:57:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int n;
+#include <string.h>
 
-	n = 0;
-	while (str[n])
-		n++;
-	return (n);
+size_t	ft_strlen(const char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
