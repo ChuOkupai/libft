@@ -4,27 +4,27 @@ OBJ_DIR	= obj
 
 # FILES
 NAME	= libft.a
-SRC		= ft_atoi_base.c \
-		  ft_atoi.c \
-		  ft_print_memory.c \
-		  ft_putchar.c \
-		  ft_putnbr_base.c \
-		  ft_putnbr.c \
-		  ft_putstr.c \
-		  ft_putstr_non_printable.c \
-		  ft_sort_int_tab.c \
-		  ft_split.c \
+SRC		= ft_atoi.c \
+		  ft_bzero.c \
+		  ft_isalpha.c \
+		  ft_isdigit.c \
+		  ft_islower.c \
+		  ft_isspace.c \
+		  ft_isupper.c \
+		  ft_memalloc.c \
+		  ft_memdel.c \
+		  ft_memset.c \
 		  ft_strcat.c \
 		  ft_strcmp.c \
 		  ft_strcpy.c \
 		  ft_strdup.c \
-		  ft_strjoin.c \
 		  ft_strlcat.c \
 		  ft_strlcpy.c \
 		  ft_strlen.c \
 		  ft_strncat.c \
 		  ft_strncmp.c \
 		  ft_strncpy.c \
+		  ft_strnew.c \
 		  ft_strstr.c
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
@@ -57,7 +57,7 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o: %.c | $(DEP_DIR) $(OBJ_DIR)
 	@echo 'Compilation of $<'
-	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(DFLAGS) -I. -c $< -o $@
 
 -include $(DEP)
 

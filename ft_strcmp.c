@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/04 01:25:21 by asoursou          #+#    #+#             */
-/*   Updated: 2019/07/04 01:37:08 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 05:05:45 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 05:09:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 && *s1 == *s2)
 	{

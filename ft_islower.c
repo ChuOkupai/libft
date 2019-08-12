@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/02 13:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/03 22:58:20 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 04:05:30 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 04:09:06 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putnbr(int nb)
+int	ft_islower(int c)
 {
-	unsigned int n;
-
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		n = -nb;
-	}
-	else
-		n = nb;
-	if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		n %= 10;
-	}
-	ft_putchar(n + '0');
+	return (c >= 'a' && c <= 'z');
 }

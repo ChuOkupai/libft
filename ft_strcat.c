@@ -3,22 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/04 01:48:44 by asoursou          #+#    #+#             */
-/*   Updated: 2019/07/04 01:55:08 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 05:04:07 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 05:50:23 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	char *d;
+#include <libft.h>
 
-	d = dest;
-	while (*d)
-		d++;
-	while (*src)
-		*d++ = *src++;
-	*d = '\0';
-	return (dest);
+char	*ft_strcat(char *s1, const char *s2)
+{
+	ft_strcpy(s1 + ft_strlen(s1), s2);
+	return (s1);
 }

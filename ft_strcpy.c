@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/03 04:58:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/07/03 05:01:42 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 05:07:17 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 05:58:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	char *d;
 
-	i = -1;
-	while (src[++i])
-		dest[i] = src[i];
-	dest[i] = '\0';
-	return (dest);
+	d = dst;
+	while (*src)
+		*d++ = *src++;
+	*d = '\0';
+	return (dst);
 }

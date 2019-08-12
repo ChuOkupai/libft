@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asoursou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/03 03:00:11 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/03 22:58:29 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 03:00:45 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 03:07:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "libft.h"
+#include <libft.h>
+#include <stdlib.h>
 
-void	ft_putstr(char *str)
+char	*ft_strnew(size_t size)
 {
-	write(1, str, ft_strlen(str));
+	char *s;
+
+	if ((s = (char *)malloc(size)))
+		return (ft_memset(s, '\0', size));
+	return (NULL);
 }

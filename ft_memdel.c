@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 06:06:10 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 06:24:56 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 02:47:22 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 02:49:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_memdel(void **ap)
 {
-	while (n && *s1 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	return ((n) ? *s1 - *s2 : 0);
+	free(*ap);
+	*ap = NULL;
 }

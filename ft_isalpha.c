@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 06:06:10 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 06:24:56 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 04:10:56 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/12 04:12:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <libft.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_isalpha(int c)
 {
-	while (n && *s1 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	return ((n) ? *s1 - *s2 : 0);
+	return (ft_islower(c) || ft_isupper(c));
 }
