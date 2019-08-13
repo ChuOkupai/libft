@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 06:06:10 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 06:24:56 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/13 19:51:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return ((n) ? *s1 - *s2 : 0);
+	return ((n) ? (unsigned char)*s1 - (unsigned char)*s2 : 0);
 }

@@ -33,7 +33,7 @@ OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -Ofast
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 
 $(NAME): $(OBJ)
@@ -58,10 +58,10 @@ $(OBJ_DIR):
 
 $(OBJ_DIR)/%.o: %.c | $(DIR)
 	@echo 'Compilation of $<'
-	@$(CC) $(CFLAGS) $(DFLAGS) -I. -c $< -o $@
+	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 %.out: %.c $(NAME) | $(DIR)
-	$(CC) $(CFLAGS) $(DFLAGS) -I. $< -o $@ -L. -lft
+	$(CC) $(CFLAGS) $(DFLAGS) $< -o $@ -L. -lft
 
 -include $(DEP)
 
