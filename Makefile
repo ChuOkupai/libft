@@ -1,6 +1,7 @@
 # DIRECTORIES
 DEP_DIR	= dep
 OBJ_DIR	= obj
+DIR		= $(DEP_DIR) $(OBJ_DIR)
 
 # FILES
 NAME	= libft.a
@@ -12,6 +13,7 @@ SRC		= ft_atoi.c \
 		  ft_isspace.c \
 		  ft_isupper.c \
 		  ft_memalloc.c \
+		  ft_memcpy.c \
 		  ft_memdel.c \
 		  ft_memset.c \
 		  ft_strcat.c \
@@ -36,13 +38,12 @@ DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 
 $(NAME): $(OBJ)
 	@echo 'Creation of $@'
-	@ar -rcs $@ $(OBJ)
+	@ar -rcs $@ $^
 
 all: $(NAME)
 
 clean:
-	@echo 'Deletion of dependencies and objects'
-	@rm -rf $(DEP_DIR) $(OBJ_DIR)
+	rm -rf $(DIR)
 
 fclean: clean
 	rm -f $(NAME)
@@ -55,7 +56,7 @@ $(DEP_DIR):
 $(OBJ_DIR):
 	mkdir $@
 
-$(OBJ_DIR)/%.o: %.c | $(DEP_DIR) $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.c | $(DIR)
 	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) -I. -c $< -o $@
 

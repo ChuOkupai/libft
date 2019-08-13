@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 04:28:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 05:10:34 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/13 01:55:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *d;
+	char	*d;
+	size_t	n;
 
-	if ((d = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char))))
-		ft_strcpy(d, s1);
+	n = ft_strlen(s1) + 1;
+	if ((d = (char *)malloc(n * sizeof(char))))
+		ft_memcpy(d, s1, n);
 	return (d);
 }

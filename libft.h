@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 05:45:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/13 02:16:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		ft_isupper(int c);
 
 void	*ft_memalloc(size_t size);
 
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
 void	ft_memdel(void **ap);
 
 void	*ft_memset(void *b, int c, size_t len);
@@ -53,10 +55,12 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_strncpy(char *dst, const char *src, size_t len);
 
+//TODO: optimiser
 size_t	ft_strlen(const char *s);
 
 char	*ft_strnew(size_t size);
 
+//TODO: améliorer la complexité
 char	*ft_strstr(const char *haystack, const char *needle);
 
 #endif
