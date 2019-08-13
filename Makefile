@@ -60,6 +60,9 @@ $(OBJ_DIR)/%.o: %.c | $(DIR)
 	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) -I. -c $< -o $@
 
+%.out: %.c $(NAME) | $(DIR)
+	$(CC) $(CFLAGS) $(DFLAGS) -I. $< -o $@ -L. -lft
+
 -include $(DEP)
 
 .PHONY: all clean fclean re

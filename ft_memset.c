@@ -6,26 +6,41 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:50:39 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 02:47:55 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/13 08:08:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+/*static void	ft_fastmemset(void *b, size_t m, size_t n)
 {
-	size_t m;
+		((size_t *)b)[0] = m;
+		((size_t *)b)[1] = m;
+		((size_t *)b)[2] = m;
+		((size_t *)b)[3] = m;
+		((size_t *)b)[4] = m;
+		((size_t *)b)[5] = m;
+		((size_t *)b)[6] = m;
+		((size_t *)b)[7] = m;
+}*/
 
-	m = (unsigned char)c;
+void		*ft_memset(void *b, int c, size_t len)
+{
+	size_t i;
+	size_t mask;
+
+	mask = (unsigned char)c;
 	c = 1;
-	while ((size_t)c < sizeof(m))
-		m |= m << (8 * c++);
-	while (len >= sizeof(len))
+	while ((size_t)c < sizeof(mask))
 	{
-		len -= sizeof(len);
-		((size_t *)b)[len] = m;
+		mask |= mask << (c << 3);
+		c <<= 1;
 	}
-	while (len)
-		((unsigned char *)b)[--len] = m;
+	i = len / sizeof(i);
+	while (i)
+		((size_t *)b)[--i] = mask;
+	i = len - len % sizeof(i);
+	while (i < len)
+		((unsigned char *)b)[i++] = mask;
 	return (b);
 }
