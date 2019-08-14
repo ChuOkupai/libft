@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 03:00:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/14 04:17:16 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/14 03:16:44 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/14 03:24:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char *s;
-
-	if ((s = (char *)malloc(++size * sizeof(char))))
-		ft_memset(s, '\0', size);
-	return (s);
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else
+		while (len--)
+			((char *)dst)[len] = ((char *)src)[len];
+	return (dst);
 }
