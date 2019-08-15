@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 04:56:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/14 00:30:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/15 04:09:46 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		if (hlen < nlen)
 			return (NULL);
 	}
-	return ((char *)haystack);
+	return ((char*)haystack);
 }

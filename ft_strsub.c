@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/14 03:27:06 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:05:12 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/15 00:54:04 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/15 04:00:14 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	while (n >= sizeof(size_t) && *((size_t*)s1) == *((size_t*)s2))
+	char *d;
+
+	if ((d = (char*)malloc((len + 1) * sizeof(char))))
 	{
-		s1 += sizeof(size_t);
-		s2 += sizeof(size_t);
-		n -= sizeof(size_t);
+		ft_memcpy(d, s + start, len);
+		d[len] = '\0';
 	}
-	while (n)
-	{
-		if (*((unsigned char*)s1) != *((unsigned char*)s2))
-			return (*((unsigned char*)s1) - *((unsigned char*)s2));
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
+	return (d);
 }

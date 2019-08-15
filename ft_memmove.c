@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 03:16:44 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/14 03:24:43 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/15 04:06:06 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memcpy(dst, src, len);
 	else
 		while (len--)
-			((char *)dst)[len] = ((char *)src)[len];
+			((char*)dst)[len] = ((char*)src)[len];
 	return (dst);
 }

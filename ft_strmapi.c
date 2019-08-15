@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/14 03:27:06 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:05:12 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/15 04:08:37 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	while (n >= sizeof(size_t) && *((size_t*)s1) == *((size_t*)s2))
+	char			*d;
+	unsigned int	n;
+
+	n = ft_strlen(s) + 1;
+	if ((d = (char*)malloc(n * sizeof(char))))
 	{
-		s1 += sizeof(size_t);
-		s2 += sizeof(size_t);
-		n -= sizeof(size_t);
+		d[--n] = '\0';
+		while (n--)
+			d[n] = f(n, s[n]);
 	}
-	while (n)
-	{
-		if (*((unsigned char*)s1) != *((unsigned char*)s2))
-			return (*((unsigned char*)s1) - *((unsigned char*)s2));
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
+	return (d);
 }

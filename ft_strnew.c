@@ -6,18 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 03:00:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/14 04:17:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/14 23:59:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
-	char *s;
-
-	if ((s = (char *)malloc(++size * sizeof(char))))
-		ft_memset(s, '\0', size);
-	return (s);
+	return (ft_memalloc(size + 1));
 }

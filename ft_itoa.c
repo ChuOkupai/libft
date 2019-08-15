@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/14 03:27:06 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:05:12 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/15 05:08:24 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/15 05:43:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_itoa(int n)
 {
-	while (n >= sizeof(size_t) && *((size_t*)s1) == *((size_t*)s2))
+	char			*s;
+	size_t			i;
+	unsigned int	t;
+
+	t = (n < 0) ? -n : n;
+	i = 1;
+	while ((t /= 10))
+		i++;
+	t = (n < 0) ? -n : n;
+	n = (n < 0);
+	if ((s = (char*)malloc((i + n + 1) * sizeof(char))))
 	{
-		s1 += sizeof(size_t);
-		s2 += sizeof(size_t);
-		n -= sizeof(size_t);
+		s[i + n] = '\0';
+		while (i--)
+		{
+			s[i + n] = t % 10 + '0';
+			t /= 10;
+		}
+		if (n)
+			s[0] = '-';
 	}
-	while (n)
-	{
-		if (*((unsigned char*)s1) != *((unsigned char*)s2))
-			return (*((unsigned char*)s1) - *((unsigned char*)s2));
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
+	return (s);
 }

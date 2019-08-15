@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:49 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 19:09:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/15 04:04:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memalloc(size_t size)
 {
 	void *p;
 
-	if ((p = (void *)malloc(size)))
+	if ((p = (void*)malloc(size)))
 		ft_bzero(p, size);
 	return (p);
 }
