@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/16 01:50:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/17 21:06:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void				*ft_memalloc(size_t size);
 
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
-// TODO: Optimiser
 void				*ft_memchr(const void *s, int c, size_t n);
 
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -141,7 +140,7 @@ char				*ft_strrchr(const char *s, int c);
 
 char				**ft_strsplit(char const *s, char c);
 
-//TODO: Améliorer la complexité
+//TODO: Réduire le code
 char				*ft_strstr(const char *haystack, const char *needle);
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
