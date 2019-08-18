@@ -6,11 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 03:38:15 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 00:45:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/18 18:48:09 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isspace(int c)
 {
-	return (c == ' ' || (c >= 9 && c <= 13));
+	return (ft_isblank(c) || (c >= 10 && c <= 13));
 }

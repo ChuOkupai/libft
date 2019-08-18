@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 02:37:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 18:31:29 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/18 19:00:35 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/18 19:04:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_ispunct(int c)
 {
-	return (c == ' ' || ft_isgraph(c));
+	return (ft_isgraph(c) && !ft_isalnum(c));
 }
