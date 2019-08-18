@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/17 21:06:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/18 00:43:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void				ft_memdel(void **ap);
 
 void				*ft_memmove(void *dst, const void *src, size_t len);
 
+void				*ft_memprint(const void *s, size_t n);
+
 void				*ft_memset(void *b, int c, size_t len);
 
 void				ft_putchar(char c);
@@ -132,7 +134,6 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 
 char				*ft_strnew(size_t size);
 
-//TODO: Améliorer la complexité
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 
@@ -140,7 +141,6 @@ char				*ft_strrchr(const char *s, int c);
 
 char				**ft_strsplit(char const *s, char c);
 
-//TODO: Réduire le code
 char				*ft_strstr(const char *haystack, const char *needle);
 
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
