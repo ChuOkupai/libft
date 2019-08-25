@@ -44,7 +44,12 @@ SRC		= ft_atoi.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c \
+		  ft_str_is_alpha.c \
 		  ft_strcapitalize.c \
+		  ft_str_is_lowercase.c \
+		  ft_str_is_numeric.c \
+		  ft_str_is_printable.c \
+		  ft_str_is_uppercase.c \
 		  ft_strcat.c \
 		  ft_strclr.c \
 		  ft_strchr.c \

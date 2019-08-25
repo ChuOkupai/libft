@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 19:37:35 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/08/25 23:57:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,16 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr(char const *s);
 
 void			ft_putstr_fd(char const *s, int fd);
+
+int				ft_str_is_alpha(char const *s);
+
+int				ft_str_is_lowercase(char const *s);
+
+int				ft_str_is_numeric(char const *s);
+
+int				ft_str_is_printable(char const *s);
+
+int				ft_str_is_uppercase(char const *s);
 
 char			*ft_strcapitalize(char *str);
 
