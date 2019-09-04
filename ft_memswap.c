@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 04:25:01 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/04 02:45:31 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/04 00:10:44 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/04 00:21:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_memswap(void *a, void *b, size_t n)
 {
-	ft_putendl_fd(s, 1);
+	unsigned char t[n];
+
+	ft_memcpy(t, a, n);
+	ft_memcpy(a, b, n);
+	ft_memcpy(b, t, n);
 }

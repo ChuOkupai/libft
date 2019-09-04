@@ -6,14 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 05:01:53 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 05:03:52 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/04 02:44:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putnbr(int n)
 {
-	ft_putnbr_fd(n, STDOUT_FILENO);
+	ft_putnbr_fd(n, 1);
 }

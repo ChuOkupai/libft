@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/25 23:57:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/04 02:41:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void			*ft_memprint(const void *s, size_t n);
 
 void			*ft_memset(void *b, int c, size_t len);
 
+void			ft_memswap(void *a, void *b, size_t n);
+
 void			ft_putchar(char c);
 
 void			ft_putchar_fd(char c, int fd);
@@ -94,11 +96,18 @@ void			ft_putendl_fd(char const *s, int fd);
 
 void			ft_putnbr(int n);
 
+void			ft_putnbr_base(int n, char const *base);
+
+void			ft_putnbr_base_fd(int n, char const *base, int fd);
+
 void			ft_putnbr_fd(int n, int fd);
 
 void			ft_putstr(char const *s);
 
 void			ft_putstr_fd(char const *s, int fd);
+
+void			ft_qsort(void *tab, size_t len, size_t n,
+				int (cmp)(const void *, const void *));
 
 int				ft_str_is_alpha(char const *s);
 
@@ -155,7 +164,7 @@ int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strnew(size_t size);
 
 char			*ft_strnstr(const char *haystack, const char *needle,
-					size_t len);
+				size_t len);
 
 char			*ft_strrchr(const char *s, int c);
 

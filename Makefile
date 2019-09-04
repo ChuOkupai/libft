@@ -36,20 +36,24 @@ SRC		= ft_atoi.c \
 		  ft_memmove.c \
 		  ft_memprint.c \
 		  ft_memset.c \
+		  ft_memswap.c \
 		  ft_putchar.c \
 		  ft_putchar_fd.c \
 		  ft_putendl.c \
 		  ft_putendl_fd.c \
 		  ft_putnbr.c \
+		  ft_putnbr_base.c \
+		  ft_putnbr_base_fd.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c \
+		  ft_qsort.c \
 		  ft_str_is_alpha.c \
-		  ft_strcapitalize.c \
 		  ft_str_is_lowercase.c \
 		  ft_str_is_numeric.c \
 		  ft_str_is_printable.c \
 		  ft_str_is_uppercase.c \
+		  ft_strcapitalize.c \
 		  ft_strcat.c \
 		  ft_strclr.c \
 		  ft_strchr.c \
@@ -86,6 +90,7 @@ OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
+LDFLAGS	= -I. -L. -lft
 
 $(NAME): $(OBJ)
 	@echo 'Creation of $@'
@@ -112,7 +117,7 @@ $(OBJ_DIR)/%.o: %.c | $(DIR)
 	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
 
 %.out: %.c $(NAME) | $(DIR)
-	$(CC) $(CFLAGS) $(DFLAGS) $< -o $@ -L. -lft
+	$(CC) $(CFLAGS) $(DFLAGS) $< -o $@ $(LDFLAGS)
 
 -include $(DEP)
 

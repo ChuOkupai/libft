@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 04:25:01 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/04 02:45:31 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/04 02:35:38 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/04 02:41:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putnbr_base(int n, char const *base)
 {
-	ft_putendl_fd(s, 1);
+	ft_putnbr_base_fd(n, base, 1);
 }
