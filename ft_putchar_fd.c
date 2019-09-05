@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:15:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:17:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 13:38:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	(void)(write(fd, &c, 1) + 1);
 }

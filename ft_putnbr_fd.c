@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:29:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 00:21:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 13:39:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n)
 		buf[--i] = '-';
-	write(fd, buf + i, BUFFER_SIZE - i);
+	(void)(write(fd, buf + i, BUFFER_SIZE - i) + 1);
 }

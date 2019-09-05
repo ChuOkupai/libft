@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 01:51:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 13:39:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_print(int n, char const *base, int size, int fd)
 	}
 	if (n)
 		buf[--i] = '-';
-	write(fd, buf + i, BUFFER_SIZE - i);
+	(void)(write(fd, buf + i, BUFFER_SIZE - i) + 1);
 }
 
 void		ft_putnbr_base_fd(int n, char const *base, int fd)
@@ -39,7 +39,7 @@ void		ft_putnbr_base_fd(int n, char const *base, int fd)
 	int		i;
 
 	i = -1;
-	ft_memset(t, 0, 128);
+	ft_bzero(t, 128);
 	while (base[++i] && ft_isgraph(base[i]) && base[i] != '+' && base[i] != '-'
 		&& !t[(int)base[i]])
 		t[(int)base[i]] = 1;
