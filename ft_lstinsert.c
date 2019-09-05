@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstinsert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:13:28 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 23:28:27 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/06 00:00:15 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/06 00:38:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstinsert(t_list **lst, t_list *new,
+		int (*cmp)(const void *, const void *))
 {
-	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void**)alst);
+	if (!*lst || cmp(new->content, (*lst)->content) <= 0)
+		ft_lstadd(lst, new);
+	else
+		ft_lstinsert(&(*lst)->next, new, cmp);
 }

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:13:28 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 23:28:27 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/06 00:33:17 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/06 00:39:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstrev(t_list **lst)
 {
-	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void**)alst);
+	t_list *prev;
+	t_list *next;
+
+	prev = NULL;
+	while (*lst)
+	{
+		next = (*lst)->next;
+		(*lst)->next = prev;
+		prev = *lst;
+		*lst = next;
+	}
+	*lst = prev;
 }

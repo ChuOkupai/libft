@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:13:28 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 23:28:27 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/06 00:40:08 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/06 00:44:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+t_list	*ft_lstfind(t_list *lst, const void *content,
+		int (*cmp)(const void *, const void *))
 {
-	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void**)alst);
+	if (!lst || !cmp(lst->content, content))
+		return (lst);
+	return (ft_lstfind(lst->next, content, cmp));
 }

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:13:28 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 23:28:27 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/05 23:33:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+size_t	ft_lstsize(t_list *l)
 {
-	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void**)alst);
+	size_t i;
+
+	i = 0;
+	while (l)
+	{
+		l = l->next;
+		i++;
+	}
+	return (i);
 }
