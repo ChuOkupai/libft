@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 03:17:11 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 19:06:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 01:23:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,9 @@ int	ft_atoi(const char *str)
 
 	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
-	{
-		sign = -1;
+	sign = (*str == '-') ? -1 : 1;
+	if (*str == '-' || *str == '+')
 		str++;
-	}
-	else
-	{
-		sign = 1;
-		if (*str == '+')
-			str++;
-	}
 	n = 0;
 	while (ft_isdigit(*str))
 		n = n * 10 + *str++ - '0';

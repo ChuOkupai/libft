@@ -6,35 +6,43 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/04 03:10:10 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 01:51:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
+#define BUFFER_SIZE 8 * sizeof(int)
 
-static void	ft_print(unsigned int n, char const *base, unsigned int size,
-			int fd)
+static void	ft_print(int n, char const *base, int size, int fd)
 {
-	if (n > size - 1)
+	char			buf[BUFFER_SIZE];
+	size_t			i;
+	unsigned int	t;
+
+	t = (n < 0) ? -n : n;
+	n = (n < 0);
+	i = BUFFER_SIZE;
+	while (t || i == BUFFER_SIZE)
 	{
-		ft_print(n / size, base, size, fd);
-		n %= size;
+		buf[--i] = base[t % size];
+		t /= size;
 	}
-	ft_putchar_fd(base[n], fd);
+	if (n)
+		buf[--i] = '-';
+	write(fd, buf + i, BUFFER_SIZE - i);
 }
 
 void		ft_putnbr_base_fd(int n, char const *base, int fd)
 {
-	unsigned int i;
+	char	t[128];
+	int		i;
 
-	i = 0;
-	while (base[i])
-		if (base[i] == '+' || base[i] == '-' || !ft_isgraph(base[i++])
-			|| ft_strchr(base + i, base[i - 1]))
-			return ;
-	if (i < 2)
-		return ;
-	if (n < 0)
-		ft_putchar_fd('-', fd);
-	ft_print(((n < 0) ? -n : n), base, i, fd);
+	i = -1;
+	ft_memset(t, 0, 128);
+	while (base[++i] && ft_isgraph(base[i]) && base[i] != '+' && base[i] != '-'
+		&& !t[(int)base[i]])
+		t[(int)base[i]] = 1;
+	if (i > 1 && !base[i])
+		ft_print(n, base, i, fd);
 }

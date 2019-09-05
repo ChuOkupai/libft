@@ -6,6 +6,7 @@ DIR		= $(DEP_DIR) $(OBJ_DIR)
 # FILES
 NAME	= libft.a
 SRC		= ft_atoi.c \
+		  ft_atoi_base.c \
 		  ft_bzero.c \
 		  ft_isalnum.c \
 		  ft_isalpha.c \
@@ -55,14 +56,13 @@ SRC		= ft_atoi.c \
 		  ft_str_is_uppercase.c \
 		  ft_strcapitalize.c \
 		  ft_strcat.c \
-		  ft_strclr.c \
 		  ft_strchr.c \
+		  ft_strclr.c \
 		  ft_strcmp.c \
 		  ft_strcpy.c \
 		  ft_strdel.c \
 		  ft_strdup.c \
 		  ft_strequ.c \
-		  ft_strnequ.c \
 		  ft_striter.c \
 		  ft_striteri.c \
 		  ft_strjoin.c \
@@ -74,6 +74,7 @@ SRC		= ft_atoi.c \
 		  ft_strncat.c \
 		  ft_strncmp.c \
 		  ft_strncpy.c \
+		  ft_strnequ.c \
 		  ft_strnew.c \
 		  ft_strnstr.c \
 		  ft_strrchr.c \
@@ -88,7 +89,7 @@ OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 LDFLAGS	= -I. -L. -lft
 

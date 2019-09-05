@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/04 02:41:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/05 01:07:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct	s_list
 }				t_list;
 
 int				ft_atoi(const char *str);
+
+int				ft_atoi_base(char const *str, char const *base);
 
 void			ft_bzero(void *s, size_t n);
 
