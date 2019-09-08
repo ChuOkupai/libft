@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 01:58:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:06:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/08 03:59:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s || !c)
-	{
 		if (*s == (char)c)
 			return ((char*)s);
-		s++;
-	}
+		else
+			s++;
 	return (NULL);
 }

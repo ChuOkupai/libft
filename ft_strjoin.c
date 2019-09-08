@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 01:45:07 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:08:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/08 04:03:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if ((d = (char*)malloc((n1 + n2) * sizeof(char))))
 	{
 		ft_memcpy(d, s1, n1);
-		ft_memcpy(d + n1, s2, n2);
+		ft_memcpy(d + n1, s2, n2 + 1);
 	}
 	return (d);
 }
