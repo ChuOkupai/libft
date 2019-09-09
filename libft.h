@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:50:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/09 19:44:48 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,16 +128,6 @@ void			ft_putstr_fd(char const *s, int fd);
 
 void			ft_qsort(void *tab, size_t len, size_t n,
 				int (cmp)(const void *, const void *));
-
-int				ft_str_is_alpha(char const *s);
-
-int				ft_str_is_lowercase(char const *s);
-
-int				ft_str_is_numeric(char const *s);
-
-int				ft_str_is_printable(char const *s);
-
-int				ft_str_is_uppercase(char const *s);
 
 char			*ft_strcapitalize(char *str);
 

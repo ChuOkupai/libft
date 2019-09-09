@@ -56,11 +56,6 @@ SRC		= ft_atoi.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c \
 		  ft_qsort.c \
-		  ft_str_is_alpha.c \
-		  ft_str_is_lowercase.c \
-		  ft_str_is_numeric.c \
-		  ft_str_is_printable.c \
-		  ft_str_is_uppercase.c \
 		  ft_strcapitalize.c \
 		  ft_strcat.c \
 		  ft_strchr.c \
