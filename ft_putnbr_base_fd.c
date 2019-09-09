@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 13:39:24 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/09 18:57:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ static void	ft_print(int n, char const *base, int size, int fd)
 	size_t			i;
 	unsigned int	t;
 
-	t = (n < 0) ? -n : n;
-	n = (n < 0);
+	t = ABS(n);
 	i = BUFFER_SIZE;
 	while (t || i == BUFFER_SIZE)
 	{
 		buf[--i] = base[t % size];
 		t /= size;
 	}
-	if (n)
+	if (n < 0)
 		buf[--i] = '-';
 	(void)(write(fd, buf + i, BUFFER_SIZE - i) + 1);
 }
@@ -40,8 +39,8 @@ void		ft_putnbr_base_fd(int n, char const *base, int fd)
 
 	i = -1;
 	ft_bzero(t, 128);
-	while (base[++i] && ft_isgraph(base[i]) && base[i] != '+' && base[i] != '-'
-		&& !t[(int)base[i]])
+	while (base[++i] && ft_isgraph(base[i])
+		&& !ft_issign(base[i]) && !t[(int)base[i]])
 		t[(int)base[i]] = 1;
 	if (i > 1 && !base[i])
 		ft_print(n, base, i, fd);

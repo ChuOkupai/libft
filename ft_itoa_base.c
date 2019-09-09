@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 04:29:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:21:16 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/09 17:11:37 by asoursou          #+#    #+#             */
+/*   Updated: 2019/09/09 18:43:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 #include "libft.h"
-#define BUFFER_SIZE 4 * sizeof(int)
 
-void	ft_putnbr_fd(int n, int fd)
+char	*ft_itoa_base(int n, int base)
 {
-	char			buf[BUFFER_SIZE];
-	size_t			i;
+	char			*b;
+	char			*s;
+	unsigned int	i;
 	unsigned int	t;
 
+	if (base < 2 || base > 16)
+		return (NULL);
+	b = "0123456789ABCDEF";
 	t = ABS(n);
-	i = BUFFER_SIZE;
-	while (t || i == BUFFER_SIZE)
+	i = 1;
+	while (t /= base)
+		i++;
+	t = ABS(n);
+	n = (n < 0 && base == 10);
+	if ((s = (char*)malloc((i + n + 1) * sizeof(char))))
 	{
-		buf[--i] = t % 10 + '0';
-		t /= 10;
+		s[i + n] = '\0';
+		while (i--)
+		{
+			s[i + n] = b[t % base];
+			t /= base;
+		}
+		if (n)
+			s[0] = '-';
 	}
-	if (n < 0)
-		buf[--i] = '-';
-	(void)(write(fd, buf + i, BUFFER_SIZE - i) + 1);
+	return (s);
 }

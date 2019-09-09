@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:28:36 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 19:09:42 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/09 19:03:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	char *d;
 
 	d = s1 + ft_strlen(s1);
-	while (n && *s2)
-	{
+	while (n-- && *s2)
 		*d++ = *s2++;
-		n--;
-	}
 	*d = '\0';
 	return (s1);
 }

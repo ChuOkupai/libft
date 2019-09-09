@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/06 00:45:34 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/09 18:50:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <string.h>
+
+#define ABS(Value) (Value < 0) ? -Value : Value;
 
 typedef struct	s_list
 {
@@ -48,6 +50,8 @@ int				ft_isprint(int c);
 
 int				ft_ispunct(int c);
 
+int				ft_issign(int c);
+
 int				ft_isspace(int c);
 
 int				ft_isupper(int c);
@@ -55,6 +59,8 @@ int				ft_isupper(int c);
 int				ft_isxdigit(int c);
 
 char			*ft_itoa(int n);
+
+char			*ft_itoa_base(int n, int base);
 
 void			ft_lstadd(t_list **alst, t_list *new);
 

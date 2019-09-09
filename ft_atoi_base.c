@@ -6,16 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 00:47:59 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 01:52:29 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/09 18:50:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_issign(int c)
-{
-	return (c == '-' || c == '+');
-}
 
 static int	ft_check_base(char const *base, char *t)
 {
