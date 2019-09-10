@@ -18,7 +18,6 @@ SRC		= ft_atoi.c \
 		  ft_islower.c \
 		  ft_isprint.c \
 		  ft_ispunct.c \
-		  ft_issign.c \
 		  ft_isspace.c \
 		  ft_isupper.c \
 		  ft_isxdigit.c \

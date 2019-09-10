@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:57:30 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:25:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		ft_putnbr_base_fd(int n, char const *base, int fd)
 	i = -1;
 	ft_bzero(t, 128);
 	while (base[++i] && ft_isgraph(base[i])
-		&& !ft_issign(base[i]) && !t[(int)base[i]])
+		&& base[i] != '-' && base[i] != '+' && !t[(int)base[i]])
 		t[(int)base[i]] = 1;
 	if (i > 1 && !base[i])
 		ft_print(n, base, i, fd);

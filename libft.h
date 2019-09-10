@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/10 15:20:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/10 20:31:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string.h>
 
-#define ABS(Value) ((Value < 0) ? -Value : Value)
+# define ABS(Value) ((Value < 0) ? -Value : Value)
 
 typedef struct	s_list
 {
@@ -49,8 +49,6 @@ int				ft_islower(int c);
 int				ft_isprint(int c);
 
 int				ft_ispunct(int c);
-
-int				ft_issign(int c);
 
 int				ft_isspace(int c);
 
