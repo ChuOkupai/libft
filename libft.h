@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 19:44:48 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/10 15:20:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string.h>
 
-#define ABS(Value) (Value < 0) ? -Value : Value;
+#define ABS(Value) ((Value < 0) ? -Value : Value)
 
 typedef struct	s_list
 {
