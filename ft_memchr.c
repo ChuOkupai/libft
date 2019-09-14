@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 01:56:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:54:52 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/14 19:36:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	{
 		if (*((unsigned char*)s) == (unsigned char)c)
 			return ((void*)s);
-		s += sizeof(unsigned char);
+		s++;
 	}
 	return (NULL);
 }
