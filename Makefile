@@ -1,3 +1,8 @@
+# COMPILATION
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
+DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
+
 # DIRECTORIES
 DEP_DIR	= dep
 OBJ_DIR	= obj
@@ -54,8 +59,6 @@ SRC		= ft_atoi.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c \
-		  ft_qsort.c \
-		  ft_qsort_int.c \
 		  ft_strcapitalize.c \
 		  ft_strcat.c \
 		  ft_strchr.c \
@@ -89,12 +92,6 @@ SRC		= ft_atoi.c \
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
-# COMPILATION
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
-DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
-LDFLAGS	= -I. -L. -lft
-
 $(NAME): $(OBJ)
 	@echo 'Creation of $@'
 	@ar -rcs $@ $^
@@ -118,9 +115,6 @@ $(OBJ_DIR):
 $(OBJ_DIR)/%.o: %.c | $(DIR)
 	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
-
-%.out: %.c $(NAME) | $(DIR)
-	$(CC) $(CFLAGS) $(DFLAGS) $< -o $@ $(LDFLAGS)
 
 -include $(DEP)
 
