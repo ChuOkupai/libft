@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/16 19:10:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/21 22:40:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,6 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memprint(const void *s, size_t n);
 
 void			*ft_memset(void *b, int c, size_t len);
-
-void			ft_memswap(void *a, void *b, size_t n);
 
 void			ft_putchar(char c);
 

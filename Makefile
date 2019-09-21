@@ -48,7 +48,6 @@ SRC		= ft_atoi.c \
 		  ft_memmove.c \
 		  ft_memprint.c \
 		  ft_memset.c \
-		  ft_memswap.c \
 		  ft_putchar.c \
 		  ft_putchar_fd.c \
 		  ft_putendl.c \

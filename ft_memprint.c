@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 13:33:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/21 22:37:37 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	ft_print_data(const char *s, size_t n)
 	while (i < 16)
 	{
 		ft_putstr((i & 1) ? "  " : "     ");
-		i += (i & 1) ? 1 : 2;
+		i += 1 + !(i & 1);
 	}
 	ft_putstr(" |");
 	i = 0;
