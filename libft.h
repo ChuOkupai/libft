@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/21 22:40:55 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/26 09:28:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,9 @@ void			ft_memdel(void **ap);
 
 void			*ft_memmove(void *dst, const void *src, size_t len);
 
-void			*ft_memprint(const void *s, size_t n);
-
 void			*ft_memset(void *b, int c, size_t len);
+
+void			*ft_print_memory(const void *s, size_t n);
 
 void			ft_putchar(char c);
 
@@ -121,8 +121,6 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr(char const *s);
 
 void			ft_putstr_fd(char const *s, int fd);
-
-char			*ft_strcapitalize(char *str);
 
 char			*ft_strcat(char *s1, const char *s2);
 
