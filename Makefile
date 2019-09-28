@@ -61,6 +61,7 @@ SRC		= ft_atoi.c \
 		  ft_strcapitalize.c \
 		  ft_strcat.c \
 		  ft_strchr.c \
+		  ft_strchrnul.c \
 		  ft_strclr.c \
 		  ft_strcmp.c \
 		  ft_strcpy.c \

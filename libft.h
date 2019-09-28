@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/26 09:28:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/09/28 19:18:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,8 @@ void			ft_putstr_fd(char const *s, int fd);
 char			*ft_strcat(char *s1, const char *s2);
 
 char			*ft_strchr(const char *s, int c);
+
+char			*ft_strchrnul(const char *s, int c);
 
 void			ft_strclr(char *s);
 
