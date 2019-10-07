@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:54:04 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:00:14 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/16 01:24:13 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/07 16:50:26 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char *d;
+	t_list *l;
 
-	if ((d = (char*)malloc((len + 1) * sizeof(char))))
+	while (*lst)
 	{
-		ft_memcpy(d, s + start, len);
-		d[len] = '\0';
+		l = *lst;
+		*lst = (*lst)->next;
+		del(l->content);
+		free(l);
 	}
-	return (d);
 }

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/28 19:18:53 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/07 17:02:56 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
 
@@ -29,6 +28,8 @@ int				ft_atoi(const char *str);
 int				ft_atoi_base(char const *str, char const *base);
 
 void			ft_bzero(void *s, size_t n);
+
+void			*ft_calloc(size_t count, size_t size);
 
 int				ft_isalnum(int c);
 
@@ -60,11 +61,11 @@ char			*ft_itoa(int n);
 
 char			*ft_itoa_base(int n, int base);
 
-void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstadd_front(t_list **alst, t_list *new);
 
-void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
 
-void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **lst, void (*del)(void *));
 
 t_list			*ft_lstfind(t_list *lst, const void *content,
 				int (*cmp)(const void *, const void *));
@@ -74,17 +75,17 @@ void			ft_lstinsert(t_list **lst, t_list *new,
 
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
+t_list			*ft_lstlast(t_list *lst);
+
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-t_list			*ft_lstnew(void const *content, size_t content_size);
+t_list			*ft_lstnew(void const *content);
 
 void			ft_lstrev(t_list **lst);
 
-size_t			ft_lstsize(t_list *l);
+size_t			ft_lstsize(t_list *lst);
 
 void			ft_lstsort(t_list **l, int (*cmp)(const void *, const void *));
-
-void			*ft_memalloc(size_t size);
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
@@ -175,9 +176,9 @@ char			**ft_strsplit(char const *s, char c);
 
 char			*ft_strstr(const char *haystack, const char *needle);
 
-char			*ft_strsub(char const *s, unsigned int start, size_t len);
+char			*ft_strtrim(char const *s1, char const *set);
 
-char			*ft_strtrim(char const *s);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 int				ft_tolower(int c);
 

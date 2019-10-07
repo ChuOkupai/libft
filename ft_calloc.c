@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:24:13 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/08 02:53:03 by asoursou         ###   ########.fr       */
+/*   Created: 2019/10/07 14:05:59 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/07 14:18:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	*ft_calloc(size_t count, size_t size)
 {
-	t_list *l;
+	void *b;
 
-	while (*alst)
-	{
-		l = *alst;
-		*alst = (*alst)->next;
-		del(l->content, l->content_size);
-		free(l);
-	}
+	size *= count;
+	if ((b = (void*)malloc(size)))
+		ft_bzero(b, size);
+	return (b);
 }

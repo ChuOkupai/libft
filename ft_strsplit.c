@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:29:19 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 04:00:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/07 14:37:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char			**ft_strsplit(char const *s, char c)
 	while (i < size)
 	{
 		n = ft_wordlen(&s, c);
-		if (!(t[i] = ft_strsub(s, 0, n)))
+		if (!(t[i] = ft_substr(s, 0, n)))
 		{
 			while (i)
 				free(t[--i]);

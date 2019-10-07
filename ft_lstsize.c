@@ -6,20 +6,20 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 23:33:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/07 17:27:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_lstsize(t_list *l)
+int	ft_lstsize(t_list *lst)
 {
-	size_t i;
+	int i;
 
 	i = 0;
-	while (l)
+	while (lst)
 	{
-		l = l->next;
+		lst = lst->next;
 		i++;
 	}
 	return (i);

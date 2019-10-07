@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/07 15:01:00 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/15 00:54:04 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/07 14:33:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
-// A opti
-char		*ft_strtrim(char const *s1, char const *set)
-{
-	size_t n;
 
-	while (ft_strchr(set, *s1))
-		s1++;
-	n = ft_strlen(s1);
-	while (n && ft_strchr(set, s1[n - 1]))
-		n--;
-	return (ft_substr(s1, 0, n));
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char *d;
+
+	if ((d = (char*)malloc((len + 1) * sizeof(char))))
+	{
+		ft_memcpy(d, s + start, len);
+		d[len] = '\0';
+	}
+	return (d);
 }

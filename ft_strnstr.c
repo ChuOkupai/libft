@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:52:50 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 00:15:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/07 14:48:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	*ft_kmp_search(const char *h, const char *n, size_t hl, size_t nl)
 	return (NULL);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t hl;
 	size_t nl;

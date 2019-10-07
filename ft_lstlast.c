@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:30:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/16 01:31:37 by asoursou         ###   ########.fr       */
+/*   Created: 2019/10/07 16:52:56 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/07 16:56:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	new->next = *alst;
-	*alst = new;
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }

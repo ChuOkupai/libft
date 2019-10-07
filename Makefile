@@ -13,6 +13,7 @@ NAME	= libft.a
 SRC		= ft_atoi.c \
 		  ft_atoi_base.c \
 		  ft_bzero.c \
+		  ft_calloc.c \
 		  ft_isalnum.c \
 		  ft_isalpha.c \
 		  ft_isascii.c \
@@ -39,7 +40,6 @@ SRC		= ft_atoi.c \
 		  ft_lstrev.c \
 		  ft_lstsize.c \
 		  ft_lstsort.c \
-		  ft_memalloc.c \
 		  ft_memccpy.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
@@ -85,11 +85,10 @@ SRC		= ft_atoi.c \
 		  ft_strrchr.c \
 		  ft_strsplit.c \
 		  ft_strstr.c \
-		  ft_strsub.c \
 		  ft_strtrim.c \
+		  ft_substr.c \
 		  ft_tolower.c \
 		  ft_toupper.c
-DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 $(NAME): $(OBJ)
