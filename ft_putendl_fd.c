@@ -6,14 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:19:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 13:41:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/08 11:36:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	char c;
 

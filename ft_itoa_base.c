@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 17:11:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:43:43 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/08 12:28:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,13 @@ char	*ft_itoa_base(int n, int base)
 	n = (n < 0 && base == 10);
 	if ((s = (char*)malloc((i + n + 1) * sizeof(char))))
 	{
+		s[0] = '-';
 		s[i + n] = '\0';
 		while (i--)
 		{
 			s[i + n] = b[t % base];
 			t /= base;
 		}
-		if (n)
-			s[0] = '-';
 	}
 	return (s);
 }

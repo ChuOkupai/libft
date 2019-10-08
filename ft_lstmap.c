@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 01:38:39 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/07 17:27:23 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/08 11:23:09 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,28 @@ static void	del(void *content)
 	(void)content;
 }
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 {
 	t_list	*e;
-	t_list	*last;
-	t_list	*new;
+	t_list	*l;
+	t_list	*prev;
 
-	new = NULL;
-	last = NULL;
+	l = NULL;
+	prev = NULL;
 	while (lst)
 	{
 		if (!(e = ft_lstnew(lst->content)))
 		{
-			ft_lstdel(&new);
-			break;
+			ft_lstclear(&l, del);
+			break ;
 		}
 		e = f(e);
-		if (new)
-			last->next = e;
+		if (l)
+			prev->next = e;
 		else
-			new = e;
-		last = e;
+			l = e;
+		prev = e;
 		lst = lst->next;
 	}
-	return (new);
+	return (l);
 }

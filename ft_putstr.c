@@ -6,14 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:23:17 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/05 13:27:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/08 11:44:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr(char const *s)
+void	ft_putstr(char *s)
 {
 	ft_putstr_fd(s, STDOUT_FILENO);
 }
