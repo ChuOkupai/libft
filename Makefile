@@ -106,9 +106,9 @@ $(DEP_DIR):
 $(OBJ_DIR):
 	mkdir $@
 
-$(OBJ_DIR)/%.o: %.c | $(DIR)
-	@echo 'Compilation of $<'
-	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@
+$(OBJ_DIR)/%.o: src/%.c | $(DIR)
+	@echo 'Compilation of $(notdir $<)'
+	@$(CC) $(CFLAGS) $(DFLAGS) -I./inc -c $< -o $@
 
 -include $(DEP)
 
