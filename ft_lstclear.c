@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 05:22:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 19:47:05 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/16 01:24:13 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/10 09:39:32 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t i;
+	t_list *next;
 
-	if ((i = ft_strlen(src)) + 1 < dstsize)
-		ft_memcpy(dst, src, i + 1);
-	else if (dstsize)
+	while (*lst)
 	{
-		while (--dstsize)
-			*dst++ = *src++;
-		*dst = '\0';
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
 	}
-	return (i);
 }
