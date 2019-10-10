@@ -6,17 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 01:38:39 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/09 09:46:35 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/10 21:31:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
-
-static void	del(void *content)
-{
-	(void)content;
-}
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 {
@@ -30,7 +25,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(void *))
 	{
 		if (!(e = f(lst->content)))
 		{
-			ft_lstclear(&l, del);
+			l = NULL;
 			break ;
 		}
 		if (l)
