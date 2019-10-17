@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/09 09:46:39 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/17 22:57:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_list			*ft_lstfind(t_list *lst, const void *content,
 void			ft_lstinsert(t_list **lst, t_list *new,
 				int (*cmp)(const void *, const void *));
 
-void			ft_lstiter(t_list *lst, void (*f)(t_list *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
 
 t_list			*ft_lstlast(t_list *lst);
 
