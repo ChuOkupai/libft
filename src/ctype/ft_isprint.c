@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:37:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 18:31:29 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/10 19:22:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	return (c == ' ' || ft_isgraph(c));
+	return (c >= ' ' && c < 127);
 }

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:22:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 19:47:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/10/09 22:24:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	size_t n;
 
-	if ((i = ft_strlen(src)) + 1 < dstsize)
-		ft_memcpy(dst, src, i + 1);
+	if ((n = ft_strlen(src)) + 1 < dstsize)
+		ft_memcpy(dst, src, n + 1);
 	else if (dstsize)
 	{
-		while (--dstsize)
-			*dst++ = *src++;
-		*dst = '\0';
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	return (i);
+	return (n);
 }
