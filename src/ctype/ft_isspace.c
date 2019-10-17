@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 19:23:52 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 21:10:41 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/12 03:38:15 by asoursou          #+#    #+#             */
+/*   Updated: 2019/10/10 20:17:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcapitalize(char *str)
+int	ft_isspace(int c)
 {
-	char	*s;
-
-	s = str;
-	while ((*s = ft_toupper(*s)))
-		while (ft_isalnum(*s++) && *s)
-			*s = ft_tolower(*s);
-	return (str);
+	return (c == ' ' || (c >= 9 && c <= 13));
 }

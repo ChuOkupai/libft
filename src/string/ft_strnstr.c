@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 03:38:15 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 18:48:09 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/15 02:52:50 by asoursou          #+#    #+#             */
+/*   Updated: 2019/08/15 04:09:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	return (ft_isblank(c) || (c >= 10 && c <= 13));
+	size_t hlen;
+	size_t nlen;
+
+	if ((nlen = ft_strlen(needle)))
+	{
+		if (len < (hlen = ft_strlen(haystack)))
+			hlen = len;
+		while (hlen >= nlen && ft_strncmp(haystack, needle, nlen))
+		{
+			haystack++;
+			hlen--;
+		}
+		if (hlen < nlen)
+			return (NULL);
+	}
+	return ((char*)haystack);
 }

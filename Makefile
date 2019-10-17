@@ -6,15 +6,12 @@ DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 # DIRECTORIES
 DEP_DIR	= dep
 OBJ_DIR	= obj
+SUBDIR	= ctype list memory stdio string utils
 DIR		= $(DEP_DIR) $(OBJ_DIR)
 
 # FILES
 NAME	= libft.a
-SRC		= ft_atoi.c \
-		  ft_atoi_base.c \
-		  ft_bzero.c \
-		  ft_calloc.c \
-		  ft_isalnum.c \
+CTYPE	= ft_isalnum.c \
 		  ft_isalpha.c \
 		  ft_isascii.c \
 		  ft_isblank.c \
@@ -27,9 +24,9 @@ SRC		= ft_atoi.c \
 		  ft_isspace.c \
 		  ft_isupper.c \
 		  ft_isxdigit.c \
-		  ft_itoa.c \
-		  ft_itoa_base.c \
-		  ft_lstadd_back.c \
+		  ft_tolower.c \
+		  ft_toupper.c
+LIST	= ft_lstadd_back.c \
 		  ft_lstadd_front.c \
 		  ft_lstclear.c \
 		  ft_lstdelone.c \
@@ -37,19 +34,20 @@ SRC		= ft_atoi.c \
 		  ft_lstinsert.c \
 		  ft_lstiter.c \
 		  ft_lstlast.c \
-		  ft_lstmap.c \
 		  ft_lstnew.c \
 		  ft_lstrev.c \
 		  ft_lstsize.c \
-		  ft_lstsort.c \
+		  ft_lstsort.c
+MEMORY	= ft_bzero.c \
+		  ft_calloc.c \
 		  ft_memccpy.c \
 		  ft_memchr.c \
 		  ft_memcmp.c \
 		  ft_memcpy.c \
 		  ft_memdel.c \
 		  ft_memmove.c \
-		  ft_memset.c \
-		  ft_print_memory.c \
+		  ft_memset.c
+STDIO	= ft_print_memory.c \
 		  ft_putchar.c \
 		  ft_putchar_fd.c \
 		  ft_putendl.c \
@@ -59,9 +57,8 @@ SRC		= ft_atoi.c \
 		  ft_putnbr_base_fd.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
-		  ft_putstr_fd.c \
-		  ft_split.c \
-		  ft_strcapitalize.c \
+		  ft_putstr_fd.c
+STRING	= ft_split.c \
 		  ft_strcat.c \
 		  ft_strchr.c \
 		  ft_strchrnul.c \
@@ -83,9 +80,18 @@ SRC		= ft_atoi.c \
 		  ft_strrchr.c \
 		  ft_strstr.c \
 		  ft_strtrim.c \
-		  ft_substr.c \
-		  ft_tolower.c \
-		  ft_toupper.c
+		  ft_substr.c
+UTILS	= ft_atoi.c \
+		  ft_atoi_base.c \
+		  ft_itoa.c \
+		  ft_itoa_base.c
+CTYPE	:= $(addprefix ctype/, $(CTYPE))
+LIST	:= $(addprefix list/, $(LIST))
+MEMORY	:= $(addprefix memory/, $(MEMORY))
+STDIO	:= $(addprefix stdio/, $(STDIO))
+STRING	:= $(addprefix string/, $(STRING))
+UTILS	:= $(addprefix utils/, $(UTILS))
+SRC		:= $(CTYPE) $(LIST) $(MEMORY) $(STDIO) $(STRING) $(UTILS)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 $(NAME): $(OBJ)
@@ -103,10 +109,10 @@ fclean: clean
 re: fclean all
 
 $(DEP_DIR):
-	mkdir $@
+	mkdir $@ $(addprefix $(DEP_DIR)/, $(SUBDIR))
 
 $(OBJ_DIR):
-	mkdir $@
+	mkdir $@ $(addprefix $(OBJ_DIR)/, $(SUBDIR))
 
 $(OBJ_DIR)/%.o: src/%.c | $(DIR)
 	@echo 'Compilation of $(notdir $<)'
