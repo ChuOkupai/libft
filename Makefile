@@ -4,12 +4,18 @@ CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 
 # DIRECTORIES
-DEP_DIR	= dep
-OBJ_DIR	= obj
-SUBDIR	= ctype list memory stdio string utils
-DIR		= $(DEP_DIR) $(OBJ_DIR)
+BUILD	= .build
+DEP_DIR	= $(BUILD)/dep
+OBJ_DIR = $(BUILD)/obj
+SUB_DIR	= ctype \
+		  list \
+		  memory \
+		  stdio \
+		  string \
+		  utils
+DIRS	= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
+		  $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
-# FILES
 NAME	= libft.a
 CTYPE	= ft_isalnum.c \
 		  ft_isalpha.c \
@@ -101,20 +107,18 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	rm -rf $(DIR)
+	rm -rf $(BUILD)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-$(DEP_DIR):
-	mkdir $@ $(addprefix $(DEP_DIR)/, $(SUBDIR))
+$(BUILD):
+	@echo 'Creation of $(BUILD) directory'
+	@mkdir $@ $(DIRS)
 
-$(OBJ_DIR):
-	mkdir $@ $(addprefix $(OBJ_DIR)/, $(SUBDIR))
-
-$(OBJ_DIR)/%.o: src/%.c | $(DIR)
+$(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo 'Compilation of $(notdir $<)'
 	@$(CC) $(CFLAGS) $(DFLAGS) -I./inc -c $< -o $@
 
