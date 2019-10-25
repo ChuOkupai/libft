@@ -13,7 +13,7 @@ SUB_DIR	= ctype \
 		  stdio \
 		  string \
 		  utils
-DIRS	= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
+DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
 		  $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
 NAME	= libft.a
@@ -98,6 +98,7 @@ STDIO	:= $(addprefix stdio/, $(STDIO))
 STRING	:= $(addprefix string/, $(STRING))
 UTILS	:= $(addprefix utils/, $(UTILS))
 SRC		:= $(CTYPE) $(LIST) $(MEMORY) $(STDIO) $(STRING) $(UTILS)
+DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 $(NAME): $(OBJ)
