@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
+#    Updated: 2019/10/27 21:24:26 by asoursou         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 # COMPILATION
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
@@ -14,8 +26,9 @@ SUB_DIR	= ctype \
 		  string \
 		  utils
 DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
-		  $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
+		   $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
+# FILES
 NAME	= libft.a
 CTYPE	= ft_isalnum.c \
 		  ft_isalpha.c \
@@ -98,7 +111,6 @@ STDIO	:= $(addprefix stdio/, $(STDIO))
 STRING	:= $(addprefix string/, $(STRING))
 UTILS	:= $(addprefix utils/, $(UTILS))
 SRC		:= $(CTYPE) $(LIST) $(MEMORY) $(STDIO) $(STRING) $(UTILS)
-DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 $(NAME): $(OBJ)
@@ -123,6 +135,6 @@ $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo 'Compilation of $(notdir $<)'
 	@$(CC) $(CFLAGS) $(DFLAGS) -I./inc -c $< -o $@
 
--include $(DEP)
+-include $(SRC:%.c=$(DEP_DIR)/%.d)
 
 .PHONY: all clean fclean re
