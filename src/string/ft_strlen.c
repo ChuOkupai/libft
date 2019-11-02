@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/20 19:09:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/02 22:37:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,25 +42,27 @@ static const char	*ft_faststrlen(const char *s, const size_t *w,
 
 size_t				ft_strlen(const char *str)
 {
-	const char		*s;
-	const size_t	*w;
-	size_t			magic_bits;
-	size_t			high_magic;
-	size_t			low_magic;
+	const char	*s;
+	size_t		high_magic;
+	size_t		low_magic;
 
 	s = str;
+	if (sizeof(size_t) > 8)
+	{
+		while (*s)
+			s++;
+		return (s - str);
+	}
 	while ((size_t)s & (sizeof(size_t) - 1))
 		++s;
 	if (*s == '\0')
 		return (s - str);
-	magic_bits = 0x7efefeffL;
 	low_magic = 0x01010101L;
 	high_magic = 0x80808080L;
 	if (sizeof(size_t) > 4)
 	{
-		magic_bits = ((0x7efefefeL << 16) << 16) | 0xfefefeffL;
 		low_magic = ((low_magic << 16) << 16) | low_magic;
 		high_magic = ((high_magic << 16) << 16) | high_magic;
 	}
-	return (ft_faststrlen(s, w = (size_t *)s, high_magic, low_magic) - str);
+	return (ft_faststrlen(s, (size_t *)s, high_magic, low_magic) - str);
 }
