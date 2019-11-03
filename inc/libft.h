@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/02 04:25:40 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/03 06:55:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 # include <string.h>
 
-# define ABS(Value) ((Value < 0) ? -Value : Value)
+# define ABS(x)		(((x) < 0) ? -(x) : (x))
+# define MAX(x, y)	(((x) > (y)) ? (x) : (y))
+# define MIN(x, y)	(((x) < (y)) ? (x) : (y))
 
 typedef struct	s_list
 {
@@ -61,33 +63,36 @@ char			*ft_itoa(int n);
 
 char			*ft_itoa_base(int n, int base);
 
-void			ft_lstadd_back(t_list **alst, t_list *new);
+void			ft_list_add(t_list **l, t_list *elem);
 
-void			ft_lstadd_front(t_list **alst, t_list *new);
+t_list			*ft_list_at(t_list *l, size_t index);
 
-void			ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_list_clear(t_list **l, void (*del)(void *));
 
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
-
-t_list			*ft_lstfind(t_list *lst, const void *content,
+t_list			*ft_list_find(t_list *l, const void *reference,
 				int (*cmp)(const void *, const void *));
 
-void			ft_lstinsert(t_list **lst, t_list *new,
+void			ft_list_foreach(t_list *l, void (*f)(void *));
+
+void			ft_list_insert(t_list **l, t_list *elem,
 				int (*cmp)(const void *, const void *));
 
-void			ft_lstiter(t_list *lst, void (*f)(void *));
+t_list			*ft_list_last(t_list *l);
 
-t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_list_new(void *content);
 
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(void *));
+void			ft_list_pop(t_list **l, void (*del)(void *));
 
-t_list			*ft_lstnew(void *content);
+void			ft_list_push(t_list **l, t_list *elem);
 
-void			ft_lstrev(t_list **lst);
+void			ft_list_remove_if(t_list **l, const void *reference,
+				int (*cmp)(const void *, const void *), void (*del)(void *));
 
-int				ft_lstsize(t_list *lst);
+void			ft_list_rev(t_list **l);
 
-void			ft_lstsort(t_list **l, int (*cmp)(const void *, const void *));
+size_t			ft_list_size(t_list *l);
+
+void			ft_list_sort(t_list **l, int (*cmp)(const void *, const void *));
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
@@ -163,10 +168,14 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 
+char			*ft_strndup(const char *s1, size_t n);
+
 char			*ft_strnstr(const char *haystack, const char *needle,
 				size_t len);
 
 char			*ft_strrchr(const char *s, int c);
+
+char			*ft_strrev(char *s);
 
 char			*ft_strstr(const char *haystack, const char *needle);
 

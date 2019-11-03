@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_list_foreach.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 07:54:13 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/16 01:33:13 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 04:38:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_list_foreach(t_list *l, void (*f)(void *))
 {
-	const char *s;
-
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	while (l)
+	{
+		f(l->content);
+		l = l->next;
+	}
 }

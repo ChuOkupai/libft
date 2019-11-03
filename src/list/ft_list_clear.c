@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstrev.c                                        :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 00:33:17 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/06 00:39:42 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/16 01:24:13 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 04:30:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstrev(t_list **lst)
+void	ft_list_clear(t_list **l, void (*del)(void *))
 {
-	t_list *prev;
-	t_list *next;
-
-	prev = NULL;
-	while (*lst)
-	{
-		next = (*lst)->next;
-		(*lst)->next = prev;
-		prev = *lst;
-		*lst = next;
-	}
-	*lst = prev;
+	while (*l)
+		ft_list_pop(l, del);
 }

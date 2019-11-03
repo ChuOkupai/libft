@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_list_add.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:33:13 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/10 09:40:20 by asoursou         ###   ########.fr       */
+/*   Created: 2019/10/07 16:50:55 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 06:00:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_list_add(t_list **l, t_list *elem)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	if (*l)
+		ft_list_last(*l)->next = elem;
+	else
+		*l = elem;
 }

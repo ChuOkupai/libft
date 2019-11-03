@@ -6,14 +6,17 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:47:22 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/12 02:49:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/03 03:38:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_memdel(void **ap)
+void	ft_memdel(void **p)
 {
-	free(*ap);
-	*ap = NULL;
+	if (*p)
+	{
+		free(*p);
+		*p = NULL;
+	}
 }

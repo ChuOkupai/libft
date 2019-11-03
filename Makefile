@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/10/27 21:24:26 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/03 07:53:10 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,18 +45,20 @@ CTYPE	= ft_isalnum.c \
 		  ft_isxdigit.c \
 		  ft_tolower.c \
 		  ft_toupper.c
-LIST	= ft_lstadd_back.c \
-		  ft_lstadd_front.c \
-		  ft_lstclear.c \
-		  ft_lstdelone.c \
-		  ft_lstfind.c \
-		  ft_lstinsert.c \
-		  ft_lstiter.c \
-		  ft_lstlast.c \
-		  ft_lstnew.c \
-		  ft_lstrev.c \
-		  ft_lstsize.c \
-		  ft_lstsort.c
+LIST	= ft_list_add.c \
+		  ft_list_at.c \
+		  ft_list_clear.c \
+		  ft_list_find.c \
+		  ft_list_foreach.c \
+		  ft_list_insert.c \
+		  ft_list_last.c \
+		  ft_list_new.c \
+		  ft_list_pop.c \
+		  ft_list_push.c \
+		  ft_list_remove_if.c \
+		  ft_list_rev.c \
+		  ft_list_size.c \
+		  ft_list_sort.c
 MEMORY	= ft_bzero.c \
 		  ft_calloc.c \
 		  ft_memccpy.c \
@@ -95,8 +97,10 @@ STRING	= ft_split.c \
 		  ft_strncat.c \
 		  ft_strncmp.c \
 		  ft_strncpy.c \
+		  ft_strndup.c \
 		  ft_strnstr.c \
 		  ft_strrchr.c \
+		  ft_strrev.c \
 		  ft_strstr.c \
 		  ft_strtrim.c \
 		  ft_substr.c
@@ -111,6 +115,7 @@ STDIO	:= $(addprefix stdio/, $(STDIO))
 STRING	:= $(addprefix string/, $(STRING))
 UTILS	:= $(addprefix utils/, $(UTILS))
 SRC		:= $(CTYPE) $(LIST) $(MEMORY) $(STDIO) $(STRING) $(UTILS)
+DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 $(NAME): $(OBJ)
@@ -135,6 +140,6 @@ $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo 'Compilation of $(notdir $<)'
 	@$(CC) $(CFLAGS) $(DFLAGS) -I./inc -c $< -o $@
 
--include $(SRC:%.c=$(DEP_DIR)/%.d)
+-include $(DEP)
 
 .PHONY: all clean fclean re

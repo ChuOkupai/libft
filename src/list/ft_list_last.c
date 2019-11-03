@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_list_last.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 07:54:13 by asoursou         ###   ########.fr       */
+/*   Created: 2019/10/07 16:52:56 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 04:45:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+t_list	*ft_list_last(t_list *l)
 {
-	const char *s;
-
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	if (l)
+		while (l->next)
+			l = l->next;
+	return (l);
 }

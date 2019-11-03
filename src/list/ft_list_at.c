@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/16 01:30:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/07 15:45:51 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/03 05:23:26 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 05:28:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
+t_list	*ft_list_at(t_list *l, size_t index)
 {
-	new->next = *alst;
-	*alst = new;
+	while (l && index--)
+		l = l->next;
+	return (l);
 }

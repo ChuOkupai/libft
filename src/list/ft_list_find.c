@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_list_find.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/07 17:27:28 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/06 00:40:08 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 05:43:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_list_find(t_list *l, const void *reference,
+		int (*cmp)(const void *, const void *))
 {
-	int i;
-
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+	while (l && cmp(l->content, reference))
+		l = l->next;
+	return (l);
 }

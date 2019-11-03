@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 07:54:13 by asoursou         ###   ########.fr       */
+/*   Created: 2019/07/19 03:08:37 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 06:37:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_list_remove_if(t_list **l, const void *reference,
+		int (*cmp)(const void *, const void *), void (*del)(void *))
 {
-	const char *s;
+	t_list *prev;
+	t_list *c;
 
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	prev = NULL;
+	c = *l;
+	while (c)
+		if (cmp(c->content, reference))
+		{
+			prev = c;
+			c = c->next;
+		}
+		else
+		{
+			ft_list_pop(&c, del);
+			if (prev)
+				prev->next = c;
+			else
+				*l = c;
+		}
 }

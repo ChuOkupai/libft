@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_list_pop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 16:50:55 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/08 11:30:22 by asoursou         ###   ########.fr       */
+/*   Created: 2019/08/16 01:13:28 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 06:34:37 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_list_pop(t_list **l, void (*del)(void *))
 {
-	if (*alst)
-		ft_lstlast(*alst)->next = new;
-	else
-		*alst = new;
+	t_list *next;
+
+	next = (*l)->next;
+	if (del)
+		del((*l)->content);
+	free(*l);
+	*l = next;
 }

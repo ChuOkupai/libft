@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_list_rev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 23:31:42 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/09 09:24:46 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/06 00:33:17 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 05:01:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_list_rev(t_list **l)
 {
-	t_list *l;
+	t_list *prev;
+	t_list *next;
 
-	if ((l = (t_list*)malloc(sizeof(t_list))))
+	prev = NULL;
+	while (*l)
 	{
-		l->content = content;
-		l->next = NULL;
+		next = (*l)->next;
+		ft_list_push(&prev, *l);
+		*l = next;
 	}
-	return (l);
+	*l = prev;
 }

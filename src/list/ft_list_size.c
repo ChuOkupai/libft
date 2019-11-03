@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstinsert.c                                     :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 00:00:15 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/08 11:50:11 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/03 05:24:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstinsert(t_list **lst, t_list *new,
-		int (*cmp)(const void *, const void *))
+size_t	ft_list_size(t_list *l)
 {
-	if (!*lst || cmp(new->content, (*lst)->content) <= 0)
-		ft_lstadd_front(lst, new);
-	else
-		ft_lstinsert(&(*lst)->next, new, cmp);
+	size_t i;
+
+	i = 0;
+	while (l)
+	{
+		l = l->next;
+		i++;
+	}
+	return (i);
 }
