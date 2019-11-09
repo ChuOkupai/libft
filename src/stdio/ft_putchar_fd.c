@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:15:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:34:37 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 14:37:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	ft_charlen(char *b, int c)
+static int	ft_wcrtob(char *b, int c)
 {
 	if (c < 0x80)
 	{
@@ -43,5 +43,5 @@ void		ft_putchar_fd(int c, int fd)
 {
 	char b[4];
 
-	(void)(write(fd, b, ft_charlen(b, c)) + 1);
+	(void)(write(fd, b, ft_wcrtob(b, c)) + 1);
 }

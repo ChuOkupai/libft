@@ -6,13 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/03 07:53:10 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/09 14:37:48 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
+CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 
 # DIRECTORIES

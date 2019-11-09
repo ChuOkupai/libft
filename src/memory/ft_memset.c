@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:50:39 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/08 02:57:02 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:52:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {

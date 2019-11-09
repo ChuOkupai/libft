@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 01:58:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/08 03:59:20 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:48:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
 {

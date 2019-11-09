@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 01:35:55 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/14 20:10:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:50:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

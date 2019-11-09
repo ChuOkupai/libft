@@ -6,32 +6,24 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:33:35 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 14:26:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
+# include <stddef.h>
 
 # define ABS(x)		(((x) < 0) ? -(x) : (x))
 # define MAX(x, y)	(((x) > (y)) ? (x) : (y))
 # define MIN(x, y)	(((x) < (y)) ? (x) : (y))
 
-typedef struct	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-int				ft_atoi(const char *str);
-
-int				ft_atoi_base(char const *str, char const *base);
-
-void			ft_bzero(void *s, size_t n);
-
-void			*ft_calloc(size_t count, size_t size);
+/*
+**	+-------+
+**	| CTYPE |
+**	+-------+
+*/
 
 int				ft_isalnum(int c);
 
@@ -59,9 +51,21 @@ int				ft_isupper(int c);
 
 int				ft_isxdigit(int c);
 
-char			*ft_itoa(int n);
+int				ft_tolower(int c);
 
-char			*ft_itoa_base(int n, int base);
+int				ft_toupper(int c);
+
+/*
+**	+------+
+**	| LIST |
+**	+------+
+*/
+
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
 
 void			ft_list_add(t_list **l, t_list *elem);
 
@@ -95,6 +99,16 @@ size_t			ft_list_size(t_list *l);
 void			ft_list_sort(t_list **l,
 				int (*cmp)(const void *, const void *));
 
+/*
+**	+--------+
+**	| MEMORY |
+**	+--------+
+*/
+
+void			ft_bzero(void *s, size_t n);
+
+void			*ft_calloc(size_t count, size_t size);
+
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 
 void			*ft_memchr(const void *s, int c, size_t n);
@@ -103,11 +117,17 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 
-void			ft_memdel(void **ap);
+void			ft_memdel(void **p);
 
 void			*ft_memmove(void *dst, const void *src, size_t len);
 
 void			*ft_memset(void *b, int c, size_t len);
+
+/*
+**	+-------+
+**	| STDIO |
+**	+-------+
+*/
 
 void			*ft_print_memory(const void *s, size_t n);
 
@@ -130,6 +150,12 @@ void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr(char *s);
 
 void			ft_putstr_fd(char *s, int fd);
+
+/*
+**	+--------+
+**	| STRING |
+**	+--------+
+*/
 
 char			**ft_split(char const *s, char c);
 
@@ -184,8 +210,18 @@ char			*ft_strtrim(char const *s1, char const *set);
 
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 
-int				ft_tolower(int c);
+/*
+**	+-------+
+**	| UTILS |
+**	+-------+
+*/
 
-int				ft_toupper(int c);
+int				ft_atoi(const char *str);
+
+int				ft_atoi_base(char const *str, char const *base);
+
+char			*ft_itoa(int n);
+
+char			*ft_itoa_base(int n, int base);
 
 #endif

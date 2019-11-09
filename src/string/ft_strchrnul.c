@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 19:16:12 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/28 19:18:06 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:49:06 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 char	*ft_strchrnul(const char *s, int c)
 {
