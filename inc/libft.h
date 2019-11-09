@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 06:55:54 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:33:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void			ft_list_rev(t_list **l);
 
 size_t			ft_list_size(t_list *l);
 
-void			ft_list_sort(t_list **l, int (*cmp)(const void *, const void *));
+void			ft_list_sort(t_list **l,
+				int (*cmp)(const void *, const void *));
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:15:45 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 03:25:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 13:34:37 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ static int	ft_charlen(char *b, int c)
 void		ft_putchar_fd(int c, int fd)
 {
 	char b[4];
-	
+
 	(void)(write(fd, b, ft_charlen(b, c)) + 1);
 }
