@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 14:26:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/09 20:14:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # define ABS(x)		(((x) < 0) ? -(x) : (x))
 # define MAX(x, y)	(((x) > (y)) ? (x) : (y))
 # define MIN(x, y)	(((x) < (y)) ? (x) : (y))
+
+# define _ANSI_CATRGB(T, R, G, B)	"\x1b["#T";2;"#R";"#G";"#B"m"
+# define ANSI_BRGB(R, G, B)			_ANSI_CATRGB(48, R, G, B)
+# define ANSI_FRGB(R, G, B)			_ANSI_CATRGB(38, R, G, B)
+# define ANSI_RESET()				"\x1b[0m"
 
 /*
 **	+-------+
@@ -130,6 +135,10 @@ void			*ft_memset(void *b, int c, size_t len);
 */
 
 void			*ft_print_memory(const void *s, size_t n);
+
+int				ft_dprintf(int fd, const char *format, ...);
+
+int				ft_printf(const char *format, ...);
 
 void			ft_putchar(int c);
 

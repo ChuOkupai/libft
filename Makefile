@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/09 14:37:48 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/09 20:34:59 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,9 @@ MEMORY	= ft_bzero.c \
 		  ft_memdel.c \
 		  ft_memmove.c \
 		  ft_memset.c
-STDIO	= ft_print_memory.c \
+STDIO	= ft_dprintf.c \
+		  ft_print_memory.c \
+		  ft_printf.c \
 		  ft_putchar.c \
 		  ft_putchar_fd.c \
 		  ft_putendl.c \
@@ -78,7 +80,16 @@ STDIO	= ft_print_memory.c \
 		  ft_putnbr_base_fd.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
-		  ft_putstr_fd.c
+		  ft_putstr_fd.c \
+		  pf_convert.c \
+		  pf_parse_arg.c \
+		  pf_parse_cs.c \
+		  pf_parse_dpux.c \
+		  pf_parse_n.c \
+		  pf_parse_o.c \
+		  pf_parse.c \
+		  pf_utils.c \
+		  pf_wchar.c
 STRING	= ft_split.c \
 		  ft_strcat.c \
 		  ft_strchr.c \
