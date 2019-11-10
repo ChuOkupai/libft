@@ -6,22 +6,29 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:24:34 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:59:14 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STDIO_H
 # define LIBFT_STDIO_H
 
+# ifndef __GNUC__
+#  define __attribute__(x)
+# endif	
+
 # include <stddef.h>
 
 void	*ft_print_memory(const void *s, size_t n);
 
-int		ft_dprintf(int fd, const char *format, ...);
+int		ft_dprintf(int fd, const char *format, ...)
+		__attribute__((format(printf, 2, 3)));
 
 int		ft_get_next_line(const int fd, char **line);
 
-int		ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...)
+		__attribute__((format(printf, 1, 2)))
+		__attribute__((nonnull(1)));
 
 void	ft_putchar(int c);
 

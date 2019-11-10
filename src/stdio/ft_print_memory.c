@@ -6,21 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 19:40:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 20:01:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_ctype.h"
 #include "libft_stdio.h"
-
-static void	ft_puthex(unsigned char c)
-{
-	char *base;
-
-	base = "0123456789abcdef";
-	ft_putchar(base[c >> 4]);
-	ft_putchar(base[c & 15]);
-}
 
 static void	ft_print_data(const char *s, size_t n)
 {
@@ -29,10 +20,9 @@ static void	ft_print_data(const char *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ft_putchar(' ');
-		ft_puthex(s[i++]);
+		ft_printf(" %.2hhx", s[i++]);
 		if (i < n)
-			ft_puthex(s[i++]);
+			ft_printf("%.2hhx", s[i++]);
 	}
 	while (i < 16)
 	{
@@ -52,15 +42,11 @@ static void	ft_print_data(const char *s, size_t n)
 void		*ft_print_memory(const void *s, size_t n)
 {
 	size_t i;
-	size_t j;
 
 	i = 0;
 	while (i < n)
 	{
-		j = 8 * sizeof(size_t);
-		while (j > 0)
-			ft_puthex((size_t)(s + i) >> (j -= 8));
-		ft_putchar(':');
+		ft_printf("%.16lx:", (size_t)(s + i));
 		ft_print_data(s + i, (n - i < 16) ? n - i : 16);
 		i += 16;
 	}
