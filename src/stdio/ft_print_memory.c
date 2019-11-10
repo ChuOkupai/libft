@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:37:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:40:16 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	ft_print_data(const char *s, size_t n)
 	ft_putstr("|\n");
 }
 
-void		*ft_memprint(const void *s, size_t n)
+void		*ft_print_memory(const void *s, size_t n)
 {
 	size_t i;
 	size_t j;
