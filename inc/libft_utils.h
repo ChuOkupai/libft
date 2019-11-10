@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   libft_utils.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:33:50 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/10 18:16:57 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/10 18:22:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_list.h"
+#ifndef LIBFT_UTILS_H
+# define LIBFT_UTILS_H
 
-size_t	ft_list_size(t_list *l)
-{
-	size_t i;
+# include <stddef.h>
 
-	i = 0;
-	while (l)
-	{
-		l = l->next;
-		i++;
-	}
-	return (i);
-}
+int		ft_atoi(const char *str);
+
+int		ft_atoi_base(char const *str, char const *base);
+
+char	*ft_itoa(int n);
+
+char	*ft_itoa_base(int n, int base);
+
+#endif

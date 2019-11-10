@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 01:33:13 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 04:38:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:32:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_list.h"
 
 void	ft_list_foreach(t_list *l, void (*f)(void *))
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_parse.c                                         :+:      :+:    :+:   */
+/*   ft_printf_parse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 21:06:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:02:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "libftprintf.h"
+#include "libft_ctype.h"
+#include "utils/ft_printf.h"
 
 static int	pf_parse_field(t_format *f)
 {

@@ -1,22 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   libft_ctype.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:29:19 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/10 18:04:55 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/10 18:24:47 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "libft_ctype.h"
-# include "libft_list.h"
-# include "libft_macros.h"
-# include "libft_memory.h"
-# include "libft_stdio.h"
-# include "libft_string.h"
-# include "libft_utils.h"
+#ifndef LIBFT_CTYPE_H
+# define LIBFT_CTYPE_H
+
+int	ft_isalnum(int c);
+
+int	ft_isalpha(int c);
+
+int	ft_isascii(int c);
+
+int	ft_isblank(int c);
+
+int	ft_iscntrl(int c);
+
+int	ft_isdigit(int c);
+
+int	ft_isgraph(int c);
+
+int	ft_islower(int c);
+
+int	ft_isprint(int c);
+
+int	ft_ispunct(int c);
+
+int	ft_isspace(int c);
+
+int	ft_isupper(int c);
+
+int	ft_isxdigit(int c);
+
+int	ft_tolower(int c);
+
+int	ft_toupper(int c);
+
 #endif

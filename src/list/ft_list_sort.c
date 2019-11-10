@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 23:34:59 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 05:23:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:33:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_list.h"
 
 static t_list	*ft_list_merge(t_list *l1, t_list *l2,
 				int (*cmp)(const void *, const void *))

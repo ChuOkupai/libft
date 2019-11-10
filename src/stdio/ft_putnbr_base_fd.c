@@ -6,12 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/18 19:45:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:40:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+#include "libft_ctype.h"
+#include "libft_macros.h"
+#include "libft_stdio.h"
 #define BUFFER_SIZE 8 * sizeof(int) + 1
 
 static void	ft_print(int n, char const *base, int size, int fd)

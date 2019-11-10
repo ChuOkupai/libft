@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/09 20:34:59 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/10 19:04:30 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ CTYPE	= ft_isalnum.c \
 LIST	= ft_list_add.c \
 		  ft_list_at.c \
 		  ft_list_clear.c \
+		  ft_list_extract.c \
 		  ft_list_find.c \
 		  ft_list_foreach.c \
 		  ft_list_insert.c \
@@ -69,7 +70,14 @@ MEMORY	= ft_bzero.c \
 		  ft_memmove.c \
 		  ft_memset.c
 STDIO	= ft_dprintf.c \
+		  ft_get_next_line.c \
 		  ft_print_memory.c \
+		  ft_printf_parse_cnos.c \
+		  ft_printf_parse_dpux.c \
+		  ft_printf_parse_utils.c \
+		  ft_printf_parse.c \
+		  ft_printf_print_utils.c \
+		  ft_printf_wchar.c \
 		  ft_printf.c \
 		  ft_putchar.c \
 		  ft_putchar_fd.c \
@@ -80,16 +88,7 @@ STDIO	= ft_dprintf.c \
 		  ft_putnbr_base_fd.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
-		  ft_putstr_fd.c \
-		  pf_convert.c \
-		  pf_parse_arg.c \
-		  pf_parse_cs.c \
-		  pf_parse_dpux.c \
-		  pf_parse_n.c \
-		  pf_parse_o.c \
-		  pf_parse.c \
-		  pf_utils.c \
-		  pf_wchar.c
+		  ft_putstr_fd.c
 STRING	= ft_split.c \
 		  ft_strcat.c \
 		  ft_strchr.c \

@@ -6,11 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 00:47:59 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:50:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:52:14 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ctype.h"
+#include "libft_memory.h"
 
 int	ft_atoi_base(char const *str, char const *base)
 {

@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 06:43:52 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 06:55:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:51:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_string.h"
 
 char	*ft_strrev(char *s)
 {

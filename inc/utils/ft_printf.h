@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 18:46:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 17:26:34 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdint.h>
 
-# define PF_BUFF_SIZE 256
-# define PF_CONVERT_BUFF_SIZE 10 * sizeof(long)
-
-# define FLAG(T_FLAG)	(f->flags & (t_flag)T_FLAG)
+# define PF_BUFF_SIZE			256
+# define PF_CONVERT_BUFF_SIZE	10 * sizeof(long)
+# define FLAG(T_FLAG)			(f->flags & (t_flag)T_FLAG)
 
 typedef enum	e_flag
 {

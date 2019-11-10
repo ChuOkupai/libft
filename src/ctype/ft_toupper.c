@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:43:06 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/15 02:49:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:31:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ctype.h"
 
 int	ft_toupper(int c)
 {

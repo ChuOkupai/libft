@@ -6,15 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/19 03:08:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 06:37:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:33:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_list.h"
 
-void	ft_list_remove_if(t_list **l, const void *reference,
-		int (*cmp)(const void *, const void *), void (*del)(void *))
+void	ft_list_remove_if(t_list **l, const void *ref,
+		int (*cmp)(const void *ref, const void *content), void (*del)(void *))
 {
 	t_list *prev;
 	t_list *c;
@@ -22,7 +22,7 @@ void	ft_list_remove_if(t_list **l, const void *reference,
 	prev = NULL;
 	c = *l;
 	while (c)
-		if (cmp(c->content, reference))
+		if (cmp(ref, c->content))
 		{
 			prev = c;
 			c = c->next;

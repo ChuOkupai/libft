@@ -6,12 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:29:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:21:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:41:10 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
+#include "libft_macros.h"
+#include "libft_stdio.h"
 #define BUFFER_SIZE 4 * sizeof(int)
 
 void	ft_putnbr_fd(int n, int fd)

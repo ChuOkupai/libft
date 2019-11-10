@@ -6,11 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/17 22:53:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:51:23 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_memory.h"
+#include "libft_string.h"
 
 char		*ft_strtrim(char const *s1, char const *set)
 {

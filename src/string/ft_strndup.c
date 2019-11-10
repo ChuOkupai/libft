@@ -6,12 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 02:21:09 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/03 06:16:47 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:50:26 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_macros.h"
+#include "libft_memory.h"
+#include "libft_string.h"
 
 char	*ft_strndup(const char *s1, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 19:00:35 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 19:04:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:30:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ctype.h"
 
 int	ft_ispunct(int c)
 {

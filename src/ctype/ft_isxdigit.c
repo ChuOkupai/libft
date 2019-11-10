@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 18:54:12 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/18 18:57:47 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:30:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_ctype.h"
 
 int	ft_isxdigit(int c)
 {

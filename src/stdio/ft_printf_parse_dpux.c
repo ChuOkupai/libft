@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_parse_dpux.c                                    :+:      :+:    :+:   */
+/*   ft_printf_parse_dpux.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 16:38:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:02:13 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "libftprintf.h"
+#include "libft_macros.h"
+#include "utils/ft_printf.h"
 
 static void	pf_set_fields(t_format *f, int hlen)
 {

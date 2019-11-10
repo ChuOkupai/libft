@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:54:04 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/07 14:33:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:51:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_memory.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

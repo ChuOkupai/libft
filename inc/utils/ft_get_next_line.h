@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_parse_n.c                                       :+:      :+:    :+:   */
+/*   ft_get_next_line.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/01 05:52:54 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 16:38:22 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/10 15:09:04 by asoursou          #+#    #+#             */
+/*   Updated: 2019/11/10 15:19:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#ifndef FT_GET_NEXT_LINE_H
+# define FT_GET_NEXT_LINE_H
 
-void	pf_parse_n(t_format *f)
+# define GL_BUFF_SIZE 64
+
+typedef struct	s_file
 {
-	int *size;
+	char	*buf;
+	int		fd;
+}				t_file;
 
-	if ((size = va_arg(f->arg, int*)))
-		*size = f->size;
-	f->s++;
-}
+#endif

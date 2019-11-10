@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 05:08:24 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/09 18:33:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:52:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_macros.h"
 
 char	*ft_itoa(int n)
 {

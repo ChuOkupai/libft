@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:29:19 by asoursou          #+#    #+#             */
-/*   Updated: 2019/10/08 11:48:32 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:45:16 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_string.h"
 
 static size_t	ft_wordlen(const char **s, char c)
 {

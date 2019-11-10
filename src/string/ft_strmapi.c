@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
-/*   Updated: 2019/09/21 22:48:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 18:49:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include "libft_string.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

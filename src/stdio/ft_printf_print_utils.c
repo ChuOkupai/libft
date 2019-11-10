@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_utils.c                                         :+:      :+:    :+:   */
+/*   ft_printf_print_utils.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 16:58:57 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:02:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft.h"
-#include "libftprintf.h"
+#include "utils/ft_printf.h"
 
 void	pf_flush_buffer(t_format *f)
 {
