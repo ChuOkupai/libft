@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/11 16:26:51 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/11 17:24:52 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
 BUILD	= .build
 DEP_DIR	= $(BUILD)/dep
 OBJ_DIR = $(BUILD)/obj
-SUB_DIR	= ctype \
+SUB_DIR	= btree \
+		  ctype \
 		  list \
 		  memory \
 		  stdio \
@@ -127,20 +128,13 @@ UTILS	= ft_atoi.c \
 		  ft_gcd.c \
 		  ft_itoa.c \
 		  ft_itoa_base.c
-BTREE	:= $(addprefix btree/, $(BTREE))
-CTYPE	:= $(addprefix ctype/, $(CTYPE))
-LIST	:= $(addprefix list/, $(LIST))
-MEMORY	:= $(addprefix memory/, $(MEMORY))
-STDIO	:= $(addprefix stdio/, $(STDIO))
-STRING	:= $(addprefix string/, $(STRING))
-UTILS	:= $(addprefix utils/, $(UTILS))
-SRC		:= $(BTREE) \
-		   $(CTYPE) \
-		   $(LIST) \
-		   $(MEMORY) \
-		   $(STDIO) \
-		   $(STRING) \
-		   $(UTILS)
+SRC		:= $(addprefix btree/, $(BTREE)) \
+		   $(addprefix ctype/, $(CTYPE)) \
+		   $(addprefix list/, $(LIST)) \
+		   $(addprefix memory/, $(MEMORY)) \
+		   $(addprefix stdio/, $(STDIO)) \
+		   $(addprefix string/, $(STRING)) \
+		   $(addprefix utils/, $(UTILS))
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
