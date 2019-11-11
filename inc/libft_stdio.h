@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 14:39:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/11 15:21:36 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	*ft_print_memory(const void *s, size_t n);
 ** Outputs a formatted string to given file descriptor.
 */
 int		ft_dprintf(int fd, const char *format, ...)
-		__attribute__((format(printf, 2, 3)));
+		__attribute__((format(printf, 2, 3)))
+		__attribute__((nonnull(2)));
 
 /*
 ** Stores next line from given file descriptor to line.

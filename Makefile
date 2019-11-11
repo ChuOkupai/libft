@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/10 19:04:30 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/11 15:19:24 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,6 +116,7 @@ STRING	= ft_split.c \
 		  ft_substr.c
 UTILS	= ft_atoi.c \
 		  ft_atoi_base.c \
+		  ft_gcd.c \
 		  ft_itoa.c \
 		  ft_itoa_base.c
 CTYPE	:= $(addprefix ctype/, $(CTYPE))
