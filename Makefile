@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/11 15:19:24 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/11 16:26:51 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,14 @@ DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
 
 # FILES
 NAME	= libft.a
+BTREE	= ft_btree_height.c \
+		  ft_btree_infix.c \
+		  ft_btree_insert.c \
+		  ft_btree_new.c \
+		  ft_btree_prefix.c \
+		  ft_btree_search.c \
+		  ft_btree_size.c \
+		  ft_btree_suffix.c
 CTYPE	= ft_isalnum.c \
 		  ft_isalpha.c \
 		  ft_isascii.c \
@@ -49,7 +57,6 @@ LIST	= ft_list_add.c \
 		  ft_list_at.c \
 		  ft_list_clear.c \
 		  ft_list_extract.c \
-		  ft_list_find.c \
 		  ft_list_foreach.c \
 		  ft_list_insert.c \
 		  ft_list_last.c \
@@ -58,6 +65,7 @@ LIST	= ft_list_add.c \
 		  ft_list_push.c \
 		  ft_list_remove_if.c \
 		  ft_list_rev.c \
+		  ft_list_search.c \
 		  ft_list_size.c \
 		  ft_list_sort.c
 MEMORY	= ft_bzero.c \
@@ -119,13 +127,20 @@ UTILS	= ft_atoi.c \
 		  ft_gcd.c \
 		  ft_itoa.c \
 		  ft_itoa_base.c
+BTREE	:= $(addprefix btree/, $(BTREE))
 CTYPE	:= $(addprefix ctype/, $(CTYPE))
 LIST	:= $(addprefix list/, $(LIST))
 MEMORY	:= $(addprefix memory/, $(MEMORY))
 STDIO	:= $(addprefix stdio/, $(STDIO))
 STRING	:= $(addprefix string/, $(STRING))
 UTILS	:= $(addprefix utils/, $(UTILS))
-SRC		:= $(CTYPE) $(LIST) $(MEMORY) $(STDIO) $(STRING) $(UTILS)
+SRC		:= $(BTREE) \
+		   $(CTYPE) \
+		   $(LIST) \
+		   $(MEMORY) \
+		   $(STDIO) \
+		   $(STRING) \
+		   $(UTILS)
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 
