@@ -59,7 +59,7 @@ t_btree	*ft_btree_search(t_btree *root, void *ref,
 size_t	ft_btree_size(t_btree *root);
 
 /*
-** Apply the given function f to all nodes in infix order
+** Apply the given function f to all nodes in suffix order
 */
 void	ft_btree_suffix(t_btree *root, void (*f)(void *));
 
