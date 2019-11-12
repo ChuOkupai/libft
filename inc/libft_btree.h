@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 16:31:37 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/12 20:11:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t	ft_btree_height(t_btree *root);
 ** Insert an element in a sorted list.
 ** Comparison is done with cmp.
 */
-void	ft_btree_insert(t_btree **root, t_btree *elem,
+void	ft_btree_insert(t_btree **root, t_btree *element,
 		int (*cmp)(void *, void *));
 
 /*
@@ -50,8 +50,8 @@ void	ft_btree_prefix(t_btree *root, void (*f)(void *));
 ** and returns a pointer to it.
 ** Comparison is done with cmp.
 */
-t_btree	*ft_btree_search(t_btree *root, void *ref,
-		int (*cmp)(void *ref, void *content));
+t_btree	*ft_btree_search(t_btree *root, void *reference,
+		int (*cmp)(void *reference, void *content));
 
 /*
 ** Returns the size of the binary tree.

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:18:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 13:05:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/12 20:03:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@
 /*
 ** Changes the background text color.
 */
-# define ANSI_BRGB(R, G, B) _ANSI_CATRGB(48, R, G, B)
+# define ANSI_BRGB(RED, GREEN, BLUE) _ANSI_CATRGB(48, RED, GREEN, BLUE)
 
 /*
 ** Changes the foreground text color.
 */
-# define ANSI_FRGB(R, G, B) _ANSI_CATRGB(38, R, G, B)
+# define ANSI_FRGB(RED, GREEN, BLUE) _ANSI_CATRGB(38, RED, GREEN, BLUE)
 
 /*
 ** Reset every text options.
