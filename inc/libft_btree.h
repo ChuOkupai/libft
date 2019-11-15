@@ -29,7 +29,7 @@ struct	s_btree
 size_t	ft_btree_height(t_btree *root);
 
 /*
-** Insert an element in a sorted list.
+** Insert an element in a sorted binary tree.
 ** Comparison is done with cmp.
 */
 void	ft_btree_insert(t_btree **root, t_btree *element,
