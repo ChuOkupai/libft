@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 10:45:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 11:54:09 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@ struct	s_btree
 };
 
 /*
-** Returns the height of the btree.
+** Free a binary tree.
+** The function pointer del can be NULL.
+*/
+void	ft_btree_clear(t_btree **root, void (*del)(void *));
+
+/*
+** Returns the height of the binary tree.
 */
 size_t	ft_btree_height(t_btree *root);
 

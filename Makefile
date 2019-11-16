@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/11 17:24:52 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/16 11:49:16 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
 
 # FILES
 NAME	= libft.a
-BTREE	= ft_btree_height.c \
+BTREE	= ft_btree_clear.c \
+		  ft_btree_height.c \
 		  ft_btree_infix.c \
 		  ft_btree_insert.c \
 		  ft_btree_new.c \
