@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/16 11:49:16 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/16 13:32:34 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SUB_DIR	= btree \
 		  ctype \
 		  list \
 		  memory \
+		  rbtree \
 		  stdio \
 		  string \
 		  utils
@@ -79,6 +80,12 @@ MEMORY	= ft_bzero.c \
 		  ft_memdel.c \
 		  ft_memmove.c \
 		  ft_memset.c
+RBTREE	= ft_rbtree_clear.c \
+		  ft_rbtree_insert.c \
+		  ft_rbtree_new.c \
+		  ft_rbtree_rotate_left.c \
+		  ft_rbtree_rotate_right.c \
+		  ft_rbtree_search.c
 STDIO	= ft_dprintf.c \
 		  ft_get_next_line.c \
 		  ft_print_memory.c \
@@ -133,6 +140,7 @@ SRC		:= $(addprefix btree/, $(BTREE)) \
 		   $(addprefix ctype/, $(CTYPE)) \
 		   $(addprefix list/, $(LIST)) \
 		   $(addprefix memory/, $(MEMORY)) \
+		   $(addprefix rbtree/, $(RBTREE)) \
 		   $(addprefix stdio/, $(STDIO)) \
 		   $(addprefix string/, $(STRING)) \
 		   $(addprefix utils/, $(UTILS))
