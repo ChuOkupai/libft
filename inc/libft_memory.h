@@ -6,13 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/12 20:08:36 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:45:16 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_MEMORY_H
 # define LIBFT_MEMORY_H
-
 # include <stddef.h>
 
 /*

@@ -6,13 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 15:14:20 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:47:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STRING_H
 # define LIBFT_STRING_H
-
 # include <stddef.h>
 
 /*

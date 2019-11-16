@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 06:43:14 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/12 19:38:45 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:49:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static const char	*ft_zerochr(const char *s)
 		return (s + 2);
 	if (!s[3])
 		return (s + 3);
-	if (sizeof (size_t) > 4)
+	if (sizeof(size_t) > 4)
 	{
 		if (!s[4])
 			return (s + 4);
@@ -36,7 +36,8 @@ static const char	*ft_zerochr(const char *s)
 	return (NULL);
 }
 
-static const char	*ft_faststrlen(const size_t *wp, const size_t hmgc, const size_t lmgc)
+static const char	*ft_faststrlen(const size_t *wp, const size_t hmgc,
+					const size_t lmgc)
 {
 	const char *s;
 

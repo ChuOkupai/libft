@@ -6,13 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/12 20:07:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:45:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_LIST_H
 # define LIBFT_LIST_H
-
 # include <stddef.h>
 
 typedef struct s_list	t_list;

@@ -6,18 +6,17 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 15:21:36 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:46:29 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STDIO_H
 # define LIBFT_STDIO_H
+# include <stddef.h>
 
 # ifndef __GNUC__
 #  define __attribute__(x)
 # endif	
-
-# include <stddef.h>
 
 /*
 ** Print n bytes of a memory aera in its hexadecimal representation and ASCII.
@@ -26,6 +25,7 @@ void	*ft_print_memory(const void *s, size_t n);
 
 /*
 ** Outputs a formatted string to given file descriptor.
+** Supported conversions: cdnopsux
 */
 int		ft_dprintf(int fd, const char *format, ...)
 		__attribute__((format(printf, 2, 3)))
@@ -41,6 +41,7 @@ int		ft_get_next_line(const int fd, char **line);
 
 /*
 ** Outputs a formatted string to standard output.
+** Supported conversions: cdnopsux
 */
 int		ft_printf(const char *format, ...)
 		__attribute__((format(printf, 1, 2)))

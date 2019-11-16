@@ -6,13 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/12 20:11:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 10:45:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BTREE_H
 # define LIBFT_BTREE_H
-
 # include <stddef.h>
 
 typedef struct s_btree	t_btree;
