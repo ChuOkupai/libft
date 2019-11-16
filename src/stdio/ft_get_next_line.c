@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:37:02 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/16 11:55:23 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ static char		*ft_join_line(t_file *f, char *b)
 
 static int		ft_read_line(t_file *f, char **line)
 {
-	char	buf[GL_BUFF_SIZE + 1];
+	char	buf[GNL_BUFF_SIZE + 1];
 	char	*b;
 	int		n;
 
 	n = 1;
 	b = f->buf ? ft_strchrnul(f->buf, '\n') : NULL;
-	while ((!b || !*b) && (n = read(f->fd, buf, GL_BUFF_SIZE)) > 0)
+	while ((!b || !*b) && (n = read(f->fd, buf, GNL_BUFF_SIZE)) > 0)
 	{
 		buf[n] = '\0';
 		b = f->buf;
