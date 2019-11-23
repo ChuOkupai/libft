@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:18:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/12 20:03:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/23 12:20:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
 /*
 ** Utility macro. Do not use.
 */
-# define _ANSI_CATRGB(T, R, G, B) "\x1b["#T";2;"#R";"#G";"#B"m"
+# define _ANSI_CATRGB(T, R, G, B) "\x1b[" #T ";2;" #R ";" #G ";" #B "m"
 
 /*
 ** Changes the background text color.
