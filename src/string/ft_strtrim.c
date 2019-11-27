@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:51:23 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:27:10 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char		*ft_strtrim(char const *s1, char const *set)
 	n = ft_strlen(s1);
 	while (n && t[(unsigned int)(s1[n - 1])])
 		n--;
-	return (ft_substr(s1, 0, n));
+	return (ft_strsub(s1, 0, n));
 }

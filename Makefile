@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/16 13:32:34 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/27 16:19:41 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ LIST	= ft_list_add.c \
 		  ft_list_rev.c \
 		  ft_list_search.c \
 		  ft_list_size.c \
-		  ft_list_sort.c
+		  ft_list_sort.c \
+		  ft_list_split.c
 MEMORY	= ft_bzero.c \
 		  ft_calloc.c \
 		  ft_memccpy.c \
@@ -106,8 +107,7 @@ STDIO	= ft_dprintf.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c
-STRING	= ft_split.c \
-		  ft_strcat.c \
+STRING	= ft_strcat.c \
 		  ft_strchr.c \
 		  ft_strchrnul.c \
 		  ft_strcmp.c \
@@ -128,9 +128,10 @@ STRING	= ft_split.c \
 		  ft_strnstr.c \
 		  ft_strrchr.c \
 		  ft_strrev.c \
+		  ft_strsplit.c \
 		  ft_strstr.c \
-		  ft_strtrim.c \
-		  ft_substr.c
+		  ft_strsub.c \
+		  ft_strtrim.c
 UTILS	= ft_atoi.c \
 		  ft_atoi_base.c \
 		  ft_gcd.c \

@@ -6,20 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 10:47:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:18:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STRING_H
 # define LIBFT_STRING_H
 # include <stddef.h>
-
-/*
-** Allocates and returns an array of strings obtained by splitting s
-** using the character c as a delimiter.
-** The array is ended by a NULL pointer.
-*/
-char	**ft_split(char const *s, char c);
 
 /*
 ** Append a copy of the null-terminated string s2 to the end
@@ -146,21 +139,28 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strrev(char *s);
 
 /*
+** Allocates and returns an array of strings obtained by splitting s
+** using the character c as a delimiter.
+** The array is ended by a NULL pointer.
+*/
+char	**ft_strsplit(char const *s, char c);
+
+/*
 ** Locates the first occurrence of the null-terminated string needle
 ** in the null-terminated string haystack.
 */
 char	*ft_strstr(const char *haystack, const char *needle);
 
 /*
+** Allocates and returns a substring from the string s.
+** The substring begins at index start and is of maximum size len.
+*/
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+
+/*
 ** Allocates and returns a copy of the string s1, without the characters
 ** specified in the set at the beginning and the end of the string.
 */
 char	*ft_strtrim(char const *s1, char const *set);
-
-/*
-** Allocates and returns a substring from the string s.
-** The substring begins at index start and is of maximum size len.
-*/
-char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

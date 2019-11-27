@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 10:45:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:00:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,12 @@ size_t	ft_list_size(t_list *l);
 */
 void	ft_list_sort(t_list **list,
 		int (*cmp)(const void *, const void *));
+
+/*
+** Allocates and returns a list of strings obtained by splitting s
+** using the character c as a delimiter.
+** If insufficient memory is available, NULL is returned.
+*/
+t_list	*ft_list_split(char const *s, char c);
 
 #endif
