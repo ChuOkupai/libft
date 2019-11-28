@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/27 16:00:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/28 23:46:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*ft_list_at(t_list *list, size_t index);
 void	ft_list_clear(t_list **list, void (*del)(void *));
 
 /*
-** Extracts an element from a list which matches the referenceerence content
+** Extracts an element from a list which matches the reference content
 ** and returns a pointer to it.
 ** Comparison is done with cmp.
 */
@@ -93,7 +93,7 @@ void	ft_list_remove_if(t_list **list, const void *reference,
 void	ft_list_rev(t_list **list);
 
 /*
-** Search an element from a list which matches the referenceerence content
+** Search an element from a list which matches the reference content
 ** and returns a pointer to it.
 ** Comparison is done with cmp.
 */
