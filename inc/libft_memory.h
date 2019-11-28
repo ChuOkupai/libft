@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 10:45:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/11/28 23:00:46 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 ** Free *p and set it to NULL.
 */
 void	ft_memdel(void **pointer);
+
+/*
+** Free an array and set it to NULL.
+** Returns NULL.
+*/
+void	*ft_memdeltab(void ***tab, size_t len);
 
 /*
 ** Copies len bytes from src to dst without overlapping.

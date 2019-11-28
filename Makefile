@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/27 16:19:41 by asoursou         ###   ########.fr        #
+#    Updated: 2019/11/28 22:59:14 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ MEMORY	= ft_bzero.c \
 		  ft_memcmp.c \
 		  ft_memcpy.c \
 		  ft_memdel.c \
+		  ft_memdeltab.c \
 		  ft_memmove.c \
 		  ft_memset.c
 RBTREE	= ft_rbtree_clear.c \
