@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/03 11:44:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 11:55:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 /*
 ** Free *p and set it to NULL.
-** Returns NULL.
 */
-void	*ft_memdel(void **pointer);
+void	ft_memdel(void **pointer);
 
 /*
 ** Free an array and set it to NULL.
