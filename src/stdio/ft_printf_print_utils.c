@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 19:02:21 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:35:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ void	pf_flush_buffer(t_format *f)
 
 void	pf_print(t_format *f, const char *s, const char *hash)
 {
-	if (!FLAG(PF_MINUS))
+	if (!(f->flags & PF_MINUS))
 		pf_putpadding(f);
-	if (FLAG(PF_HASH))
+	if ((f->flags & PF_HASH))
 		pf_putstr(f, hash);
 	while (f->precision--)
 		pf_putchar(f, '0');
 	if (f->dsize)
 		pf_putstr(f, s);
-	if (FLAG(PF_MINUS))
+	if ((f->flags & PF_MINUS))
 		pf_putpadding(f);
 	f->s++;
 }
@@ -47,7 +47,7 @@ void	pf_putpadding(t_format *f)
 {
 	char c;
 
-	c = FLAG(PF_ZERO) ? '0' : ' ';
+	c = (f->flags & PF_ZERO) ? '0' : ' ';
 	while (f->width--)
 		pf_putchar(f, c);
 }

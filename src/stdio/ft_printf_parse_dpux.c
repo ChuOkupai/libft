@@ -6,21 +6,22 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 19:02:13 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:33:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_macros.h"
 #include "utils/ft_printf.h"
 
 static void	pf_set_fields(t_format *f, int hlen)
 {
-	if (f->precision >= 0 || FLAG(PF_MINUS))
+	if (f->precision >= 0 || (f->flags & PF_MINUS))
 		f->flags &= ~PF_ZERO;
-	f->precision = MAX(f->precision - f->dsize, 0);
-	hlen = f->dsize + f->precision + ((FLAG(PF_HASH)) ? hlen : 0);
-	f->width = MAX(f->width - hlen, 0);
-	if (FLAG(PF_ZERO))
+	if ((f->precision = f->precision - f->dsize) < 0)
+		f->precision = 0;
+	hlen = f->dsize + f->precision + (((f->flags & PF_HASH)) ? hlen : 0);
+	if ((f->width = f->width - hlen) < 0)
+		f->width = 0;
+	if ((f->flags & PF_ZERO))
 	{
 		f->precision = f->width;
 		f->width = 0;
@@ -34,13 +35,13 @@ void		pf_parse_d(t_format *f)
 	int64_t		n;
 
 	n = pf_parse_arg(f);
-	s = pf_convert(f, ABS(n), 10, 1);
+	s = pf_convert(f, (n < 0 ? -n : n), 10, 1);
 	if (n < 0)
 		h = "-";
-	else if (FLAG(PF_PLUS))
+	else if ((f->flags & PF_PLUS))
 		h = "+";
 	else
-		h = FLAG(PF_SPACE) ? " " : 0;
+		h = (f->flags & PF_SPACE) ? " " : 0;
 	if (h)
 		f->flags |= PF_HASH;
 	else
@@ -80,7 +81,7 @@ void		pf_parse_x(t_format *f)
 
 	n = pf_parse_arg_unsigned(f);
 	s = pf_convert(f, n, 16, *f->s == 'x');
-	if (!n && FLAG(PF_HASH))
+	if (!n && (f->flags & PF_HASH))
 		f->flags &= ~PF_HASH;
 	pf_set_fields(f, 2);
 	pf_print(f, s, (*f->s == 'x') ? "0x" : "0X");

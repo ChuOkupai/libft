@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 19:02:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:36:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ static int	pf_parse_subflags(t_format *f)
 	else if (*f->s == '+')
 		f->flags |= PF_PLUS;
 	else if (*f->s == 'l')
-		f->flags |= (FLAG(PF_L)) ? PF_LL : PF_L;
+		f->flags |= (f->flags & PF_L) ? PF_LL : PF_L;
 	else if (*f->s == 'h')
-		f->flags |= (FLAG(PF_H)) ? PF_HH : PF_H;
+		f->flags |= (f->flags & PF_H) ? PF_HH : PF_H;
 	else
 		return (0);
 	f->s++;

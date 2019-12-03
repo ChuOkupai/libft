@@ -6,15 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:40:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:17:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft_ctype.h"
-#include "libft_macros.h"
 #include "libft_stdio.h"
-#define BUFFER_SIZE 8 * sizeof(int) + 1
+#define BUFFER_SIZE 33
 
 static void	ft_print(int n, char const *base, int size, int fd)
 {
@@ -22,7 +21,7 @@ static void	ft_print(int n, char const *base, int size, int fd)
 	size_t			i;
 	unsigned int	t;
 
-	t = ABS(n);
+	t = n < 0 ? -n : n;
 	i = BUFFER_SIZE;
 	while (t || i == BUFFER_SIZE)
 	{
@@ -36,9 +35,9 @@ static void	ft_print(int n, char const *base, int size, int fd)
 
 void		ft_putnbr_base_fd(int n, char const *base, int fd)
 {
-	unsigned long long int	t;
-	unsigned long long int	m;
-	int						i;
+	unsigned long int	t;
+	unsigned long int	m;
+	int					i;
 
 	t = 0;
 	m = 1;

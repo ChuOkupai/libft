@@ -7,7 +7,7 @@ My own C library for 42 School projects
 - [btree](inc/libft_btree.h "libft_btree.h") - Implementation of binary trees
 - [ctype](inc/libft_ctype.h "libft_ctype.h") - Character tests and conversions
 - [list](inc/libft_list.h "libft_list.h") - Implementation of linked lists
-- [macros](inc/libft_macros.h "libft_macros.h") - A collection of almost useful macros
+- ~~macros~~ - A collection of almost useful macros - DEPRECATED
 - [memory](inc/libft_memory.h "libft_memory.h") - Functions concerning memory manipulation
 - [rbtree](inc/libft_rbtree.h "libft_rbtree.h") - Implementation of red black trees
 - [stdio](inc/libft_stdio.h "libft_stdio.h") - Basic I/O interface

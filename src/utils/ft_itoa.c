@@ -6,12 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 05:08:24 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:52:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:17:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_macros.h"
 
 char	*ft_itoa(int n)
 {
@@ -19,11 +18,11 @@ char	*ft_itoa(int n)
 	size_t			i;
 	unsigned int	t;
 
-	t = ABS(n);
+	t = n < 0 ? -n : n;
 	i = 1;
 	while (t /= 10)
 		i++;
-	t = ABS(n);
+	t = n < 0 ? -n : n;
 	n = (n < 0);
 	if ((s = (char*)malloc((i + n + 1) * sizeof(char))))
 	{

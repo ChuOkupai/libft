@@ -6,12 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 17:11:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:52:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:18:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_macros.h"
 
 char	*ft_itoa_base(int n, int base)
 {
@@ -23,11 +22,11 @@ char	*ft_itoa_base(int n, int base)
 	if (base < 2 || base > 16)
 		return (NULL);
 	b = "0123456789ABCDEF";
-	t = ABS(n);
+	t = n < 0 ? -n : n;
 	i = 1;
 	while (t /= base)
 		i++;
-	t = ABS(n);
+	t = n < 0 ? -n : n;
 	n = (n < 0 && base == 10);
 	if ((s = (char*)malloc((i + n + 1) * sizeof(char))))
 	{

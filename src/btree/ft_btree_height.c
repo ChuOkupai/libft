@@ -6,12 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 16:20:50 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 16:24:46 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 12:14:48 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_btree.h"
-#include "libft_macros.h"
 
 size_t	ft_btree_height(t_btree *root)
 {
@@ -22,5 +21,5 @@ size_t	ft_btree_height(t_btree *root)
 		return (0);
 	l = ft_btree_height(root->left);
 	r = ft_btree_height(root->right);
-	return (1 + MAX(l, r));
+	return (1 + (l > r ? l : r));
 }
