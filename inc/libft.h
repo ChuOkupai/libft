@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 12:00:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/03 13:56:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@
 # include "libft_btree.h"
 # include "libft_ctype.h"
 # include "libft_list.h"
-# include "libft_macros.h"
 # include "libft_memory.h"
 # include "libft_rbtree.h"
 # include "libft_stdio.h"
