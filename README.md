@@ -12,7 +12,6 @@ My own C library for 42 School projects
 - [rbtree](inc/libft_rbtree.h "libft_rbtree.h") - Implementation of red black trees
 - [stdio](inc/libft_stdio.h "libft_stdio.h") - Basic I/O interface
 - [string](inc/libft_string.h "libft_string.h") - Fonctions concerning string manipulation
-- [utils](inc/libft_utils.h "libft_utils.h") - Everything else
 
 ## Build instructions
 

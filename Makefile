@@ -6,14 +6,14 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/11/28 22:59:14 by asoursou         ###   ########.fr        #
+#    Updated: 2019/12/09 02:17:02 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin
-DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT '$@'
+DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 
 # DIRECTORIES
 BUILD	= .build
@@ -108,7 +108,11 @@ STDIO	= ft_dprintf.c \
 		  ft_putnbr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c
-STRING	= ft_strcat.c \
+STRING	= ft_atoi.c \
+		  ft_atoi_base.c \
+		  ft_itoa.c \
+		  ft_itoa_base.c \
+		  ft_strcat.c \
 		  ft_strchr.c \
 		  ft_strchrnul.c \
 		  ft_strcmp.c \
@@ -133,11 +137,6 @@ STRING	= ft_strcat.c \
 		  ft_strstr.c \
 		  ft_strsub.c \
 		  ft_strtrim.c
-UTILS	= ft_atoi.c \
-		  ft_atoi_base.c \
-		  ft_gcd.c \
-		  ft_itoa.c \
-		  ft_itoa_base.c
 SRC		:= $(addprefix btree/, $(BTREE)) \
 		   $(addprefix ctype/, $(CTYPE)) \
 		   $(addprefix list/, $(LIST)) \

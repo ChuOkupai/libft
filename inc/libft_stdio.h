@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 10:46:29 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/09 01:03:56 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 # ifndef __GNUC__
 #  define __attribute__(x)
 # endif	
-
-/*
-** Print n bytes of a memory aera in its hexadecimal representation and ASCII.
-*/
-void	*ft_print_memory(const void *s, size_t n);
 
 /*
 ** Outputs a formatted string to given file descriptor.
@@ -38,6 +33,11 @@ int		ft_dprintf(int fd, const char *format, ...)
 ** This function return a negative value if an error occurs.
 */
 int		ft_get_next_line(const int fd, char **line);
+
+/*
+** Print n bytes of a memory aera in its hexadecimal and ASCII representation.
+*/
+void	*ft_print_memory(const void *s, size_t n);
 
 /*
 ** Outputs a formatted string to standard output.
@@ -75,6 +75,11 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr(int n);
 
 /*
+** Outputs an integer to given file descriptor.
+*/
+void	ft_putnbr_fd(int n, int fd);
+
+/*
 ** Outputs an integer using a base to standard output.
 */
 void	ft_putnbr_base(int n, char const *base);
@@ -83,11 +88,6 @@ void	ft_putnbr_base(int n, char const *base);
 ** Outputs an integer using a base to given file descriptor.
 */
 void	ft_putnbr_base_fd(int n, char const *base, int fd);
-
-/*
-** Outputs an integer to given file descriptor.
-*/
-void	ft_putnbr_fd(int n, int fd);
 
 /*
 ** Outputs a string to standard output.

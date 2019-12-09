@@ -6,13 +6,36 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/27 16:18:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/09 01:08:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STRING_H
 # define LIBFT_STRING_H
 # include <stddef.h>
+
+/*
+** Converts the string str to its integer representation.
+*/
+int		ft_atoi(const char *str);
+
+/*
+** Converts the string str to its integer representation using a base.
+*/
+int		ft_atoi_base(char const *str, char const *base);
+
+/*
+** Converts an int to a string, and returns a pointer to it.
+** The pointer must be free.
+*/
+char	*ft_itoa(int n);
+
+/*
+** Converts an int to a string in a base between 2 and 16,
+** and returns a pointer to it.
+** The pointer must be free.
+*/
+char	*ft_itoa_base(int n, int base);
 
 /*
 ** Append a copy of the null-terminated string s2 to the end
