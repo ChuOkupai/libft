@@ -6,13 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 11:55:23 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/18 20:18:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "libft_list.h"
+#include "libft_memory.h"
 #include "libft_string.h"
 #include "utils/ft_get_next_line.h"
 
@@ -26,8 +27,13 @@ static t_list	*ft_search_file(t_list **l, int fd)
 	t_file *f;
 	t_list *e;
 
-	e = ft_list_extract(l, &fd, &ft_filecmp);
-	if (!e && (f = malloc(sizeof(t_file))))
+	if ((e = ft_list_extract(l, &fd, &ft_filecmp)) && read(fd, NULL, 0) < 0)
+	{
+		ft_memdel((void**)&((t_file*)(e->content))->buf);
+		free(e->content);
+		ft_memdel((void**)&e);
+	}
+	else if (!e && (f = malloc(sizeof(t_file))))
 	{
 		f->buf = NULL;
 		f->fd = fd;
@@ -86,8 +92,7 @@ int				ft_get_next_line(const int fd, char **line)
 		r = -1;
 	else if ((r = ft_read_line(e->content, line)) < 1)
 	{
-		if (((t_file*)(e->content))->buf)
-			free(((t_file*)(e->content))->buf);
+		ft_memdel((void**)&((t_file*)(e->content))->buf);
 		free(e->content);
 		free(e);
 	}
