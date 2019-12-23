@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/12/09 02:17:02 by asoursou         ###   ########.fr        #
+#    Updated: 2019/12/23 15:00:46 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,6 +136,7 @@ STRING	= ft_atoi.c \
 		  ft_strsplit.c \
 		  ft_strstr.c \
 		  ft_strsub.c \
+		  ft_strtoul.c \
 		  ft_strtrim.c
 SRC		:= $(addprefix btree/, $(BTREE)) \
 		   $(addprefix ctype/, $(CTYPE)) \

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/09 01:08:54 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/23 19:02:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,22 @@ char	*ft_strstr(const char *haystack, const char *needle);
 ** The substring begins at index start and is of maximum size len.
 */
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+
+/*
+** Converts the string in str to an unsigned long value.
+**
+** Base must be between 2 and 36 inclusive, or be the special value 0.
+** If base is zero or 16, the string may then include a "0x" prefix,
+** and the number will be read in base 16. Otherwise, a zero base is taken
+** as 10 (decimal) unless the next character is '0', in which case it is taken
+** as 8 (octal).
+** In bases above 10, the letter 'A' in upper or lower case represents 10,
+** 'B' represents 11, ..., and 'Z' represents 35.
+**
+** If endptr is not NULL, it stores the address of the first invalid character
+** in *endptr.
+*/
+unsigned long ft_strtoul(const char *str, char **endptr, int base);
 
 /*
 ** Allocates and returns a copy of the string s1, without the characters
