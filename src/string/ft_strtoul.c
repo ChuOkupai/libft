@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/23 14:43:07 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/23 20:45:43 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:27:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static const char	*ft_convert(const char *s, int *any, int base,
 }
 
 unsigned long		ft_strtoul(const char *str, char **endptr, int base)
- {
+{
 	const char		*s;
 	int				sign;
 	int				any;
@@ -67,4 +67,4 @@ unsigned long		ft_strtoul(const char *str, char **endptr, int base)
 	if (endptr)
 		*endptr = (char *)(any ? s : str);
 	return (n);
- }
+}
