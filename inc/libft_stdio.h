@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/09 01:03:56 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:39:32 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 # define LIBFT_STDIO_H
 # include <stddef.h>
 
-# ifndef __GNUC__
-#  define __attribute__(x)
-# endif	
-
 /*
 ** Outputs a formatted string to given file descriptor.
 ** Supported conversions: cdnopsux
 */
-int		ft_dprintf(int fd, const char *format, ...)
-		__attribute__((format(printf, 2, 3)))
-		__attribute__((nonnull(2)));
+int		ft_dprintf(int fd, const char *format,
+	...) __attribute__((format(printf,2,3),nonnull(2)));
 
 /*
 ** Stores next line from given file descriptor to line.
@@ -43,9 +38,8 @@ void	*ft_print_memory(const void *s, size_t n);
 ** Outputs a formatted string to standard output.
 ** Supported conversions: cdnopsux
 */
-int		ft_printf(const char *format, ...)
-		__attribute__((format(printf, 1, 2)))
-		__attribute__((nonnull(1)));
+int		ft_printf(const char *format,
+	...) __attribute__((format(printf,1,2),nonnull(1)));
 
 /*
 ** Outputs a character to standard output.
