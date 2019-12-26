@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/28 23:46:02 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/26 13:57:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_list_pop(t_list **list, void (*del)(void *));
 void	ft_list_push(t_list **list, t_list *element);
 
 /*
-** Removes every elements matching the referenceerence content from a list.
+** Removes every elements matching the reference content from a list.
 ** Comparison is done with cmp.
 ** The function pointer del can be NULL.
 */

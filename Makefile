@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/12/23 15:00:46 by asoursou         ###   ########.fr        #
+#    Updated: 2019/12/26 14:01:25 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,7 +109,6 @@ STDIO	= ft_dprintf.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c
 STRING	= ft_atoi.c \
-		  ft_atoi_base.c \
 		  ft_itoa.c \
 		  ft_itoa_base.c \
 		  ft_strcat.c \
