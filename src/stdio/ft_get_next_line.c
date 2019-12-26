@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/18 20:18:40 by asoursou         ###   ########.fr       */
+/*   Updated: 2019/12/26 14:05:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char		*ft_join_line(t_file *f, char *b)
 	if (b && *b == '\n')
 		*b++ = '\0';
 	d = ft_strdup(f->buf ? f->buf : "");
-	b = b ? ft_strdup(b) : NULL;
+	b = b && d ? ft_strdup(b) : NULL;
 	if (f->buf)
 		free(f->buf);
 	f->buf = b;

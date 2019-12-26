@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/12/26 14:01:25 by asoursou         ###   ########.fr        #
+#    Updated: 2019/12/26 14:06:50 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ LIST	= ft_list_add.c \
 		  ft_list_foreach.c \
 		  ft_list_insert.c \
 		  ft_list_last.c \
+		  ft_list_load_file.c \
 		  ft_list_new.c \
 		  ft_list_pop.c \
 		  ft_list_push.c \
