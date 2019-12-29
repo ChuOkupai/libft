@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/12/26 14:06:50 by asoursou         ###   ########.fr        #
+#    Updated: 2019/12/29 18:19:37 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -131,6 +131,7 @@ STRING	= ft_atoi.c \
 		  ft_strncpy.c \
 		  ft_strndup.c \
 		  ft_strnstr.c \
+		  ft_strpbrk.c \
 		  ft_strrchr.c \
 		  ft_strrev.c \
 		  ft_strsplit.c \
