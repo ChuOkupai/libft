@@ -6,14 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 20:01:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 22:09:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_ctype.h"
 #include "libft_stdio.h"
 
-static void	ft_print_data(const char *s, size_t n)
+static void	ft_print_data(const unsigned char *s, size_t n)
 {
 	size_t i;
 
