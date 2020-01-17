@@ -6,18 +6,17 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/03 12:28:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 20:02:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-
 # include <stdarg.h>
 # include <stddef.h>
 # include <stdint.h>
 
-# define PF_BUFF_SIZE			256
+# define PF_BUFF_SIZE			128
 # define PF_CONVERT_BUFF_SIZE	80
 
 typedef enum	e_flag

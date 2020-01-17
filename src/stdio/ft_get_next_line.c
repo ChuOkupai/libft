@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/26 14:05:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 20:01:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "libft_list.h"
 #include "libft_memory.h"
 #include "libft_string.h"
-#include "utils/ft_get_next_line.h"
+#include "ft_get_next_line.h"
 
 static int		ft_filecmp(const void *a, const void *b)
 {

@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/01/17 19:15:18 by asoursou         ###   ########.fr        #
+#    Updated: 2020/01/17 20:00:47 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
+IFLAGS	= -I./inc -I./inc/utils
 
 # DIRECTORIES
 BUILD	= .build
@@ -169,7 +170,7 @@ $(BUILD):
 
 $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo 'Compilation of $(notdir $<)'
-	@$(CC) $(CFLAGS) $(DFLAGS) -I./inc -c $< -o $@
+	@$(CC) $(CFLAGS) $(DFLAGS) $(IFLAGS) -c $< -o $@
 
 -include $(DEP)
 

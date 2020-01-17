@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 16:50:34 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 20:04:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ struct		s_rbtree
 	t_rbtree	*parent;
 	t_rbtree	*left;
 	t_rbtree	*right;
-	t_rbcolor	color;
+	t_rbcolor	color : 1;
 };
 
 /*
