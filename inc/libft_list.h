@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/26 14:23:40 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 19:29:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ struct	s_list
 	void	*content;
 	t_list	*next;
 };
-
-/*
-** Add an element at the end of a list.
-** Returns 0 on success, else -1.
-*/
-int		ft_list_add(t_list **list, t_list *element);
 
 /*
 ** Returns the element at the given index if it exists.
@@ -64,14 +58,6 @@ void	ft_list_insert(t_list **list, t_list *element,
 t_list	*ft_list_last(t_list *l);
 
 /*
-** Load a file and store its content into a list.
-** If the returned list is NULL, an error has occured.
-** Each element is a line without the final newline.
-** If the last line does not contains a newline, it will be ignored.
-*/
-t_list	*ft_list_load_file(const char *path);
-
-/*
 ** Creates a new element with malloc.
 */
 t_list	*ft_list_new(void *content);
@@ -83,10 +69,14 @@ t_list	*ft_list_new(void *content);
 void	ft_list_pop(t_list **list, void (*del)(void *));
 
 /*
-** Add an element at the beginning of a list.
-** Returns 0 on success, else -1.
+** Add an element at the end of a list.
 */
-int		ft_list_push(t_list **list, t_list *element);
+void	ft_list_push_back(t_list **list, t_list *element);
+
+/*
+** Add an element at the beginning of a list.
+*/
+void	ft_list_push(t_list **list, t_list *element);
 
 /*
 ** Removes every elements matching the reference content from a list.
@@ -98,9 +88,10 @@ void	ft_list_remove_if(t_list **list, const void *reference,
 		void (*del)(void *));
 
 /*
-** Reverse a list.
+** Reverse the order of items in the list.
+** Returns a pointer to the start of the list.
 */
-void	ft_list_rev(t_list **list);
+t_list	*ft_list_rev(t_list *list);
 
 /*
 ** Search an element from a list which matches the reference content

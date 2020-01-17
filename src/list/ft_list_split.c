@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 15:50:44 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/27 16:26:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 19:43:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ t_list			*ft_list_split(char const *s, char c)
 			ft_list_clear(&l, &free);
 			break ;
 		}
-		ft_list_push(&l, e);
+		else
+			ft_list_push(&l, e);
 		s += n;
 	}
-	ft_list_rev(&l);
-	return (l);
+	return (ft_list_rev(l));
 }

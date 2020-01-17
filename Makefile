@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2019/12/29 18:19:37 by asoursou         ###   ########.fr        #
+#    Updated: 2020/01/17 19:15:18 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,17 +56,16 @@ CTYPE	= ft_isalnum.c \
 		  ft_isxdigit.c \
 		  ft_tolower.c \
 		  ft_toupper.c
-LIST	= ft_list_add.c \
-		  ft_list_at.c \
+LIST	= ft_list_at.c \
 		  ft_list_clear.c \
 		  ft_list_extract.c \
 		  ft_list_foreach.c \
 		  ft_list_insert.c \
 		  ft_list_last.c \
-		  ft_list_load_file.c \
 		  ft_list_new.c \
 		  ft_list_pop.c \
 		  ft_list_push.c \
+		  ft_list_push_back.c \
 		  ft_list_remove_if.c \
 		  ft_list_rev.c \
 		  ft_list_search.c \
