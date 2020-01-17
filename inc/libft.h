@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/09 01:26:40 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 20:19:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include "libft_btree.h"
-# include "libft_ctype.h"
-# include "libft_list.h"
-# include "libft_memory.h"
-# include "libft_rbtree.h"
-# include "libft_stdio.h"
-# include "libft_string.h"
+# include <libft_btree.h>
+# include <libft_ctype.h>
+# include <libft_list.h>
+# include <libft_memory.h>
+# include <libft_rbtree.h>
+# include <libft_stdio.h>
+# include <libft_string.h>
 #endif

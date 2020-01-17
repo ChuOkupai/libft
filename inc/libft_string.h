@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/29 18:18:39 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/17 20:35:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,16 @@ char			*ft_strrchr(const char *s, int c);
 ** Reverse the string s.
 */
 char			*ft_strrev(char *s);
+
+/*
+** Locates the first occurrence of any character in the string delim or the
+** terminating `\0' character and replaces it with a `\0'.
+** The location of the next character after the delimiter character
+** (or NULL, if the end of the string was reached) is stored in *stringp.
+** The original value of *stringp is returned.
+** If *stringp is initially NULL, strsep() returns NULL.
+*/
+char			*ft_strsep(char **stringp, const char *delim);
 
 /*
 ** Allocates and returns an array of strings obtained by splitting s
