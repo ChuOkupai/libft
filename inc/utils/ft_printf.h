@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:02:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/19 21:09:50 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,44 +36,43 @@ typedef enum	e_flag
 typedef struct	s_format
 {
 	const char	*s;
-	va_list		arg;
 	char		buf[PF_BUFF_SIZE];
 	char		conv[PF_CONVERT_BUFF_SIZE + 1];
 	int			fd;
 	int			i;
+	int			err;
+	int			size;
 	t_flag		flags;
 	int			dsize;
 	int			precision;
 	int			width;
-	int			err;
-	int			size;
 }				t_format;
 
 char			*pf_convert(t_format *f, uint64_t n, int base, int lower);
 
 void			pf_flush_buffer(t_format *f);
 
-int64_t			pf_parse_arg(t_format *f);
+int64_t			pf_va_arg(t_flag f, va_list l);
 
-uint64_t		pf_parse_arg_unsigned(t_format *f);
+uint64_t		pf_va_arg_unsigned(t_flag f, va_list l);
 
-void			pf_parse_c(t_format *f);
+void			pf_parse_c(t_format *f, va_list l);
 
-void			pf_parse_d(t_format *f);
+void			pf_parse_d(t_format *f, int64_t n);
 
-void			pf_parse_n(t_format *f);
+void			pf_parse_n(t_format *f, int64_t *size);
 
-void			pf_parse_o(t_format *f);
+void			pf_parse_o(t_format *f, uint64_t n);
 
-void			pf_parse_p(t_format *f);
+void			pf_parse_p(t_format *f, uint64_t n);
 
-void			pf_parse_s(t_format *f);
+void			pf_parse_s(t_format *f, char *s);
 
-void			pf_parse_u(t_format *f);
+void			pf_parse_u(t_format *f, uint64_t n);
 
-void			pf_parse_x(t_format *f);
+void			pf_parse_x(t_format *f, uint64_t n);
 
-void			pf_parse(t_format *f);
+void			pf_parse(t_format *f, va_list l);
 
 void			pf_print(t_format *f, const char *s, const char *hash);
 

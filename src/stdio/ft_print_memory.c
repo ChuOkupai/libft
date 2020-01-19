@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 22:09:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/19 19:53:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,20 @@ static void	ft_print_data(const unsigned char *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ft_printf(" %.2hhx", s[i++]);
-		if (i < n)
-			ft_printf("%.2hhx", s[i++]);
+		if (n - i > 1)
+			ft_printf("%.2hhx%.2hhx ", s[i], s[i + 1]);
+		else
+			ft_printf("%.2hhx   ", s[i]);
+		i += 2;
 	}
-	while (i < 16)
+	while ((i += 2) <= 16)
+		ft_putstr("     ");
+	while (n--)
 	{
-		ft_putstr((i & 1) ? "  " : "     ");
-		i += 1 + !(i & 1);
+		ft_putchar(ft_isprint(*s) ? *s : '.');
+		++s;
 	}
-	ft_putstr(" |");
-	i = 0;
-	while (i < n)
-	{
-		ft_putchar((ft_isprint(s[i])) ? s[i] : '.');
-		i++;
-	}
-	ft_putstr("|\n");
+	ft_putchar('\n');
 }
 
 void		*ft_print_memory(const void *s, size_t n)
@@ -46,8 +43,8 @@ void		*ft_print_memory(const void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		ft_printf("%.16lx:", (size_t)(s + i));
-		ft_print_data(s + i, (n - i < 16) ? n - i : 16);
+		ft_printf("%.16lx: ", (size_t)(s + i));
+		ft_print_data(s + i, (n - i < 16 ? n - i : 16));
 		i += 16;
 	}
 	return ((void*)s);

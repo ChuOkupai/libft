@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:02:08 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/19 21:11:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	pf_print(t_format *f, const char *s, const char *hash)
 {
 	if (!(f->flags & PF_MINUS))
 		pf_putpadding(f);
-	if ((f->flags & PF_HASH))
+	if (f->flags & PF_HASH)
 		pf_putstr(f, hash);
 	while (f->precision--)
 		pf_putchar(f, '0');

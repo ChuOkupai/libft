@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:50:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:01:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/19 21:09:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,28 @@ char		*pf_convert(t_format *f, uint64_t n, int base, int lower)
 	return (d);
 }
 
-int64_t		pf_parse_arg(t_format *f)
+int64_t		pf_va_arg(t_flag f, va_list l)
 {
 	int64_t n;
 
-	if ((f->flags & PF_LL))
-		n = va_arg(f->arg, int64_t);
-	else if ((f->flags & PF_L))
-		n = va_arg(f->arg, int64_t);
+	if (f & PF_LL)
+		n = va_arg(l, int64_t);
+	else if (f & PF_L)
+		n = va_arg(l, int64_t);
 	else
-		n = va_arg(f->arg, int32_t);
+		n = va_arg(l, int32_t);
 	return (n);
 }
 
-uint64_t	pf_parse_arg_unsigned(t_format *f)
+uint64_t	pf_va_arg_unsigned(t_flag f, va_list l)
 {
 	uint64_t n;
 
-	if ((f->flags & PF_LL))
-		n = va_arg(f->arg, uint64_t);
-	else if ((f->flags & PF_L))
-		n = va_arg(f->arg, uint64_t);
+	if (f & PF_LL)
+		n = va_arg(l, uint64_t);
+	else if (f & PF_L)
+		n = va_arg(l, uint64_t);
 	else
-		n = va_arg(f->arg, uint32_t);
+		n = va_arg(l, uint32_t);
 	return (n);
 }
