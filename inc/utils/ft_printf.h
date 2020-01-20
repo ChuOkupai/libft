@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 21:09:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/20 20:48:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct	s_format
 	char		buf[PF_BUFF_SIZE];
 	char		conv[PF_CONVERT_BUFF_SIZE + 1];
 	int			fd;
+	char		*str;
+	int			use_str;
 	int			i;
 	int			err;
 	int			size;

@@ -6,16 +6,21 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 21:11:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/20 21:00:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_printf.h"
+#include "libft_memory.h"
 
 void	pf_flush_buffer(t_format *f)
 {
-	if (!f->err && write(f->fd, f->buf, f->i) < 0)
+	if (f->err)
+		return ;
+	if (f->use_str)
+		ft_memcpy(f->str, f->buf, f->i);
+	else if (write(f->fd, f->buf, f->i) < 0)
 		f->err = -1;
 	f->i = 0;
 }

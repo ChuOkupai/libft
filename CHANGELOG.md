@@ -9,11 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- ft_putnstr: Outputs no more than n characters of a string to standard output
-- ft_putnstr_fd: Outputs no more than n characters of a string to given file descriptor
-- ft_strsep: Locates the first occurrence of any character in the string delim or the terminating '\0' character and replaces it with a '\0'
-- ft_vdprintf: Outputs a formatted string to given file descriptor using an argument list.
-- ft_vprintf: Outputs a formatted string to standard output using an argument list.
+- ft_putnstr
+Outputs no more than n characters of a string to standard output
+- ft_putnstr_fd
+Outputs no more than n characters of a string to given file descriptor
+- ft_sprintf
+Outputs a formatted string to a string.
+- ft_strsep
+Locates the first occurrence of any character in the string delim or the terminating '\0' character and replaces it with a '\0'
+- ft_vdprintf
+Outputs a formatted string to given file descriptor using an argument list.
+- ft_vprintf
+Outputs a formatted string to standard output using an argument list.
+- ft_vsprintf
+Outputs a formatted string to a string using an argument list.
 
 ### Changed
 

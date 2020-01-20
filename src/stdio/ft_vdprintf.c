@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "ft_printf.h"
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
@@ -20,6 +19,7 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 	f.s = format;
 	f.conv[PF_CONVERT_BUFF_SIZE] = '\0';
 	f.fd = fd;
+	f.use_str = 0;
 	f.i = 0;
 	f.err = 0;
 	f.size = 0;

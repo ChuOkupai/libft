@@ -6,13 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 20:20:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/20 20:55:13 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STDIO_H
 # define LIBFT_STDIO_H
-# include <stdarg.h>
 # include <stddef.h>
 
 /*
@@ -108,6 +107,16 @@ void	ft_putstr(char *s);
 void	ft_putstr_fd(char *s, int fd);
 
 /*
+** Outputs a formatted string to a string.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int		ft_sprintf(char *str, const char *format,
+	...) __attribute__((format(printf,2,3),nonnull(2)));
+
+# if defined(_VA_LIST) || defined(_STDARG_H_) || defined(STDARG_H_)
+
+/*
 ** Outputs a formatted string to given file descriptor using an argument list.
 ** Refer to the printf function to know the supported conversions, flags and
 ** modifiers.
@@ -122,5 +131,15 @@ int		ft_vdprintf(int fd, const char *format,
 */
 int		ft_vprintf(const char *format,
 	va_list ap) __attribute__((nonnull(1)));
+
+/*
+** Outputs a formatted string to a string using an argument list.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int	ft_vsprintf(char *str, const char *format,
+	va_list ap) __attribute__((nonnull(1)));
+
+# endif
 
 #endif
