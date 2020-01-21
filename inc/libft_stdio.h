@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/20 20:55:13 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/21 13:51:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ int		ft_vprintf(const char *format,
 ** Refer to the printf function to know the supported conversions, flags and
 ** modifiers.
 */
-int	ft_vsprintf(char *str, const char *format,
+int		ft_vsprintf(char *str, const char *format,
 	va_list ap) __attribute__((nonnull(1)));
 
 # endif

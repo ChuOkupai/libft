@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:04:40 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/21 16:16:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,13 @@ struct		s_rbtree
 ** The function pointer del can be NULL.
 */
 void		ft_rbtree_clear(t_rbtree **root, void (*del)(void *));
+
+/*
+** Remove an element in a red black tree.
+** The function pointer del can be NULL.
+*/
+void	ft_rbtree_delete(t_rbtree **root, t_rbtree *element,
+		void (*del)(void *));
 
 /*
 ** Insert an element in a red black tree.

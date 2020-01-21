@@ -6,13 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/01/20 21:02:28 by asoursou         ###   ########.fr        #
+#    Updated: 2020/01/21 18:16:59 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin
+CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin -g
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 IFLAGS	= -I./inc -I./inc/utils
 
@@ -84,11 +84,11 @@ MEMORY	= ft_bzero.c \
 		  ft_memmove.c \
 		  ft_memset.c
 RBTREE	= ft_rbtree_clear.c \
+		  ft_rbtree_delete.c \
 		  ft_rbtree_insert.c \
 		  ft_rbtree_new.c \
-		  ft_rbtree_rotate_left.c \
-		  ft_rbtree_rotate_right.c \
-		  ft_rbtree_search.c
+		  ft_rbtree_search.c \
+		  ft_rbtree_utils.c
 STDIO	= ft_dprintf.c \
 		  ft_sprintf.c \
 		  ft_get_next_line.c \
