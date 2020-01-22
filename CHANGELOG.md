@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Outputs no more than n characters of a string to standard output
 - ft_putnstr_fd
 Outputs no more than n characters of a string to given file descriptor
+- ft_rbtree_size
+Returns the size of a red black tree
 - ft_sprintf
 Outputs a formatted string to a string.
 - ft_strsep

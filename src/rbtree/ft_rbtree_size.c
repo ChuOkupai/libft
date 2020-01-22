@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rbtree.h                                        :+:      :+:    :+:   */
+/*   ft_rbtree_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 13:30:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 20:31:06 by asoursou         ###   ########.fr       */
+/*   Created: 2020/01/22 20:38:53 by asoursou          #+#    #+#             */
+/*   Updated: 2020/01/22 20:40:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_RBTREE_H
-# define FT_RBTREE_H
-# include "libft_rbtree.h"
+#include "libft_rbtree.h"
 
-t_rbtree	*ft_rbtree_minimum(t_rbtree *root);
-
-void		ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g);
-
-void		ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x);
-
-void		ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y);
-
-void		ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v);
-
-#endif
+size_t	ft_rbtree_size(t_rbtree *root)
+{
+	if (!root)
+		return (0);
+	return (1 + ft_rbtree_size(root->left) + ft_rbtree_size(root->right));
+}

@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/01/21 18:16:59 by asoursou         ###   ########.fr        #
+#    Updated: 2020/01/22 20:40:00 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ RBTREE	= ft_rbtree_clear.c \
 		  ft_rbtree_insert.c \
 		  ft_rbtree_new.c \
 		  ft_rbtree_search.c \
+		  ft_rbtree_size.c \
 		  ft_rbtree_utils.c
 STDIO	= ft_dprintf.c \
 		  ft_sprintf.c \

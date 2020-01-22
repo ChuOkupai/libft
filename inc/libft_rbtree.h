@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/21 16:16:57 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/22 20:38:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void		ft_rbtree_clear(t_rbtree **root, void (*del)(void *));
 ** Remove an element in a red black tree.
 ** The function pointer del can be NULL.
 */
-void	ft_rbtree_delete(t_rbtree **root, t_rbtree *element,
-		void (*del)(void *));
+void		ft_rbtree_delete(t_rbtree **root, t_rbtree *element,
+			void (*del)(void *));
 
 /*
 ** Insert an element in a red black tree.
@@ -64,5 +64,10 @@ t_rbtree	*ft_rbtree_new(void *content);
 */
 t_rbtree	*ft_rbtree_search(t_rbtree *root, void *reference,
 			int (*cmp)(void *reference, void *content));
+
+/*
+** Returns the size of a red black tree.
+*/
+size_t		ft_rbtree_size(t_rbtree *root);
 
 #endif

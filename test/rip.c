@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 18:29:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/21 19:41:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/22 19:43:13 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,37 @@ void	preorder(t_rbtree *root, int deep)
 	preorder(root->right, deep + 1);
 }
 
-int	main()
+void	test1()
 {
-	t_rbtree *tree = NULL, *n;
-	
+	t_rbtree *tree = NULL, *n, *n2;
 
 	ft_rbtree_insert(&tree, (n = new_node(7)), &intcmp);
 	ft_rbtree_insert(&tree, new_node(2), &intcmp);
-	ft_rbtree_insert(&tree, new_node(9), &intcmp);
+	ft_rbtree_insert(&tree, (n2 = new_node(9)), &intcmp);
 	ft_rbtree_insert(&tree, new_node(1), &intcmp);
 	ft_rbtree_insert(&tree, new_node(3), &intcmp);
 	ft_rbtree_insert(&tree, new_node(8), &intcmp);
 	ft_rbtree_insert(&tree, new_node(10), &intcmp);
 	ft_rbtree_insert(&tree, new_node(14), &intcmp);
 	ft_rbtree_delete(&tree, n, &free);
-	//preorder(tree, 0);
+	ft_rbtree_delete(&tree, n2, &free);
+	preorder(tree, 0);
 	ft_rbtree_clear(&tree, &free);
+}
+
+void	test2()
+{
+	t_rbtree *tree = NULL, *n;
+
+	ft_rbtree_insert(&tree, (n = new_node(2)), &intcmp);
+	ft_rbtree_insert(&tree, new_node(1), &intcmp);
+	ft_rbtree_delete(&tree, n, &free);
+	preorder(tree, 0);
+	ft_rbtree_clear(&tree, &free);
+}
+
+int	main()
+{
+	test2();
 	return 0;
 }

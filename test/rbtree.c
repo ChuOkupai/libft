@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 15:25:13 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/21 19:55:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/22 20:41:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,8 +170,18 @@ int	main()
 					ft_rbtree_insert(&tree, new_node(key), &intcmp);
 					choice--;
 				}
+				max /= 2;
 				while (tree)
+				{
 					ft_rbtree_delete(&tree, tree, &free);
+					if (--max != ft_rbtree_size(tree))
+					{
+						ft_printf("wrong size!\n");
+						break ;
+					}
+				}
+				if (!max)
+					ft_printf("gg!\n");
 			}
 		}
 	if (tree)

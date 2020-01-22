@@ -6,29 +6,29 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 13:31:54 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/21 18:09:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/22 20:31:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_rbtree.h"
-
-t_rbtree	ft_rbtree_guard(t_rbtree *parent, t_rbtree *left, t_rbtree *right)
-{
-	t_rbtree g;
-
-	g.content = NULL;
-	g.parent = parent;
-	g.left = left;
-	g.right = right;
-	g.color = RB_BLACK;
-	return (g);
-}
 
 t_rbtree	*ft_rbtree_minimum(t_rbtree *root)
 {
 	while (root->left)
 		root = root->left;
 	return (root);
+}
+
+void		ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g)
+{
+	if (x != g)
+		return ;
+	if (!(x = x->parent))
+		*root = NULL;
+	else if (x->left == g)
+		x->left = NULL;
+	else
+		x->right = NULL;
 }
 
 void		ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x)
@@ -82,6 +82,5 @@ void		ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v)
 		u->parent->left = v;
 	else
 		u->parent->right = v;
-	if (v)
-		v->parent = u->parent;
+	v->parent = u->parent;
 }
