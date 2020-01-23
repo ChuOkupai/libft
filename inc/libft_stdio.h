@@ -6,12 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/21 13:51:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:10:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_STDIO_H
 # define LIBFT_STDIO_H
+# include <stdarg.h>
 # include <stddef.h>
 
 /*
@@ -107,14 +108,20 @@ void	ft_putstr(char *s);
 void	ft_putstr_fd(char *s, int fd);
 
 /*
+** Outputs a formatted string of maximum n characters to a string.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int		ft_snprintf(char *str, size_t n, const char *format,
+		...) __attribute__((format(printf,3,4),nonnull(3)));
+
+/*
 ** Outputs a formatted string to a string.
 ** Refer to the printf function to know the supported conversions, flags and
 ** modifiers.
 */
 int		ft_sprintf(char *str, const char *format,
-	...) __attribute__((format(printf,2,3),nonnull(2)));
-
-# if defined(_VA_LIST) || defined(_STDARG_H_) || defined(STDARG_H_)
+	...) __attribute__((format(printf,2,3),nonnull(2),nonnull(1)));
 
 /*
 ** Outputs a formatted string to given file descriptor using an argument list.
@@ -122,7 +129,7 @@ int		ft_sprintf(char *str, const char *format,
 ** modifiers.
 */
 int		ft_vdprintf(int fd, const char *format,
-	va_list ap) __attribute__((nonnull(2)));
+	va_list ap) __attribute__((format(printf,2,0),nonnull(2)));
 
 /*
 ** Outputs a formatted string to standard output using an argument list.
@@ -130,7 +137,16 @@ int		ft_vdprintf(int fd, const char *format,
 ** modifiers.
 */
 int		ft_vprintf(const char *format,
-	va_list ap) __attribute__((nonnull(1)));
+	va_list ap) __attribute__((format(printf,1,0),nonnull(1)));
+
+/*
+** Outputs a formatted string of maximum n characters to a string using
+** an argument list.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int		ft_vsnprintf(char *str, size_t n, const char *format,
+	va_list ap) __attribute__((format(printf,3,0),nonnull(3)));
 
 /*
 ** Outputs a formatted string to a string using an argument list.
@@ -138,8 +154,6 @@ int		ft_vprintf(const char *format,
 ** modifiers.
 */
 int		ft_vsprintf(char *str, const char *format,
-	va_list ap) __attribute__((nonnull(1)));
-
-# endif
+	va_list ap) __attribute__((format(printf,2,0),nonnull(2),nonnull(1)));
 
 #endif

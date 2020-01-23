@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:50:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 21:09:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:37:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ char		*pf_convert(t_format *f, uint64_t n, int base, int lower)
 	}
 	f->dsize = f->conv + PF_CONVERT_BUFF_SIZE - d;
 	return (d);
+}
+
+void		pf_init(t_format *f, const char *format, va_list l)
+{
+	f->conv[PF_CONVERT_BUFF_SIZE] = '\0';
+	f->i = 0;
+	f->s = format;
+	va_copy(f->l, l);
+	f->pflags = 0;
+	f->size = 0;
 }
 
 int64_t		pf_va_arg(t_flag f, va_list l)

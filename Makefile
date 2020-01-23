@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/01/22 20:40:00 by asoursou         ###   ########.fr        #
+#    Updated: 2020/01/22 21:19:53 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,6 @@ RBTREE	= ft_rbtree_clear.c \
 		  ft_rbtree_size.c \
 		  ft_rbtree_utils.c
 STDIO	= ft_dprintf.c \
-		  ft_sprintf.c \
 		  ft_get_next_line.c \
 		  ft_print_memory.c \
 		  ft_printf_parse_cnos.c \
@@ -113,8 +112,11 @@ STDIO	= ft_dprintf.c \
 		  ft_putnstr_fd.c \
 		  ft_putstr.c \
 		  ft_putstr_fd.c \
+		  ft_snprintf.c \
+		  ft_sprintf.c \
 		  ft_vdprintf.c \
 		  ft_vprintf.c \
+		  ft_vsnprintf.c \
 		  ft_vsprintf.c
 STRING	= ft_atoi.c \
 		  ft_itoa.c \

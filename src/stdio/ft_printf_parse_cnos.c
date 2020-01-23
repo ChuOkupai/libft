@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 20:43:47 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/23 15:05:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ static void	pf_parse_ls(t_format *f, wchar_t *s)
 		pf_putwchar(f, *s++);
 }
 
-void		pf_parse_c(t_format *f, va_list l)
+void		pf_parse_c(t_format *f)
 {
 	wchar_t c;
 
 	if (*f->s == '%')
 		c = '%';
 	else if ((f->flags & PF_L))
-		c = va_arg(l, wchar_t);
+		c = va_arg(f->l, wchar_t);
 	else
-		c = (char)va_arg(l, int);
+		c = (char)va_arg(f->l, int);
 	f->s++;
 	if ((c < 0 && (f->flags & PF_L)) || c > 0x10ffff)
 	{
-		f->err = -1;
+		f->pflags |= PF_ERROR;
 		return ;
 	}
 	if ((f->width = f->width - pf_wclen(c)) < 0)

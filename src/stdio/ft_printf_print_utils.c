@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/20 21:00:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/01/23 13:58:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,24 @@
 
 void	pf_flush_buffer(t_format *f)
 {
-	if (f->err)
+	if (f->pflags & PF_ERROR)
 		return ;
-	if (f->use_str)
-		ft_memcpy(f->str, f->buf, f->i);
+	if (f->pflags & PF_USE_STR)
+	{
+		if (f->pflags & PF_USE_LEFT)
+		{
+			if (!f->left || f->left - 1 < (size_t)f->i)
+			{
+				f->i = f->left - (f->left > 0);
+				f->left = (f->left > 0);
+			}
+			else
+				f->left -= f->i;
+		}
+		f->str = ft_memcpy(f->str, f->buf, f->i) + f->i;
+	}
 	else if (write(f->fd, f->buf, f->i) < 0)
-		f->err = -1;
+		f->pflags |= PF_ERROR;
 	f->i = 0;
 }
 
@@ -37,12 +49,12 @@ void	pf_print(t_format *f, const char *s, const char *hash)
 		pf_putstr(f, s);
 	if ((f->flags & PF_MINUS))
 		pf_putpadding(f);
-	f->s++;
+	++f->s;
 }
 
 void	pf_putchar(t_format *f, const char c)
 {
-	f->size++;
+	++f->size;
 	f->buf[f->i++] = c;
 	if (f->i == PF_BUFF_SIZE)
 		pf_flush_buffer(f);
