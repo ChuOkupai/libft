@@ -47,6 +47,7 @@ Outputs a formatted string to a string using an argument list.
 - ft_list_load_file
 - return value in ft_list_push and ft_list_push_back
 - utils/ directory in all #include instructions
+- utils directory creation in Makefile
 
 ## [1.0.0] - 2020-01-19
 

@@ -6,13 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/01/22 21:19:53 by asoursou         ###   ########.fr        #
+#    Updated: 2020/02/05 15:28:01 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin -g
+CFLAGS	= -Wall -Wextra -Werror -Ofast -march=native -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 IFLAGS	= -I./inc -I./inc/utils
 
@@ -26,8 +26,7 @@ SUB_DIR	= btree \
 		  memory \
 		  rbtree \
 		  stdio \
-		  string \
-		  utils
+		  string
 DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
 		   $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
@@ -155,8 +154,7 @@ SRC		:= $(addprefix btree/, $(BTREE)) \
 		   $(addprefix memory/, $(MEMORY)) \
 		   $(addprefix rbtree/, $(RBTREE)) \
 		   $(addprefix stdio/, $(STDIO)) \
-		   $(addprefix string/, $(STRING)) \
-		   $(addprefix utils/, $(UTILS))
+		   $(addprefix string/, $(STRING))
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 

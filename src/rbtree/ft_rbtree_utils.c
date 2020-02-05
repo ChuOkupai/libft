@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 13:31:54 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 20:31:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/02/05 15:30:49 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void		ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x)
 	y->left = x;
 	x->parent = y;
 }
+
 void		ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y)
 {
 	t_rbtree *x;
