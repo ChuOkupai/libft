@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-02-05
+
 ### Added
 
 - ft_putnstr
@@ -56,4 +58,5 @@ Outputs a formatted string to a string using an argument list.
 - First version
 
 [Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.0.0...unstable
+[1.1.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.0
 [1.0.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.0.0
