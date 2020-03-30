@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.1] - 2020-03-30
+
+### Fixed
+- ft_btree_infix was using a prefix traversal
+- ft_btree_suffix was using a prefix traversal
+- ft_strrev a segmentation fault occurred with an empty string
+
+### Removed
+- ft_strlen fast implementation due to memory access detection on uninitialized variables (which is technically true but incorrect)
 
 ## [1.1.0] - 2020-02-05
 
@@ -57,6 +65,6 @@ Outputs a formatted string to a string using an argument list.
 
 - First version
 
-[Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.0.0...unstable
+[1.1.1]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.1
 [1.1.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.0
 [1.0.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.0.0
