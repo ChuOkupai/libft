@@ -6,24 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 03:17:11 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:52:26 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/18 01:05:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_ctype.h"
+#include "libft_string.h"
 
 int	ft_atoi(const char *str)
 {
-	int n;
-	int sign;
-
-	while (ft_isspace(*str))
-		str++;
-	sign = (*str == '-') ? -1 : 1;
-	if (*str == '-' || *str == '+')
-		str++;
-	n = 0;
-	while (ft_isdigit(*str))
-		n = n * 10 + *str++ - '0';
-	return (n * sign);
+	return (ft_strtol(str, (char**)NULL, 10));
 }

@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_vasprintf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2020/02/09 01:44:27 by asoursou          #+#    #+#             */
+/*   Updated: 2020/02/09 02:00:50 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_string.h"
+#include "libft_stdio.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+int	ft_vasprintf(char **ret, const char *format, va_list ap)
 {
-	char	*d;
-	size_t	n;
+	int size;
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
-	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
-	}
-	return (d);
+	size = ft_vsnprintf(NULL, 0, format, ap);
+	if (size < 0 || !(*ret = (char*)malloc((size + 1) * sizeof(char))))
+		return (-1);
+	return (ft_vsprintf(*ret, format, ap));
 }

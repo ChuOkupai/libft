@@ -6,43 +6,59 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:29:19 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/03 11:39:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/30 03:47:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
+#include "ft_const.h"
+#include "libft_bit.h"
 #include "libft_memory.h"
 #include "libft_string.h"
 
-static size_t	ft_wordlen(const char **s, char c)
+static size_t	ft_wordlen(const char **s, const void *map)
 {
-	while (**s && **s == c)
-		(*s)++;
-	return (ft_strchrnul(*s, c) - *s);
+	const char *s2;
+
+	while (ft_bit_at(map, **s))
+		++(*s);
+	s2 = *s;
+	while (*s2 && !ft_bit_at(map, *s2))
+		++s2;
+	return (s2 - *s);
 }
 
-char			**ft_strsplit(char const *s, char c)
+static size_t	ft_wordcount(const char *s, const void *map)
 {
-	char		**t;
-	const char	*s2;
-	size_t		i;
-	size_t		n;
+	size_t i;
+	size_t n;
 
-	s2 = s;
 	i = 0;
-	while ((n = ft_wordlen(&s2, c)))
+	while ((n = ft_wordlen(&s, map)))
 	{
 		++i;
-		s2 += n;
+		s += n;
 	}
-	if (!(t = (char**)malloc((i + 1) * sizeof(char*))))
+	return (i);
+}
+
+char			**ft_strsplit(const char *s, const char *set)
+{
+	uint8_t	map[32];
+	char	**t;
+	size_t	i;
+	size_t	n;
+
+	ft_bit_map(map, 32, (set ? set : FT_SPACE));
+	if (!(t = (char**)malloc((ft_wordcount(s, map) + 1) * sizeof(char*))))
 		return (NULL);
 	i = 0;
-	while ((n = ft_wordlen(&s, c)))
-		if (!(t[i++] = ft_strsub(s, 0, n)))
-			return (ft_memdeltab((void***)&t, i - 1));
-		else
+	while ((n = ft_wordlen(&s, map)))
+		if ((t[i++] = ft_strsub(s, 0, n)))
 			s += n;
-	t[i] = 0;
+		else
+			return (ft_memdeltab((void***)&t, i - 1));
+	t[i] = NULL;
 	return (t);
 }

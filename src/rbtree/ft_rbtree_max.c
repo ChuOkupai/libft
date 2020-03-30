@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_rbtree_max.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2020/03/25 15:14:27 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/25 15:16:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft_string.h"
+#include "libft_rbtree.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+t_rbtree	*ft_rbtree_max(t_rbtree *root)
 {
-	char	*d;
-	size_t	n;
-
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
-	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
-	}
-	return (d);
+	if (!root)
+		return (NULL);
+	while (root->right)
+		root = root->right;
+	return (root);
 }

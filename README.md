@@ -7,13 +7,11 @@ My own C library for 42 School projects
 - free
 - malloc
 - read
-- va_arg
-- va_end
-- va_start
 - write
 
 ## Content description
 
+- [bit](inc/libft_bit.h "libft_bit.h") - Perform basic operations on bit arrays
 - [btree](inc/libft_btree.h "libft_btree.h") - Implementation of binary trees
 - [ctype](inc/libft_ctype.h "libft_ctype.h") - Character tests and conversions
 - [list](inc/libft_list.h "libft_list.h") - Implementation of linked lists

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_bit_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2020/03/25 00:14:04 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/30 03:29:29 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft_string.h"
+#include <stdint.h>
+#include "libft_bit.h"
+#include "libft_memory.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	ft_bit_map(void *array, size_t size, const char *set)
 {
-	char	*d;
-	size_t	n;
+	const uint8_t	*s;
+	uint8_t			*map;
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
+	s = (const uint8_t *)set;
+	map = array;
+	ft_bzero(map, size);
+	while (*s)
 	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
+		map[*s / 8] |= 0x80 >> *s % 8;
+		++s;
 	}
-	return (d);
 }

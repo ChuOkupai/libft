@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_rbtree_rotate_right.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2020/03/25 15:24:35 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/25 15:25:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft_string.h"
+#include "libft_rbtree.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y)
 {
-	char	*d;
-	size_t	n;
+	t_rbtree *x;
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
+	x = y->left;
+	y->left = x->right;
+	if (x->right)
+		x->right->parent = y;
+	x->parent = y->parent;
+	if (y->parent)
 	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
+		if (y == y->parent->left)
+			y->parent->left = x;
+		else
+			y->parent->right = x;
 	}
-	return (d);
+	else
+		*root = x;
+	x->right = y;
+	y->parent = x;
 }

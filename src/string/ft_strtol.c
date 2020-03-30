@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2020/03/18 00:04:04 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/18 00:55:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft_ctype.h"
 #include "libft_string.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+long	ft_strtol(const char *str, char **endptr, int base)
 {
-	char	*d;
-	size_t	n;
+	const char	*s;
+	long		n;
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
+	s = ft_strwhile(str, ft_isspace);
+	if (*s == '-')
+		n = -ft_strtoul(++s, endptr, base);
+	else
 	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
+		if (*s == '+')
+			++s;
+		n = ft_strtoul(s, endptr, base);
 	}
-	return (d);
+	if (!n && endptr && *endptr == s)
+		*endptr = (char*)str;
+	return (n);
 }

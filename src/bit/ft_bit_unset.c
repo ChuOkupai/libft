@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rbtree.h                                        :+:      :+:    :+:   */
+/*   ft_bit_unset.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 13:30:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 20:31:06 by asoursou         ###   ########.fr       */
+/*   Created: 2020/03/25 00:02:28 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/30 03:29:39 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_RBTREE_H
-# define FT_RBTREE_H
-# include "libft_rbtree.h"
+#include <stdint.h>
+#include "libft_bit.h"
 
-t_rbtree	*ft_rbtree_minimum(t_rbtree *root);
-
-void		ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g);
-
-void		ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x);
-
-void		ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y);
-
-void		ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v);
-
-#endif
+void	ft_bit_unset(void *array, size_t index)
+{
+	((uint8_t *)array)[index / 8] &= ~(0x80 >> index % 8);
+}

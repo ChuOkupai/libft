@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/23 14:10:53 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/02/09 02:05:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 # define LIBFT_STDIO_H
 # include <stdarg.h>
 # include <stddef.h>
+
+/*
+** Outputs a formatted string to a new allocated string.
+** The allocated pointer should be passed to free.
+** If sufficient space cannot be allocated, return -1 and set ret to be
+** a NULL pointer.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int		ft_asprintf(char **ret, const char *format,
+	...) __attribute__((format(printf,2,3),nonnull(2)));
 
 /*
 ** Outputs a formatted string to given file descriptor.
@@ -122,6 +133,17 @@ int		ft_snprintf(char *str, size_t n, const char *format,
 */
 int		ft_sprintf(char *str, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2),nonnull(1)));
+
+/*
+** Outputs a formatted string to a new allocated string using an argument list.
+** The allocated pointer should be passed to free.
+** If sufficient space cannot be allocated, return -1 and set ret to be
+** a NULL pointer.
+** Refer to the printf function to know the supported conversions, flags and
+** modifiers.
+*/
+int		ft_vasprintf(char **ret, const char *format,
+	va_list ap) __attribute__((format(printf,2,0),nonnull(2)));
 
 /*
 ** Outputs a formatted string to given file descriptor using an argument list.

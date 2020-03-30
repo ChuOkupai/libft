@@ -6,18 +6,20 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/23 14:43:07 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/24 15:27:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/30 03:48:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include <limits.h>
 #include <stddef.h>
 #include "libft_ctype.h"
+#include "libft_string.h"
 
 static const char	*ft_convert(const char *s, int *any, int base,
-					unsigned long *n)
+								unsigned long *n)
 {
-	char			c;
+	int				c;
 	unsigned long	cutoff;
 
 	if (!base)
@@ -44,16 +46,14 @@ static const char	*ft_convert(const char *s, int *any, int base,
 unsigned long		ft_strtoul(const char *str, char **endptr, int base)
 {
 	const char		*s;
-	int				sign;
+	int				neg;
 	int				any;
 	unsigned long	n;
 
-	s = str;
-	while (ft_isspace(*s))
+	s = ft_strwhile(str, ft_isspace);
+	if ((neg = *s == '-') || *s == '+')
 		++s;
-	if ((sign = *s == '-' ? -1 : 1) < 0 || *s == '+')
-		++s;
-	if ((base == 0 || base == 16) && *s == '0' && ft_tolower(s[1]) == 'x')
+	if ((!base || base == 16) && *s == '0' && ft_tolower(s[1]) == 'x')
 	{
 		str = s + 1;
 		s += 2;
@@ -61,8 +61,11 @@ unsigned long		ft_strtoul(const char *str, char **endptr, int base)
 	}
 	s = ft_convert(s, &any, base, &n);
 	if (any < 0)
+	{
+		errno = ERANGE;
 		n = ULONG_MAX;
-	else if (sign < 0)
+	}
+	else if (neg)
 		n = -n;
 	if (endptr)
 		*endptr = (char *)(any ? s : str);

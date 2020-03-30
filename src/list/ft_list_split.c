@@ -6,47 +6,56 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 15:50:44 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 19:43:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/30 03:30:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
+#include "ft_const.h"
+#include "libft_bit.h"
 #include "libft_list.h"
 #include "libft_memory.h"
 #include "libft_string.h"
 
-static size_t	ft_wordlen(const char **s, char c)
+static size_t		ft_wordlen(const char **s, const void *map)
 {
-	size_t n;
+	const char *s2;
 
-	while (**s && **s == c)
-		(*s)++;
-	n = 0;
-	while ((*s)[n] && (*s)[n] != c)
-		n++;
-	return (n);
+	while (ft_bit_at(map, **s))
+		++(*s);
+	s2 = *s;
+	while (*s2 && !ft_bit_at(map, *s2))
+		++s2;
+	return (s2 - *s);
 }
 
-t_list			*ft_list_split(char const *s, char c)
+static const char	*ft_copy(t_list **l, const char *s, size_t n)
 {
-	char	*str;
+	char	*s2;
+	t_list	*elem;
+
+	s2 = ft_strsub(s, 0, n);
+	if (s && (elem = ft_list_new(s2)))
+	{
+		ft_list_push(l, elem);
+		return (s + n);
+	}
+	ft_memdel((void **)&s);
+	ft_list_clear(l, &free);
+	return (NULL);
+}
+
+t_list				*ft_list_split(const char *s, const char *set)
+{
+	uint8_t	map[32];
 	t_list	*l;
-	t_list	*e;
 	size_t	n;
 
+	ft_bit_map(map, 32, (set ? set : FT_SPACE));
 	l = NULL;
-	while ((n = ft_wordlen(&s, c)))
-	{
-		str = ft_strsub(s, 0, n);
-		if (!str || !(e = ft_list_new(str)))
-		{
-			ft_memdel((void**)(&str));
-			ft_list_clear(&l, &free);
+	while ((n = ft_wordlen(&s, map)))
+		if (!(s = ft_copy(&l, s, n)))
 			break ;
-		}
-		else
-			ft_list_push(&l, e);
-		s += n;
-	}
 	return (ft_list_rev(l));
 }

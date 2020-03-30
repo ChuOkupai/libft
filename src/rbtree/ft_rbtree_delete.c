@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:38:46 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 20:57:42 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/25 15:14:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ static t_rbtree	*ft_rbtree_delete_case2children(t_rbtree **root, t_rbtree *z,
 	t_rbtree *x;
 	t_rbtree *y;
 
-	y = ft_rbtree_minimum(z->right);
+	y = ft_rbtree_min(z->right);
 	*ycolor = y->color;
 	if (!(x = y->right))
 	{

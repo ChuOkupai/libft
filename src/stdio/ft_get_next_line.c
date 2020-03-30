@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:01:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/18 01:35:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static t_list	*ft_search_file(t_list **l, int fd)
 
 	if ((e = ft_list_extract(l, &fd, &ft_filecmp)) && read(fd, NULL, 0) < 0)
 	{
-		ft_memdel((void**)&((t_file*)(e->content))->buf);
+		free(((t_file*)(e->content))->buf);
 		free(e->content);
 		ft_memdel((void**)&e);
 	}
@@ -72,13 +72,11 @@ static int		ft_read_line(t_file *f, char **line)
 		f->buf = ft_strjoin((f->buf ? f->buf : ""), buf);
 		if (b)
 			free(b);
-		if (!f->buf && (n = -1))
-			break ;
+		if (!f->buf)
+			return (-1);
 		b = ft_strchrnul(f->buf, '\n');
 	}
-	if (n < 0 || !(*line = ft_join_line(f, b)))
-		return (-1);
-	return (n > 0);
+	return (n < 0 || !(*line = ft_join_line(f, b)) ? -1 : n > 0);
 }
 
 int				ft_get_next_line(const int fd, char **line)
@@ -92,7 +90,7 @@ int				ft_get_next_line(const int fd, char **line)
 		r = -1;
 	else if ((r = ft_read_line(e->content, line)) < 1)
 	{
-		ft_memdel((void**)&((t_file*)(e->content))->buf);
+		free(((t_file*)(e->content))->buf);
 		free(e->content);
 		free(e);
 	}

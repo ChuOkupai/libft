@@ -6,11 +6,10 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 11:23:54 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 21:29:35 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/02/09 02:07:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include <unistd.h>
 #include "libft_stdio.h"
 

@@ -6,45 +6,40 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/03 12:17:12 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/30 04:35:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <unistd.h>
+#include "libft_bit.h"
 #include "libft_ctype.h"
+#include "libft_memory.h"
 #include "libft_stdio.h"
 #define BUFFER_SIZE 33
 
-static void	ft_print(int n, char const *base, int size, int fd)
-{
-	char			buf[BUFFER_SIZE];
-	size_t			i;
-	unsigned int	t;
-
-	t = n < 0 ? -n : n;
-	i = BUFFER_SIZE;
-	while (t || i == BUFFER_SIZE)
-	{
-		buf[--i] = base[t % size];
-		t /= size;
-	}
-	if (n < 0)
-		buf[--i] = '-';
-	(void)(write(fd, buf + i, BUFFER_SIZE - i) + 1);
-}
-
 void		ft_putnbr_base_fd(int n, char const *base, int fd)
 {
-	unsigned long int	t;
-	unsigned long int	m;
-	int					i;
+	uint8_t		buf[BUFFER_SIZE];
+	uint32_t	t;
+	size_t		i;
+	size_t		j;
 
-	t = 0;
-	m = 1;
-	i = -1;
+	ft_bzero(buf, BUFFER_SIZE);
+	i = 0;
 	while (base[++i] && ft_isgraph(base[i])
-		&& base[i] != '-' && base[i] != '+' && !(t >> (int)base[i] & 1))
-		t |= m << (int)base[i];
-	if (i > 1 && !base[i])
-		ft_print(n, base, i, fd);
+		&& base[i] != '-' && base[i] != '+' && !ft_bit_at(buf, base[i]))
+		ft_bit_set(buf, base[i]);
+	if (i < 2 || base[i])
+		return ;
+	t = n < 0 ? -n : n;
+	j = BUFFER_SIZE;
+	while (t || j == BUFFER_SIZE)
+	{
+		buf[--j] = base[t % i];
+		t /= i;
+	}
+	if (n < 0)
+		buf[--j] = '-';
+	(void)(write(fd, buf + j, BUFFER_SIZE - j) + 1);
 }

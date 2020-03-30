@@ -6,10 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 06:06:10 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:49:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/30 03:57:52 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -20,5 +21,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		n--;
 	}
-	return ((n) ? (unsigned char)*s1 - (unsigned char)*s2 : 0);
+	return (n ? (uint8_t)(*s1) - (uint8_t)(*s2) : 0);
 }

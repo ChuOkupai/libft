@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/22 20:38:21 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/03/25 15:14:36 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,16 @@ void		ft_rbtree_delete(t_rbtree **root, t_rbtree *element,
 */
 void		ft_rbtree_insert(t_rbtree **root, t_rbtree *element,
 			int (*cmp)(void *, void *));
+
+/*
+** Returns the maximum element of a red black tree.
+*/
+t_rbtree	*ft_rbtree_max(t_rbtree *root);
+
+/*
+** Returns the minimum element of a red black tree.
+*/
+t_rbtree	*ft_rbtree_min(t_rbtree *root);
 
 /*
 ** Creates a new element with malloc.

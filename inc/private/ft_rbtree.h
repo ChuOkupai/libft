@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_rbtree.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 14:04:40 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/16 13:30:10 by asoursou          #+#    #+#             */
+/*   Updated: 2020/03/25 15:26:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft_string.h"
+#ifndef FT_RBTREE_H
+# define FT_RBTREE_H
+# include "libft_rbtree.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
-{
-	char	*d;
-	size_t	n;
+void	ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g);
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
-	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
-	}
-	return (d);
-}
+void	ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x);
+
+void	ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y);
+
+void	ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v);
+
+#endif
