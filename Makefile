@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/12 18:25:18 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/12 22:05:52 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ SUB_SRC	:= ft_list_at.c \
 		   ft_list_last.c \
 		   ft_list_new.c \
 		   ft_list_pop.c \
+		   ft_list_print.c \
 		   ft_list_push.c \
 		   ft_list_push_back.c \
 		   ft_list_remove_if.c \

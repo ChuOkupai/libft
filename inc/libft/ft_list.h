@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 19:26:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 22:14:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ t_list	*ft_list_new(void *content);
 ** If the function pointer del is NULL, content is returned, NULL otherwise.
 */
 void	*ft_list_pop(t_list **list, void (*del)(void *));
+
+/*
+** Display the contents of the list on standard output.
+*/
+void	ft_list_print(t_list *l, void (*print_func)(const void *content));
 
 /*
 ** Add an element at the end of a list.

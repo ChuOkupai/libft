@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_strtol**
 - **ft_strwhile**
 - **ft_vasprintf**
+- **ft_memdup**
+- **ft_list_print**
 - Installation mechanism
 
 ### Changed
