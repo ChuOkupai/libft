@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 15:24:46 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 15:25:51 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_rbtree.h"
+#include "libft/ft_rbtree.h"
 
 void	ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v)
 {

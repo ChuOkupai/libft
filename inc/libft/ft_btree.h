@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_btree.h                                      :+:      :+:    :+:   */
+/*   ft_btree.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/09 00:48:48 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BTREE_H
-# define LIBFT_BTREE_H
+#ifndef FT_BTREE_H
+# define FT_BTREE_H
 # include <stddef.h>
 
 typedef struct s_btree	t_btree;

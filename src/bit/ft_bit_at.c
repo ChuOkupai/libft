@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 23:56:15 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/30 03:29:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
-#include "libft_bit.h"
+#include "libft/ft_bit.h"
 
 unsigned char	ft_bit_at(const void *array, size_t index)
 {

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rbtree.h                                        :+:      :+:    :+:   */
+/*   ft_rbtree_utils.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 13:30:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 15:26:24 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:09:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_RBTREE_H
-# define FT_RBTREE_H
-# include "libft_rbtree.h"
+#ifndef FT_RBTREE_UTILS_H
+# define FT_RBTREE_UTILS_H
+# include "libft/ft_rbtree.h"
 
 void	ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g);
 

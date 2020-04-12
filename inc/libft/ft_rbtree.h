@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_rbtree.h                                     :+:      :+:    :+:   */
+/*   ft_rbtree.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 15:14:36 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_RBTREE_H
-# define LIBFT_RBTREE_H
+#ifndef FT_RBTREE_H
+# define FT_RBTREE_H
 # include <stddef.h>
 
 typedef enum e_rbcolor	t_rbcolor;

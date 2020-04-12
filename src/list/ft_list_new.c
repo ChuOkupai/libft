@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 23:31:42 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:32:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_list.h"
+#include "libft/ft_list.h"
 
 t_list	*ft_list_new(void *content)
 {

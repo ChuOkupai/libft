@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:04:07 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:46:22 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_string.h"
+#include "libft/ft_string.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {

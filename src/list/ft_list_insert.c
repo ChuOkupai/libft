@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 00:00:15 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:32:49 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_list.h"
+#include "libft/ft_list.h"
 
 void	ft_list_insert(t_list **l, t_list *elem,
 		int (*cmp)(const void *, const void *))

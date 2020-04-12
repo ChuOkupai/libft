@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_memory.h                                     :+:      :+:    :+:   */
+/*   ft_memory.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2019/12/03 11:55:42 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_MEMORY_H
-# define LIBFT_MEMORY_H
+#ifndef FT_MEMORY_H
+# define FT_MEMORY_H
 # include <stddef.h>
 
 /*

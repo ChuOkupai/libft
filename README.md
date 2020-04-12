@@ -11,14 +11,14 @@ My own C library for 42 School projects
 
 ## Content description
 
-- [bit](inc/libft_bit.h "libft_bit.h") - Perform basic operations on bit arrays
-- [btree](inc/libft_btree.h "libft_btree.h") - Implementation of binary trees
-- [ctype](inc/libft_ctype.h "libft_ctype.h") - Character tests and conversions
-- [list](inc/libft_list.h "libft_list.h") - Implementation of linked lists
-- [memory](inc/libft_memory.h "libft_memory.h") - Functions concerning memory manipulation
-- [rbtree](inc/libft_rbtree.h "libft_rbtree.h") - Implementation of red black trees
-- [stdio](inc/libft_stdio.h "libft_stdio.h") - Basic I/O interface
-- [string](inc/libft_string.h "libft_string.h") - Fonctions concerning string manipulation
+- [bit](inc/libft/bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
+- [btree](inc/libft/btree.h "libft/ft_btree.h") - Implementation of binary trees
+- [ctype](inc/libft/ctype.h "libft/ft_ctype.h") - Character tests and conversions
+- [list](inc/libft/list.h "libft/ft_list.h") - Implementation of linked lists
+- [memory](inc/libft/memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
+- [rbtree](inc/libft/rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
+- [stdio](inc/libft/stdio.h "libft/ft_stdio.h") - Basic I/O interface
+- [string](inc/libft/string.h "libft/ft_string.h") - Fonctions concerning string manipulation
 
 ## Features
 
@@ -37,6 +37,20 @@ make
 
 It generates a static C library named libft.a.
 
+## Installation
+
+In order to install the libft on your system, you can use the command:
+```shell
+make install
+```
+
+It can be removed with:
+```shell
+make uninstall
+```
+
+- ⚠️ Note that it requires access privileges
+
 ## Usage
 
 All header files are located in the inc directory.
@@ -48,16 +62,21 @@ The main header file is called libft.h, which can be included in your source fil
 But you can also use sub-header files if you do not want to include the entire library.
 For example:
 ```c
-#include "libft_string.h" // include only libft string functions like ft_strlen
+#include "libft/ft_string.h" // include only libft string functions like ft_strlen
 ```
 
 ### Compile with libft
 
-Assuming that you are using gcc as your compiler, that the library is compiled, and that the file named *main.c* is in the root of the directory:
+Assuming that you are using gcc as your compiler and *main.c* is located at the root of the directory:
 
 ```shell
 gcc -I./inc main.c -L. -lft
 ```
+...or if the library has been installed on your system:
+```shell
+gcc main.c -lft
+```
+
 
 ## License
 

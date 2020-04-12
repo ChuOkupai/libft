@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:36:13 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 12:39:49 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_rbtree.h"
+#include "libft/ft_rbtree.h"
 
 t_rbtree	*ft_rbtree_search(t_rbtree *root, void *ref,
 			int (*cmp)(void *ref, void *content))

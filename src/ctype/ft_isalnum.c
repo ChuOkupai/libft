@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:35:19 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:29:37 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_ctype.h"
+#include "libft/ft_ctype.h"
 
 int	ft_isalnum(int c)
 {

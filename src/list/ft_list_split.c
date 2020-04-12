@@ -6,17 +6,17 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 15:50:44 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/30 03:30:15 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
 #include <stdlib.h>
 #include "ft_const.h"
-#include "libft_bit.h"
-#include "libft_list.h"
-#include "libft_memory.h"
-#include "libft_string.h"
+#include "libft/ft_bit.h"
+#include "libft/ft_list.h"
+#include "libft/ft_memory.h"
+#include "libft/ft_string.h"
 
 static size_t		ft_wordlen(const char **s, const void *map)
 {

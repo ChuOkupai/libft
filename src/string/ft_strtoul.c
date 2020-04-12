@@ -6,15 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/23 14:43:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/30 03:48:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
 #include <limits.h>
 #include <stddef.h>
-#include "libft_ctype.h"
-#include "libft_string.h"
+#include "libft/ft_ctype.h"
+#include "libft/ft_string.h"
 
 static const char	*ft_convert(const char *s, int *any, int base,
 								unsigned long *n)

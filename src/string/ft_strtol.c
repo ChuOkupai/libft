@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 00:04:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/18 00:55:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_ctype.h"
-#include "libft_string.h"
+#include "libft/ft_ctype.h"
+#include "libft/ft_string.h"
 
 long	ft_strtol(const char *str, char **endptr, int base)
 {

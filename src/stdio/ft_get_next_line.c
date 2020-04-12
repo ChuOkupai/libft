@@ -6,15 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/18 01:35:27 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft_list.h"
-#include "libft_memory.h"
-#include "libft_string.h"
+#include "libft/ft_list.h"
+#include "libft/ft_memory.h"
+#include "libft/ft_string.h"
 #include "ft_get_next_line.h"
 
 static int		ft_filecmp(const void *a, const void *b)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_list.h                                       :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 02:38:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_LIST_H
-# define LIBFT_LIST_H
+#ifndef FT_LIST_H
+# define FT_LIST_H
 # include <stddef.h>
 
 typedef struct s_list	t_list;

@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 11:49:33 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 11:53:20 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft_btree.h"
+#include "libft/ft_btree.h"
 
 static void	ft_clear(t_btree *root, void (*del)(void *))
 {

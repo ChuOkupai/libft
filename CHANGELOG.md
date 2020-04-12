@@ -21,11 +21,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_strtol**
 - **ft_strwhile**
 - **ft_vasprintf**
+- Installation mechanism
 
 ### Changed
 - **ft_strsplit** now takes a set of delimiters as an argument instead of an unique character. When the given set is empty, all spaces are delimiters
 - **ft_list_split** identical to the changes of **ft_strsplit**
 - Various code refactoring
+- Sub-header files are now located in **inc/libft/ft_*.h**
 
 ### Fixed
 - **ft_strtoul** sets errno correctly when the value is out of range

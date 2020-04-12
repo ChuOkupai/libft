@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:23:17 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:42:15 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft_stdio.h"
+#include "libft/ft_stdio.h"
 
 void	ft_putstr(char *s)
 {

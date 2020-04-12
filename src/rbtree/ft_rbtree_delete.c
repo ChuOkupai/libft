@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:38:46 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 15:14:55 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:09:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_rbtree.h"
-#include "libft_memory.h"
+#include "ft_rbtree_utils.h"
+#include "libft/ft_memory.h"
 
 static t_rbtree	*ft_rbtree_fixup_left(t_rbtree **root, t_rbtree *w,
 				t_rbtree *x)

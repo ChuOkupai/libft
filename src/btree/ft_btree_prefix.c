@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:47:25 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/11 15:58:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_btree.h"
+#include "libft/ft_btree.h"
 
 void	ft_btree_prefix(t_btree *root, void (*f)(void *))
 {

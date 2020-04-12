@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:11:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/17 20:00:53 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 02:09:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rbtree.h"
+#include "ft_rbtree_utils.h"
 
 static t_rbtree	*ft_fixup_left(t_rbtree **root, t_rbtree *x)
 {
