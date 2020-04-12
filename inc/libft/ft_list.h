@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 19:26:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ t_list	*ft_list_at(t_list *list, size_t index);
 /*
 ** Free a list.
 ** The function pointer del can be NULL.
+** Returns NULL.
 */
-void	ft_list_clear(t_list **list, void (*del)(void *));
+void	*ft_list_clear(t_list **list, void (*del)(void *));
 
 /*
 ** Extracts an element from a list which matches the reference content
@@ -64,19 +65,21 @@ t_list	*ft_list_new(void *content);
 
 /*
 ** Destroy the first element from a list if it exists.
-** The function pointer del can be NULL.
+** If the function pointer del is NULL, content is returned, NULL otherwise.
 */
-void	ft_list_pop(t_list **list, void (*del)(void *));
+void	*ft_list_pop(t_list **list, void (*del)(void *));
 
 /*
 ** Add an element at the end of a list.
+** Returns a pointer to the inserted element.
 */
-void	ft_list_push_back(t_list **list, t_list *element);
+t_list	*ft_list_push_back(t_list **list, t_list *element);
 
 /*
 ** Add an element at the beginning of a list.
+** Returns a pointer to the inserted element.
 */
-void	ft_list_push(t_list **list, t_list *element);
+t_list	*ft_list_push(t_list **list, t_list *element);
 
 /*
 ** Removes every elements matching the reference content from a list.

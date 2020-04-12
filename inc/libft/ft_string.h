@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 14:24:49 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,8 +210,9 @@ char			*ft_strstr(const char *haystack, const char *needle);
 /*
 ** Allocates and returns a substring from the string s.
 ** The substring begins at index start and is of maximum size len.
+** Behavior is undefined is len is greater the the length of string s.
 */
-char			*ft_strsub(const char *s, unsigned int start, size_t len);
+char			*ft_strsub(const char *s, size_t start, size_t len);
 
 /*
 ** Converts the string in str to an long value.

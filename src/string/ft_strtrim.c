@@ -6,15 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
 #include "ft_const.h"
-#include "libft/ft_bit.h"
-#include "libft/ft_memory.h"
-#include "libft/ft_string.h"
+#include "ft_bit.h"
+#include "ft_memory.h"
+#include "ft_string.h"
 
 char	*ft_strtrim(const char *s1, const char *set)
 {

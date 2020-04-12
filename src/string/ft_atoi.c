@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 03:17:11 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ft_string.h"
+#include "ft_string.h"
 
 int	ft_atoi(const char *str)
 {

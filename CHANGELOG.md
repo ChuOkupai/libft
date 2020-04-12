@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_list_split** identical to the changes of **ft_strsplit**
 - Various code refactoring
 - Sub-header files are now located in **inc/libft/ft_*.h**
+- Various return values added to simplify the source code
 
 ### Fixed
 - **ft_strtoul** sets errno correctly when the value is out of range

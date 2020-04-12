@@ -6,12 +6,12 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 04:19:38 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include "libft/ft_string.h"
+#include "ft_string.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

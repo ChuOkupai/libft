@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 05:23:26 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ft_list.h"
+#include "ft_list.h"
 
 t_list	*ft_list_at(t_list *l, size_t index)
 {

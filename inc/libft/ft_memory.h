@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 17:23:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,23 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 /*
 ** Free *p and set it to NULL.
+** Returns NULL.
 */
-void	ft_memdel(void **pointer);
+void	*ft_memdel(void **pointer);
 
 /*
 ** Free an array and set it to NULL.
+** All elements are passed to free().
 ** Returns NULL.
 */
 void	*ft_memdeltab(void ***tab, size_t len);
+
+/*
+** Allocates alloc_size bytes and does the copy of no more than copy_size
+** of the src pointer. The remainder is filled with 0.
+** Returns a pointer to the new allocated memory, or NULL on error.
+*/
+void	*ft_memdup(const void *src, size_t alloc_size, size_t copy_size);
 
 /*
 ** Copies len bytes from src to dst without overlapping.

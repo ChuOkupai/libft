@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 00:14:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
-#include "libft/ft_bit.h"
-#include "libft/ft_memory.h"
+#include "ft_bit.h"
+#include "ft_memory.h"
 
 void	ft_bit_map(void *array, size_t size, const char *set)
 {

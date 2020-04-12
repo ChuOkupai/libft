@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/12 02:57:00 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/12 18:25:18 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
-IFLAGS	= -I./inc -I./inc/private
+IFLAGS	= -I./inc -I./inc/libft -I./inc/private
 
 # DIRECTORIES
 BUILD	:= .build
@@ -93,6 +93,7 @@ SUB_SRC	:= ft_bzero.c \
 		   ft_memcpy.c \
 		   ft_memdel.c \
 		   ft_memdeltab.c \
+		   ft_memdup.c \
 		   ft_memmove.c \
 		   ft_memset.c
 SRC		+= $(addprefix memory/, $(SUB_SRC))

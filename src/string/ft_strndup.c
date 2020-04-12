@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 02:21:09 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft/ft_memory.h"
-#include "libft/ft_string.h"
+#include "ft_memory.h"
+#include "ft_string.h"
 
 char	*ft_strndup(const char *s1, size_t n)
 {

@@ -6,21 +6,21 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 18:53:29 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdint.h>
 #include <unistd.h>
-#include "libft/ft_bit.h"
-#include "libft/ft_ctype.h"
-#include "libft/ft_memory.h"
-#include "libft/ft_stdio.h"
+#include "ft_bit.h"
+#include "ft_ctype.h"
+#include "ft_memory.h"
+#include "ft_stdio.h"
 #define BUFFER_SIZE 33
 
 void		ft_putnbr_base_fd(int n, char const *base, int fd)
 {
-	uint8_t		buf[BUFFER_SIZE];
+	uint8_t		buf[32];
 	uint32_t	t;
 	size_t		i;
 	size_t		j;

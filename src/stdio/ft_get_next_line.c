@@ -6,44 +6,37 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/12 19:23:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft/ft_list.h"
-#include "libft/ft_memory.h"
-#include "libft/ft_string.h"
+#include "ft_list.h"
+#include "ft_memory.h"
+#include "ft_string.h"
 #include "ft_get_next_line.h"
 
-static int		ft_filecmp(const void *a, const void *b)
+static int	ft_filecmp(const void *a, const void *b)
 {
 	return ((*(int*)a) - ((t_file*)b)->fd);
 }
 
-static t_list	*ft_search_file(t_list **l, int fd)
+static int	ft_file_set(t_list **l, int fd)
 {
-	t_file *f;
 	t_list *e;
+	t_file *f;
 
-	if ((e = ft_list_extract(l, &fd, &ft_filecmp)) && read(fd, NULL, 0) < 0)
-	{
-		free(((t_file*)(e->content))->buf);
-		free(e->content);
-		ft_memdel((void**)&e);
-	}
-	else if (!e && (f = malloc(sizeof(t_file))))
-	{
-		f->buf = NULL;
-		f->fd = fd;
-		if (!(e = ft_list_new(f)))
-			free(f);
-	}
-	return (e);
+	if ((e = ft_list_extract(l, &fd, &ft_filecmp)))
+		return (ft_list_push(l, e) != NULL);
+	if (!(f = malloc(sizeof(t_file))) || !ft_list_push(l, ft_list_new(f)))
+		return (ft_memdel((void**)&f) != NULL);
+	f->fd = fd;
+	f->buf = NULL;
+	return (1);
 }
 
-static char		*ft_join_line(t_file *f, char *b)
+static char	*ft_join_line(t_file *f, char *b)
 {
 	char *d;
 
@@ -57,7 +50,7 @@ static char		*ft_join_line(t_file *f, char *b)
 	return (d);
 }
 
-static int		ft_read_line(t_file *f, char **line)
+static int	ft_read_line(t_file *f, char **line)
 {
 	char	buf[GNL_BUFF_SIZE + 1];
 	char	*b;
@@ -79,22 +72,18 @@ static int		ft_read_line(t_file *f, char **line)
 	return (n < 0 || !(*line = ft_join_line(f, b)) ? -1 : n > 0);
 }
 
-int				ft_get_next_line(const int fd, char **line)
+int			ft_get_next_line(const int fd, char **line)
 {
 	static t_list	*l = NULL;
-	t_list			*e;
 	int				r;
 
 	*line = NULL;
-	if (fd < 0 || !(e = ft_search_file(&l, fd)))
+	if (fd < 0 || !ft_file_set(&l, fd))
 		r = -1;
-	else if ((r = ft_read_line(e->content, line)) < 1)
+	else if ((r = ft_read_line(l->content, line)) < 1)
 	{
-		free(((t_file*)(e->content))->buf);
-		free(e->content);
-		free(e);
+		ft_memdel((void**)&((t_file*)(l->content))->buf);
+		ft_list_pop(&l, &free);
 	}
-	else
-		ft_list_push(&l, e);
 	return (r);
 }
