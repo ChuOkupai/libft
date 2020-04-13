@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/13 03:14:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,20 @@ t_rbtree	*ft_rbtree_min(t_rbtree *root);
 ** Creates a new element with malloc.
 */
 t_rbtree	*ft_rbtree_new(void *content);
+
+/*
+** Display the contents of the red black tree to given file descriptor.
+** The print function is called to display the content of each item.
+*/
+void		ft_rbtree_print_fd(t_rbtree *root,
+			void (*print)(const void *content, int fd), int fd);
+
+/*
+** Display the contents of the red black tree on standard output.
+** The print function is called to display the content of each item.
+*/
+void		ft_rbtree_print(t_rbtree *root,
+			void (*print)(const void *content));
 
 /*
 ** Search an element from a red black tree which matches the reference content

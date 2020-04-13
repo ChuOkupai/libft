@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/12 22:05:52 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/13 03:13:07 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SUB_DIR += $(addsuffix /$(PRV), $(SUB_DIR))
 SUB_DIR	+= bit \
 		   btree \
 		   ctype \
+		   generic \
 		   list \
 		   memory \
 		   string
@@ -68,6 +69,13 @@ SUB_SRC	:= ft_isalnum.c \
 		   ft_tolower.c \
 		   ft_toupper.c
 SRC		+= $(addprefix ctype/, $(SUB_SRC))
+SUB_SRC	:= ft_print_char.c \
+		   ft_print_char_fd.c \
+		   ft_print_int.c \
+		   ft_print_int_fd.c \
+		   ft_print_str.c \
+		   ft_print_str_fd.c
+SRC		+= $(addprefix generic/, $(SUB_SRC))
 SUB_SRC	:= ft_list_at.c \
 		   ft_list_clear.c \
 		   ft_list_extract.c \
@@ -77,6 +85,7 @@ SUB_SRC	:= ft_list_at.c \
 		   ft_list_new.c \
 		   ft_list_pop.c \
 		   ft_list_print.c \
+		   ft_list_print_fd.c \
 		   ft_list_push.c \
 		   ft_list_push_back.c \
 		   ft_list_remove_if.c \
@@ -109,6 +118,8 @@ SUB_SRC	+= ft_rbtree_clear.c \
 		   ft_rbtree_max.c \
 		   ft_rbtree_min.c \
 		   ft_rbtree_new.c \
+		   ft_rbtree_print.c \
+		   ft_rbtree_print_fd.c \
 		   ft_rbtree_search.c \
 		   ft_rbtree_size.c
 SRC		+= $(addprefix rbtree/, $(SUB_SRC))

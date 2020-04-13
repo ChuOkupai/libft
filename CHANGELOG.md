@@ -14,15 +14,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_bit_map**
 - **ft_bit_set**
 - **ft_bit_unset**
+- **ft_list_print**
+- **ft_list_print_fd**
+- **ft_memdup**
+- **ft_print_char**
+- **ft_print_char_fd**
+- **ft_print_int**
+- **ft_print_int_fd**
+- **ft_print_str**
+- **ft_print_str_fd**
 - **ft_rbtree_max**
 - **ft_rbtree_min**
+- **ft_rbtree_print**
+- **ft_rbtree_print_fd**
 - **ft_stpcpy**
 - **ft_stpncpy**
 - **ft_strtol**
 - **ft_strwhile**
 - **ft_vasprintf**
-- **ft_memdup**
-- **ft_list_print**
 - Installation mechanism
 
 ### Changed
@@ -34,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - **ft_strtoul** sets errno correctly when the value is out of range
+- **ft_*_split** a segmentation fault occurred with non ASCII characters
 
 ## [1.1.1] - 2020-03-30
 

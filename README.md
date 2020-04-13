@@ -11,14 +11,15 @@ My own C library for 42 School projects
 
 ## Content description
 
-- [bit](inc/libft/ft_bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
-- [btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
-- [ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
-- [list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of linked lists
-- [memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
-- [rbtree](inc/libft/ft_rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
-- [stdio](inc/libft/ft_stdio.h "libft/ft_stdio.h") - Basic I/O interface
-- [string](inc/libft/ft_string.h "libft/ft_string.h") - Fonctions concerning string manipulation
+- [ft_bit](inc/libft/ft_bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
+- [ft_btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
+- [ft_ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
+- [ft_generic](inc/libft/ft_generic.h "libft/ft_generic.h") - Provide generic display functions for common standard data types
+- [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of linked lists
+- [ft_memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
+- [ft_rbtree](inc/libft/ft_rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
+- [ft_stdio](inc/libft/ft_stdio.h "libft/ft_stdio.h") - Basic I/O interface
+- [ft_string](inc/libft/ft_string.h "libft/ft_string.h") - Fonctions concerning string manipulation
 
 ## Features
 

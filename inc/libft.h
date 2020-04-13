@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 01:58:21 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/13 00:57:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # include <libft/ft_bit.h>
 # include <libft/ft_btree.h>
 # include <libft/ft_ctype.h>
+# include <libft/ft_generic.h>
 # include <libft/ft_list.h>
 # include <libft/ft_memory.h>
 # include <libft/ft_rbtree.h>

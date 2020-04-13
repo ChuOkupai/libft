@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 15:50:44 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 19:21:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/13 01:29:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static size_t	ft_wordlen(const char **s, const uint8_t *map)
 {
 	const char *set;
 
-	while (ft_bit_at(map, **s))
+	while (ft_bit_at(map, (uint8_t)**s))
 		++(*s);
 	set = *s;
-	while (*set && !ft_bit_at(map, *set))
+	while (*set && !ft_bit_at(map, (uint8_t)*set))
 		++set;
 	return (set - *s);
 }

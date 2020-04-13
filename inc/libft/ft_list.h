@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 22:14:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/13 00:11:29 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,17 @@ t_list	*ft_list_new(void *content);
 void	*ft_list_pop(t_list **list, void (*del)(void *));
 
 /*
-** Display the contents of the list on standard output.
+** Display the contents of the list to given file descriptor.
+** The print function is called to display the content of each item.
 */
-void	ft_list_print(t_list *l, void (*print_func)(const void *content));
+void	ft_list_print_fd(t_list *l,
+		void (*print)(const void *content, int fd), int fd);
+
+/*
+** Display the contents of the list on standard output.
+** The print function is called to display the content of each item.
+*/
+void	ft_list_print(t_list *l, void (*print)(const void *content));
 
 /*
 ** Add an element at the end of a list.

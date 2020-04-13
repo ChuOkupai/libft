@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_print.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/12 22:05:26 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/13 00:13:41 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/13 01:45:49 by asoursou          #+#    #+#             */
+/*   Updated: 2020/04/13 01:48:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include "ft_stdio.h"
+#include <unistd.h>
+#include "ft_generic.h"
 
-void	ft_list_print(t_list *l, void (*print)(const void *content))
+void	ft_print_char(const void *content)
 {
-	ft_putchar('[');
-	while (l)
-	{
-		print(l->content);
-		if ((l = l->next))
-			ft_printf(", ");
-	}
-	ft_printf("]\n");
+	ft_print_char_fd(content, STDOUT_FILENO);
 }
