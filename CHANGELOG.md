@@ -13,7 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_bit_at**
 - **ft_bit_map**
 - **ft_bit_set**
+- **ft_bit_to_string**
 - **ft_bit_unset**
+- **ft_compare_int**
 - **ft_list_print**
 - **ft_list_print_fd**
 - **ft_memdup**
@@ -23,8 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_print_int_fd**
 - **ft_print_str**
 - **ft_print_str_fd**
+- **ft_rbtree_infix**
 - **ft_rbtree_max**
 - **ft_rbtree_min**
+- **ft_rbtree_postfix**
+- **ft_rbtree_prefix**
 - **ft_rbtree_print**
 - **ft_rbtree_print_fd**
 - **ft_stpcpy**
@@ -33,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_strwhile**
 - **ft_vasprintf**
 - Installation mechanism
+- License change from GPLv3 to LGPLv3
 
 ### Changed
 - **ft_strsplit** now takes a set of delimiters as an argument instead of an unique character. When the given set is empty, all spaces are delimiters
@@ -44,6 +50,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **ft_strtoul** sets errno correctly when the value is out of range
 - **ft_*_split** a segmentation fault occurred with non ASCII characters
+- **ft_btree_clear** content memory was not properly deallocated
+- **ft_rbtree_clear** content memory was not properly deallocated
 
 ## [1.1.1] - 2020-03-30
 

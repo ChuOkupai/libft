@@ -6,14 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 00:00:15 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:32:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ft_list.h"
+#include "ft_list.h"
 
-void	ft_list_insert(t_list **l, t_list *elem,
-		int (*cmp)(const void *, const void *))
+void	ft_list_insert(t_list **l, t_list *elem, t_gcompare cmp)
 {
 	if (!*l || cmp(elem->content, (*l)->content) <= 0)
 		ft_list_push(l, elem);

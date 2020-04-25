@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/13 03:13:07 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/25 17:29:03 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ NAME	:= $(FT).a
 SUB_SRC	:= ft_bit_at.c \
 		   ft_bit_map.c \
 		   ft_bit_set.c \
+		   ft_bit_to_string.c \
 		   ft_bit_unset.c
 SRC		:= $(addprefix bit/, $(SUB_SRC))
 SUB_SRC	:= ft_btree_clear.c \
@@ -48,10 +49,10 @@ SUB_SRC	:= ft_btree_clear.c \
 		   ft_btree_infix.c \
 		   ft_btree_insert.c \
 		   ft_btree_new.c \
+		   ft_btree_postfix.c \
 		   ft_btree_prefix.c \
 		   ft_btree_search.c \
-		   ft_btree_size.c \
-		   ft_btree_suffix.c
+		   ft_btree_size.c
 SRC		+= $(addprefix btree/, $(SUB_SRC))
 SUB_SRC	:= ft_isalnum.c \
 		   ft_isalpha.c \
@@ -114,10 +115,13 @@ SUB_SRC	:= ft_rbtree_remove_guard.c \
 SUB_SRC	:= $(addprefix $(PRV)/, $(SUB_SRC))
 SUB_SRC	+= ft_rbtree_clear.c \
 		   ft_rbtree_delete.c \
+		   ft_rbtree_infix.c \
 		   ft_rbtree_insert.c \
 		   ft_rbtree_max.c \
 		   ft_rbtree_min.c \
 		   ft_rbtree_new.c \
+		   ft_rbtree_postfix.c \
+		   ft_rbtree_prefix.c \
 		   ft_rbtree_print.c \
 		   ft_rbtree_print_fd.c \
 		   ft_rbtree_search.c \

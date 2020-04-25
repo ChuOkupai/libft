@@ -6,15 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 01:56:39 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/13 03:10:30 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:24:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rbtree.h"
 #include "ft_stdio.h"
 
-static void	prefix_traversal(t_rbtree *root,
-			void (*print)(const void *content), int deep)
+static void	prefix_traversal(t_rbtree *root, t_gprint print, int deep)
 {
 	if (!root)
 		return ;
@@ -27,8 +26,7 @@ static void	prefix_traversal(t_rbtree *root,
 	prefix_traversal(root->right, print, deep + 2);
 }
 
-void		ft_rbtree_print(t_rbtree *root,
-			void (*print)(const void *content))
+void		ft_rbtree_print(t_rbtree *root, t_gprint print)
 {
 	prefix_traversal(root, print, 0);
 }

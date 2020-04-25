@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_clear.c                                   :+:      :+:    :+:   */
+/*   ft_btree_postfix.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 11:49:33 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 17:03:35 by asoursou         ###   ########.fr       */
+/*   Created: 2019/11/11 15:58:00 by asoursou          #+#    #+#             */
+/*   Updated: 2020/04/25 17:30:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_btree.h"
 
-static void	ft_clear(t_btree *root, t_gfunction del)
+void	ft_btree_postfix(t_btree *root, t_gfunction function)
 {
 	if (!root)
 		return ;
-	ft_clear(root->left, del);
-	ft_clear(root->right, del);
-	if (del)
-		del(root->content);
-	free(root);
-}
-
-void		*ft_btree_clear(t_btree **root, t_gfunction del)
-{
-	ft_clear(*root, del);
-	return (*root = NULL);
+	ft_btree_postfix(root->left, function);
+	ft_btree_postfix(root->right, function);
+	function(root->content);
 }

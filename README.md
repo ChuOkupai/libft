@@ -20,6 +20,7 @@ My own C library for 42 School projects
 - [ft_rbtree](inc/libft/ft_rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
 - [ft_stdio](inc/libft/ft_stdio.h "libft/ft_stdio.h") - Basic I/O interface
 - [ft_string](inc/libft/ft_string.h "libft/ft_string.h") - Fonctions concerning string manipulation
+- [ft_type](inc/libft/ft_type.h "libft/ft_type.h") - Contains data types definition including generic functions pointers
 
 ## Features
 
@@ -81,4 +82,4 @@ gcc main.c -lft
 
 ## License
 
-This project is licensed under the GPLv3 License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the LGPLv3 License - see the [LICENSE](LICENSE) file for details

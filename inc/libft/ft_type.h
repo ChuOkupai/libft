@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_clear.c                                   :+:      :+:    :+:   */
+/*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 11:49:33 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 17:03:35 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/25 15:10:54 by asoursou          #+#    #+#             */
+/*   Updated: 2020/04/25 16:12:54 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_btree.h"
-
-static void	ft_clear(t_btree *root, t_gfunction del)
-{
-	if (!root)
-		return ;
-	ft_clear(root->left, del);
-	ft_clear(root->right, del);
-	if (del)
-		del(root->content);
-	free(root);
-}
-
-void		*ft_btree_clear(t_btree **root, t_gfunction del)
-{
-	ft_clear(*root, del);
-	return (*root = NULL);
-}
+#ifndef FT_TYPE_H
+# define FT_TYPE_H
+# define FT_REQUIRE_TYPE_BOOL
+# define FT_REQUIRE_TYPE_GENERIC
+# define FT_REQUIRE_TYPE_SIGNED
+# define FT_REQUIRE_TYPE_SIZE_T
+# define FT_REQUIRE_TYPE_UNSIGNED
+# include <private/ft_include.h>
+#endif

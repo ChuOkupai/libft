@@ -6,10 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 20:35:40 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 13:07:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
 #include "ft_stdio.h"
 
 int	ft_sprintf(char *str, const char *format, ...)

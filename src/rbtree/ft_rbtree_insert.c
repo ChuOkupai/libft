@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:11:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:09:42 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:40:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ static t_rbtree	*ft_fixup_right(t_rbtree **root, t_rbtree *x)
 	return (x);
 }
 
-void			ft_rbtree_insert(t_rbtree **root, t_rbtree *e,
-				int (*cmp)(void *, void *))
+void			ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
 {
 	int			d;
 	t_rbtree	*x;
@@ -65,7 +64,7 @@ void			ft_rbtree_insert(t_rbtree **root, t_rbtree *e,
 	{
 		y = x;
 		d = cmp(e->content, x->content);
-		x = (d < 0) ? x->left : x->right;
+		x = d < 0 ? x->left : x->right;
 	}
 	if (!(e->parent = y))
 		*root = e;

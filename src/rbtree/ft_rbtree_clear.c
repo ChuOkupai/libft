@@ -6,26 +6,26 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:01:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 17:33:22 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_rbtree.h"
 
-static void	ft_clear(t_rbtree *root, void (*del)(void *))
+static void	clear(t_rbtree *root, t_gfunction del)
 {
 	if (!root)
 		return ;
-	ft_clear(root->left, del);
-	ft_clear(root->right, del);
+	clear(root->left, del);
+	clear(root->right, del);
 	if (del)
-		free(root->content);
+		del(root->content);
 	free(root);
 }
 
-void		ft_rbtree_clear(t_rbtree **root, void (*del)(void *))
+void		*ft_rbtree_clear(t_rbtree **root, t_gfunction del)
 {
-	ft_clear(*root, del);
-	*root = NULL;
+	clear(*root, del);
+	return (*root = NULL);
 }

@@ -6,12 +6,17 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 00:01:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/13 01:48:26 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:57:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GENERIC_H
 # define FT_GENERIC_H
+
+/*
+** Compare two int.
+*/
+void	ft_compare_int(const void *reference, const void *content);
 
 /*
 ** Display the content of char type to given file descriptor.

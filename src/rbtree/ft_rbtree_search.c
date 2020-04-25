@@ -6,22 +6,18 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:36:13 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:41:36 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rbtree.h"
 
-t_rbtree	*ft_rbtree_search(t_rbtree *root, void *ref,
-			int (*cmp)(void *ref, void *content))
+t_rbtree	*ft_rbtree_search(t_rbtree *root, const void *reference,
+			t_gcompare cmp)
 {
-	t_rbtree *n;
+	int d;
 
-	if (!root)
-		return (NULL);
-	if ((n = ft_rbtree_search(root->left, ref, cmp)))
-		return (n);
-	if (!cmp(ref, root->content))
-		return (root);
-	return (ft_rbtree_search(root->right, ref, cmp));
+	while (root && (d = cmp(reference, root->content)))
+		root = d < 0 ? root->left : root->right;
+	return (root);
 }

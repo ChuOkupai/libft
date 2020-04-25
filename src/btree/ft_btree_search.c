@@ -6,14 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 16:15:32 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:45:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_btree.h"
 
-t_btree	*ft_btree_search(t_btree *root, void *ref,
-		int (*cmp)(void *ref, void *content))
+t_btree	*ft_btree_search(t_btree *root, void *ref, t_gcompare cmp)
 {
 	t_btree *b;
 

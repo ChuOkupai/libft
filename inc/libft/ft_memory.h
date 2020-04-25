@@ -6,13 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 17:23:24 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:11:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEMORY_H
 # define FT_MEMORY_H
-# include <stddef.h>
+# define FT_REQUIRE_TYPE_SIZE_T
+# include <private/ft_include.h>
 
 /*
 ** Writes n zeroed bytes to s.

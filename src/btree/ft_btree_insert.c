@@ -6,14 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 16:05:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:04:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:45:49 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ft_btree.h"
+#include "ft_btree.h"
 
-void	ft_btree_insert(t_btree **root, t_btree *elem,
-		int (*cmp)(void *, void *))
+void	ft_btree_insert(t_btree **root, t_btree *elem, t_gcompare cmp)
 {
 	if (!*root)
 		*root = elem;

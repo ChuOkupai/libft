@@ -6,14 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:12:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STDIO_H
 # define FT_STDIO_H
-# include <stdarg.h>
-# include <stddef.h>
+# define FT_NEED_TYPE_VA_LIST
+# define FT_REQUIRE_TYPE_SIZE_T
+# include <private/ft_include.h>
 
 /*
 ** Outputs a formatted string to a new allocated string.
@@ -134,6 +135,14 @@ int		ft_snprintf(char *str, size_t n, const char *format,
 int		ft_sprintf(char *str, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2),nonnull(1)));
 
+# ifdef FT_TYPE_VA_LIST
+
+/*
+** Disclaimer:
+** Requires #include <stdarg.h> before calling this header to include functions
+** that depend on va_list.
+*/
+
 /*
 ** Outputs a formatted string to a new allocated string using an argument list.
 ** The allocated pointer should be passed to free.
@@ -178,4 +187,5 @@ int		ft_vsnprintf(char *str, size_t n, const char *format,
 int		ft_vsprintf(char *str, const char *format,
 	va_list ap) __attribute__((format(printf,2,0),nonnull(2),nonnull(1)));
 
+# endif
 #endif

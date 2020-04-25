@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_btree_suffix.c                                  :+:      :+:    :+:   */
+/*   ft_rbtree_prefix.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 15:58:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/25 17:23:42 by asoursou          #+#    #+#             */
+/*   Updated: 2020/04/25 17:24:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_btree.h"
+#include "ft_rbtree.h"
 
-void	ft_btree_suffix(t_btree *root, void (*f)(void *))
+void	ft_rbtree_prefix(t_rbtree *root, t_gfunction function)
 {
 	if (!root)
 		return ;
-	ft_btree_suffix(root->left, f);
-	ft_btree_suffix(root->right, f);
-	f(root->content);
+	function(root->content);
+	ft_rbtree_prefix(root->left, function);
+	ft_rbtree_prefix(root->right, function);
 }
