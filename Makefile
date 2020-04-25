@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/25 17:29:03 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/25 19:34:29 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,14 +68,14 @@ SUB_SRC	:= ft_isalnum.c \
 		   ft_isupper.c \
 		   ft_isxdigit.c \
 		   ft_tolower.c \
+		   ft_toprint.c \
 		   ft_toupper.c
 SRC		+= $(addprefix ctype/, $(SUB_SRC))
-SUB_SRC	:= ft_print_char.c \
+SUB_SRC	:= ft_compare_int.c \
+		   ft_print_char.c \
 		   ft_print_char_fd.c \
 		   ft_print_int.c \
-		   ft_print_int_fd.c \
-		   ft_print_str.c \
-		   ft_print_str_fd.c
+		   ft_print_int_fd.c
 SRC		+= $(addprefix generic/, $(SUB_SRC))
 SUB_SRC	:= ft_list_at.c \
 		   ft_list_clear.c \
@@ -149,6 +149,8 @@ SUB_SRC	+= ft_asprintf.c \
 		   ft_putnbr_fd.c \
 		   ft_putnstr.c \
 		   ft_putnstr_fd.c \
+		   ft_putrawstr.c \
+		   ft_putrawstr_fd.c \
 		   ft_putstr.c \
 		   ft_putstr_fd.c \
 		   ft_snprintf.c \
@@ -194,7 +196,8 @@ SUB_SRC	:= ft_atoi.c \
 		   ft_strtol.c \
 		   ft_strtoul.c \
 		   ft_strtrim.c \
-		   ft_strwhile.c
+		   ft_strwhile.c \
+		   ft_strwhilenot.c
 SRC		+= $(addprefix string/, $(SUB_SRC))
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)

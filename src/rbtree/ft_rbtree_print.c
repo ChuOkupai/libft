@@ -6,27 +6,29 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 01:56:39 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/24 22:24:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 20:14:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_const.h"
 #include "ft_rbtree.h"
 #include "ft_stdio.h"
 
-static void	prefix_traversal(t_rbtree *root, t_gprint print, int deep)
+static void	prefix(t_rbtree *root, t_gprint print, int deep)
 {
 	if (!root)
 		return ;
 	if (deep)
 		ft_printf("%*c", deep, ' ');
-	ft_printf("(\x1b[%dm  \x1b[0m, ", 40 + root->color);
+	ft_printf(FT_DS_BEGIN "\x1b[%dmX\x1b[0m" FT_ARRAY_LINK,
+	30 + root->color);
 	print(root->content);
-	ft_printf(")\n");
-	prefix_traversal(root->left, print, deep + 2);
-	prefix_traversal(root->right, print, deep + 2);
+	ft_putstr(FT_DS_END);
+	prefix(root->left, print, deep + 2);
+	prefix(root->right, print, deep + 2);
 }
 
 void		ft_rbtree_print(t_rbtree *root, t_gprint print)
 {
-	prefix_traversal(root, print, 0);
+	prefix(root, print, 0);
 }

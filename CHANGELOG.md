@@ -23,8 +23,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_print_char_fd**
 - **ft_print_int**
 - **ft_print_int_fd**
-- **ft_print_str**
-- **ft_print_str_fd**
+- **ft_putrawstr**
+- **ft_putrawstr_fd**
 - **ft_rbtree_infix**
 - **ft_rbtree_max**
 - **ft_rbtree_min**
@@ -36,6 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_stpncpy**
 - **ft_strtol**
 - **ft_strwhile**
+- **ft_strwhilenot**
+- **ft_toprint**
 - **ft_vasprintf**
 - Installation mechanism
 - License change from GPLv3 to LGPLv3

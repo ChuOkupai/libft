@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:19:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/25 13:23:26 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 21:29:48 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,13 @@
 # define FT_LOWER	"abcdefghijklmnopqrstuvwxyz"
 # define FT_SPACE	"\x9\xa\xb\xc\xd "
 # define FT_UPPER	"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+# define FT_ARRAY_BEGIN	"["
+# define FT_ARRAY_END	"]\n"
+# define FT_ARRAY_LINK	", "
+
+# define FT_DS_BEGIN	"("
+# define FT_DS_END		")\n"
+# define FT_DS_LINK		" -> "
 
 #endif

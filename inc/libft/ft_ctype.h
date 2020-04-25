@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:04:55 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 02:02:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 17:48:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,12 @@ int	ft_isxdigit(int c);
 ** Converts uppercase letters to lowercase.
 */
 int	ft_tolower(int c);
+
+/*
+** Converts non printable chracter to printable equivalent if possible.
+** Ex: ft_toprint('\n') returns 'n'
+*/
+int	ft_toprint(int c);
 
 /*
 ** Converts lowercase letters to uppercase.

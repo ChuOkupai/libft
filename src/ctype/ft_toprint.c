@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnstr_fd.c                                    :+:      :+:    :+:   */
+/*   ft_toprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/19 19:10:47 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 19:36:15 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/25 17:48:34 by asoursou          #+#    #+#             */
+/*   Updated: 2020/04/25 21:17:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_string.h"
-
-void	ft_putnstr_fd(const char *s, size_t n, int fd)
+int	ft_toprint(int c)
 {
-	size_t max;
-
-	if ((max = ft_strlen(s)) > n)
-		max = n;
-	(void)(write(fd, s, max) + 1);
+	if (c > 6 && c < 14)
+		return ("abtnvfr"[c - 7]);
+	if (!c)
+		return ('0');
+	return (c);
 }

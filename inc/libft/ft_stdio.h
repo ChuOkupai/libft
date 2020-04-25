@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 16:12:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 22:09:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,24 @@ void	ft_putnbr_base_fd(int n, char const *base, int fd);
 /*
 ** Outputs no more than n characters of a string to standard output.
 */
-void	ft_putnstr(char *s, size_t n);
+void	ft_putnstr(const char *s, size_t n);
 
 /*
 ** Outputs no more than n characters of a string to given file descriptor.
 */
-void	ft_putnstr_fd(char *s, size_t n, int fd);
+void	ft_putnstr_fd(const char *s, size_t n, int fd);
+
+/*
+** Outputs a string to standard output.
+** The content is displayed in raw mode surrounded by double quotes.
+*/
+void	ft_putrawstr(const char *s);
+
+/*
+** Display the content of type string to given file descriptor.
+** The content is displayed in raw mode surrounded by double quotes.
+*/
+void	ft_putrawstr_fd(const char *s, int fd);
 
 /*
 ** Outputs a string to standard output.

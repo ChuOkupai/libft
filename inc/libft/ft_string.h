@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 17:39:20 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/25 22:09:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -267,5 +267,14 @@ char		*ft_strtrim(const char *s1, const char *set);
 ** for example ft_islower.
 */
 const char	*ft_strwhile(const char *s, int (*condition)(int));
+
+/*
+** Iterates over a string while the condition is not met.
+** Returns a pointer between the beginning and the end of the string,
+** depending on the result of the loop.
+** The condition function pointer can use on of the ctype functions,
+** for example ft_islower.
+*/
+const char	*ft_strwhilenot(const char *s, int (*condition)(int));
 
 #endif
