@@ -6,15 +6,30 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 22:09:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 02:06:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STDIO_H
 # define FT_STDIO_H
-# define FT_NEED_TYPE_VA_LIST
+# define FT_REQUIRE_TYPE_BOOL
+# define FT_REQUIRE_TYPE_EOF
 # define FT_REQUIRE_TYPE_SIZE_T
+# define FT_NEED_TYPE_VA_LIST
 # include <private/ft_include.h>
+
+typedef struct s_file	t_file;
+struct s_file
+{
+	t_bool	eof;
+	t_bool	error;
+	int		last_call;
+	int		oflag;
+	int		fd;
+	char	*buf;
+	size_t	size;
+	size_t	cur;
+};
 
 /*
 ** Outputs a formatted string to a new allocated string.
