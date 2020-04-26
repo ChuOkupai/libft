@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 00:30:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 21:26:09 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 00:49:51 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int			isprintable(int c)
 
 void		ft_putrawstr_fd(const char *s, int fd)
 {
-	int c;
-	int n;
+	int		n;
+	char	c;
 
 	ft_putchar_fd('"', fd);
 	while (*s)

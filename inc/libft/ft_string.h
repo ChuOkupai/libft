@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 22:09:57 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 01:39:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,8 +162,7 @@ char		*ft_strndup(const char *s1, size_t n);
 ** Locates the first occurrence of the null-terminated string needle
 ** in the string haystack, where not more than len characters are searched.
 */
-char		*ft_strnstr(const char *haystack, const char *needle,
-				size_t len);
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 /*
 ** Locates first occurrence of any character in charset.
