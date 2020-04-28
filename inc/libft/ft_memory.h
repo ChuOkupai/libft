@@ -6,14 +6,14 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 16:11:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 02:55:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEMORY_H
 # define FT_MEMORY_H
 # define FT_REQUIRE_TYPE_SIZE_T
-# include <private/ft_include.h>
+# include "private/ft_include.h"
 
 /*
 ** Writes n zeroed bytes to s.
@@ -51,10 +51,9 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 /*
-** Free *p and set it to NULL.
-** Returns NULL.
+** Free the pointer and returns NULL.
 */
-void	*ft_memdel(void **pointer);
+void	*ft_memdel(void *pointer);
 
 /*
 ** Free an array and set it to NULL.

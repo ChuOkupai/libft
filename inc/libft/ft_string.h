@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 01:39:35 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 02:49:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_STRING_H
 # define FT_REQUIRE_TYPE_SIZE_T
 # define FT_REQUIRE_TYPE_UNSIGNED
-# include <private/ft_include.h>
+# include "private/ft_include.h"
 
 /*
 ** Converts the string str to integer representation.

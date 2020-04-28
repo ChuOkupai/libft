@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:06:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/28 02:01:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,29 @@
 # define FT_REQUIRE_TYPE_EOF
 # define FT_REQUIRE_TYPE_SIZE_T
 # define FT_NEED_TYPE_VA_LIST
-# include <private/ft_include.h>
+# include "private/ft_include.h"
+
+# define FT_FILE_BUFSIZE 16
+
+typedef enum e_bufmode	t_bufmode;
+enum e_bufmode
+{
+	IO_BUFMODE_FULL,
+	IO_BUFMODE_LINE,
+	IO_BUFMODE_NONE
+};
 
 typedef struct s_file	t_file;
 struct s_file
 {
-	t_bool	eof;
-	t_bool	error;
-	int		last_call;
-	int		oflag;
-	int		fd;
-	char	*buf;
-	size_t	size;
-	size_t	cur;
+	int			fd;
+	int			mode;
+	char		*buf;
+	t_bufmode	bmode;
+	size_t		bsize;
+	size_t		i;
+	t_bool		eof;
+	t_bool		error;
 };
 
 /*
@@ -49,6 +59,25 @@ int		ft_asprintf(char **ret, const char *format,
 */
 int		ft_dprintf(int fd, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2)));
+
+/*
+** Closes the file stream, emptying the buffer if necessary.
+** Returns EOF on error.
+*/
+int		ft_fclose(t_file *stream);
+
+/*
+** Opens a file according to the given path in binary mode.
+** Supported mode :
+** - "r" Open for reading. Fail if the file does not exist.
+** - "w" Open for writing. Create the file if it does not exist.
+** - "a" Open for writing. Always append new text at the end of file.
+**       Creates the file if it does not exist.
+** - "+" Following "r", "w", "a" opens for both reading and writing.
+** - "x" Following "w" or "w+". Fail if the file already exists.
+** Returns NULL on error.
+*/
+t_file	*ft_fopen(const char *path, const char *mode);
 
 /*
 ** Stores next line from given file descriptor to line.

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 13:03:14 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 01:57:34 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 04:18:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@
 
 # ifdef FT_REQUIRE_TYPE_EOF
 #  undef FT_REQUIRE_TYPE_EOF
-#  define EOF	-1
+#  ifndef EOF
+#   define EOF	-1
+#  endif
 # endif
 
 # ifdef FT_REQUIRE_TYPE_BOOL

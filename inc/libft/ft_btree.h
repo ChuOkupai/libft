@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 22:09:32 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/04/26 02:49:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_BTREE_H
 # define FT_REQUIRE_TYPE_GENERIC
 # define FT_REQUIRE_TYPE_SIZE_T
-# include <private/ft_include.h>
+# include "private/ft_include.h"
 
 typedef struct s_btree	t_btree;
 struct	s_btree

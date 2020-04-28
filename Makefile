@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/25 19:34:29 by asoursou         ###   ########.fr        #
+#    Updated: 2020/04/26 04:03:23 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -136,6 +136,8 @@ SUB_SRC	:= ft_printf_parse_cnos.c \
 SUB_SRC	:= $(addprefix $(PRV)/, $(SUB_SRC))
 SUB_SRC	+= ft_asprintf.c \
 		   ft_dprintf.c \
+		   ft_fclose.c \
+		   ft_fopen.c \
 		   ft_get_next_line.c \
 		   ft_print_memory.c \
 		   ft_printf.c \
