@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/02 17:32:00 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/02 19:21:41 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -165,8 +165,6 @@ SUB_SRC	+= ft_asprintf.c \
 		   ft_putnbr_fd.c \
 		   ft_putnstr.c \
 		   ft_putnstr_fd.c \
-		   ft_putrawstr.c \
-		   ft_putrawstr_fd.c \
 		   ft_putstr.c \
 		   ft_putstr_fd.c \
 		   ft_setbuffer.c \

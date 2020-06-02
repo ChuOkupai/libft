@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:49:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:13:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ void	ft_btree_infix(t_btree *root, t_gfunction function);
 /*
 ** Insert an element in a sorted binary tree.
 ** Comparison is done with a comparison fonction pointer.
+** Returns a pointer to the inserted element.
 */
-void	ft_btree_insert(t_btree **root, t_btree *element, t_gcompare cmp);
+t_btree	*ft_btree_insert(t_btree **root, t_btree *element, t_gcompare cmp);
 
 /*
 ** Creates a new element with malloc.
@@ -66,6 +67,7 @@ void	ft_btree_prefix(t_btree *root, t_gfunction function);
 ** Search an element from a binary tree which matches the reference content
 ** and returns a pointer to it.
 ** Comparison is done with cmp.
+** Returns NULL if not found.
 */
 t_btree	*ft_btree_search(t_btree *root, void *reference, t_gcompare cmp);
 

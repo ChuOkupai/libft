@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:11:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/24 22:40:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:10:44 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static t_rbtree	*ft_fixup_right(t_rbtree **root, t_rbtree *x)
 	return (x);
 }
 
-void			ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
+t_rbtree		*ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
 {
 	int			d;
 	t_rbtree	*x;
@@ -78,4 +78,5 @@ void			ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
 		else
 			e = ft_fixup_right(root, e);
 	(*root)->color = RB_BLACK;
+	return (e);
 }

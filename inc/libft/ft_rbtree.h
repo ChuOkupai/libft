@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 16:57:14 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:13:39 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ typedef struct s_rbtree	t_rbtree;
 struct		s_rbtree
 {
 	void		*content;
+	t_rbcolor	color : 1;
 	t_rbtree	*parent;
 	t_rbtree	*left;
 	t_rbtree	*right;
-	t_rbcolor	color : 1;
 };
 
 /*
@@ -56,8 +56,9 @@ void		ft_rbtree_infix(t_rbtree *root, t_gfunction function);
 ** Insert an element in a red black tree.
 ** Comparison is done with a comparison fonction pointer.
 ** Do not insert duplicates.
+** Returns a pointer to the inserted element.
 */
-void		ft_rbtree_insert(t_rbtree **root, t_rbtree *element,
+t_rbtree	*ft_rbtree_insert(t_rbtree **root, t_rbtree *element,
 			t_gcompare cmp);
 
 /*
@@ -101,6 +102,7 @@ void		ft_rbtree_print(t_rbtree *root, t_gprint print);
 ** Search an element from a red black tree which matches the reference content
 ** and returns a pointer to it.
 ** Comparison is done with a comparison fonction pointer.
+** Returns NULL if not found.
 */
 t_rbtree	*ft_rbtree_search(t_rbtree *root, const void *reference,
 			t_gcompare cmp);

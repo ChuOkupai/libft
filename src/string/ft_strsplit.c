@@ -6,10 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:29:19 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 19:41:49 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:19:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include <stdlib.h>
 #include "ft_list.h"
 #include "ft_memory.h"
@@ -21,7 +22,8 @@ char	**ft_strsplit(const char *s, const char *set)
 	size_t	i;
 
 	l = ft_list_split(s, set);
-	if (!l || !(t = (char**)malloc((ft_list_size(l) + 1) * sizeof(char*))))
+	if ((!l && errno) ||
+	!(t = (char**)malloc((ft_list_size(l) + 1) * sizeof(char*))))
 		return (ft_list_clear(&l, &free));
 	i = 0;
 	while (l)

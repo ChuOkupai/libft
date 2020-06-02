@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:49:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 19:13:48 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ t_list	*ft_list_rev(t_list *list);
 ** Search an element from a list which matches the reference content
 ** and returns a pointer to it.
 ** Comparison is done with a comparison fonction pointer.
+** Returns NULL if not found.
 */
 t_list	*ft_list_search(t_list *list, const void *reference, t_gcompare cmp);
 
