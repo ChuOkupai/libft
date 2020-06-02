@@ -6,20 +6,25 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 03:27:06 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:35:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:52:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "ft_type.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	const t_u8 *a;
+	const t_u8 *b;
+
+	a = s1;
+	b = s2;
 	while (n--)
 	{
-		if (*((unsigned char*)s1) != *((unsigned char*)s2))
-			return (*((unsigned char*)s1) - *((unsigned char*)s2));
-		s1++;
-		s2++;
+		if (*a != *b)
+			return (*a - *b);
+		++a;
+		++b;
 	}
 	return (0);
 }

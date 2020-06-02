@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/23 15:28:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:57:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define PF_BUFF_SIZE			128
 # define PF_CONVERT_BUFF_SIZE	80
 
-typedef enum e_pflag	t_pflag;
 enum		e_pflag
 {
 	PF_ERROR = 0x1,
@@ -27,8 +26,8 @@ enum		e_pflag
 	PF_USE_LEFT = 0x4,
 	PF_E_PFLAG_MAX = 3
 };
+typedef enum e_pflag	t_pflag;
 
-typedef enum e_flag	t_flag;
 enum		e_flag
 {
 	PF_MINUS = 0x1,
@@ -43,6 +42,7 @@ enum		e_flag
 	PF_HH = 0x200,
 	PF_E_FLAG_MAX = 10
 };
+typedef enum e_flag	t_flag;
 
 typedef struct s_format	t_format;
 struct		s_format

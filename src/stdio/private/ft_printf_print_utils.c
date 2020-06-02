@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 10:13:05 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:58:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	pf_flush_buffer(t_format *f)
 			else
 				f->left -= f->i;
 		}
-		f->str = ft_memcpy(f->str, f->buf, f->i) + f->i;
+		f->str = (char *)ft_memcpy(f->str, f->buf, f->i) + f->i;
 	}
 	else if (write(f->fd, f->buf, f->i) < 0)
 		f->pflags |= PF_ERROR;

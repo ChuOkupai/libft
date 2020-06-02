@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 11:22:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 14:17:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:57:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@
 ** FT_FERROR: error indicator
 ** FT_FWRITE: write operation (RAW and WAR dependencies)
 */
-typedef enum e_fflag	t_fflag;
 enum	e_fflag
 {
 	FT_FOPEN = 0x1,
@@ -37,6 +36,7 @@ enum	e_fflag
 	FT_FERROR = 0x8,
 	FT_FWRITE = 0x10
 };
+typedef enum e_fflag	t_fflag;
 
 /*
 ** fd: file descriptor

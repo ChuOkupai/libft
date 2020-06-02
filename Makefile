@@ -6,13 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/02 00:11:26 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/02 16:41:25 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Wvla -Ofast -fno-builtin
+CFLAGS	= -Wall -Wextra -Werror -Wpedantic -Wvla -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 IFLAGS	= -I./inc -I./inc/libft -I./inc/private
 

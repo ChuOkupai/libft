@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:31:01 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 19:45:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:45:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,27 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	size_t *t;
+
+	t = s;
 	while (n >= 8 * sizeof(size_t))
 	{
-		((size_t *)s)[0] = 0;
-		((size_t *)s)[1] = 0;
-		((size_t *)s)[2] = 0;
-		((size_t *)s)[3] = 0;
-		((size_t *)s)[4] = 0;
-		((size_t *)s)[5] = 0;
-		((size_t *)s)[6] = 0;
-		((size_t *)s)[7] = 0;
-		s += 8 * sizeof(size_t);
+		t[0] = 0;
+		t[1] = 0;
+		t[2] = 0;
+		t[3] = 0;
+		t[4] = 0;
+		t[5] = 0;
+		t[6] = 0;
+		t[7] = 0;
+		t += 8;
 		n -= 8 * sizeof(size_t);
 	}
 	while (n >= sizeof(size_t))
 	{
-		*((size_t *)s) = 0;
-		s += sizeof(size_t);
+		*t++ = 0;
 		n -= sizeof(size_t);
 	}
 	while (n)
-		((unsigned char *)s)[--n] = 0;
+		((unsigned char *)t)[--n] = 0;
 }

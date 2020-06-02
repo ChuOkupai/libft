@@ -6,12 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 02:39:26 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/01 18:33:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:59:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_memory.h"
 #include "ft_stdio_utils.h"
+#include "ft_type.h"
 
 static size_t	copy(t_file *f, void *ptr, size_t nitems)
 {
@@ -34,7 +35,7 @@ size_t			ft_fread(void *ptr, size_t size, size_t nitems, t_file *f)
 	if ((nitems -= n) && nitems < f->size)
 	{
 		ft_fread_internal(f, f->buf, f->size);
-		n += copy(f, ptr + n, nitems);
+		n += copy(f, (t_u8 *)ptr + n, nitems);
 	}
 	else if (!n)
 		n = ft_fread_internal(f, ptr, nitems);

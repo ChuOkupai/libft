@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:49:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 16:57:14 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 # define FT_REQUIRE_TYPE_SIZE_T
 # include "private/ft_include.h"
 
-typedef enum e_rbcolor	t_rbcolor;
 enum		e_rbcolor
 {
 	RB_BLACK,
 	RB_RED
 };
+typedef enum e_rbcolor	t_rbcolor;
 
 typedef struct s_rbtree	t_rbtree;
 struct		s_rbtree
