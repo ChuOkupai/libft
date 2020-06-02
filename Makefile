@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/02 19:21:41 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/02 22:15:55 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,11 @@ CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Wpedantic -Wvla -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 IFLAGS	= -I./inc -I./inc/libft -I./inc/private
+LDFLAGS	= -L. -lft
 
 # DIRECTORIES
 BUILD	:= .build
+BIN_DIR	:= bin
 DEP_DIR	:= $(BUILD)/dep
 OBJ_DIR	:= $(BUILD)/obj
 LOC_DIR := /usr/local
@@ -111,6 +113,7 @@ SRC		+= $(addprefix memory/, $(SUB_SRC))
 SUB_SRC	:= ft_rbtree_remove_guard.c \
 		   ft_rbtree_rotate_left.c \
 		   ft_rbtree_rotate_right.c \
+		   ft_rbtree_set_guard.c \
 		   ft_rbtree_transplant.c
 SUB_SRC	:= $(addprefix $(PRV)/, $(SUB_SRC))
 SUB_SRC	+= ft_rbtree_clear.c \
@@ -216,6 +219,11 @@ SUB_SRC	:= ft_atoi.c \
 SRC		+= $(addprefix string/, $(SUB_SRC))
 DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
+SRC_BIN	:= cat.c \
+		   name.c \
+		   rbtree.c \
+		   split.c
+BIN		:= $(SRC_BIN:%.c=$(BIN_DIR)/%)
 
 $(NAME): $(OBJ)
 	@echo 'Creation of $@'
@@ -227,9 +235,11 @@ clean:
 	rm -rf $(BUILD)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(BIN_DIR) $(NAME)
 
 re: fclean all
+
+test: $(BIN)
 
 install: $(NAME)
 	install $< $(LOC_DIR)/lib
@@ -247,6 +257,14 @@ $(BUILD):
 $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
 	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) $(IFLAGS) -c $< -o $@
+
+$(BIN_DIR):
+	@echo 'Creation of $@ directory'
+	@mkdir $@
+
+$(BIN_DIR)/%: examples/%.c $(NAME) | $(BIN_DIR)
+	@echo 'Compilation of $<'
+	@$(CC) $(CFLAGS) $(IFLAGS) $< -o $@ $(LDFLAGS)
 
 -include $(DEP)
 

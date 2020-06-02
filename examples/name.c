@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rbtree_utils.h                                  :+:      :+:    :+:   */
+/*   name.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/16 13:30:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 22:14:28 by asoursou         ###   ########.fr       */
+/*   Created: 2020/06/02 20:08:35 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/02 20:20:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_RBTREE_UTILS_H
-# define FT_RBTREE_UTILS_H
-# include "ft_rbtree.h"
+#include <libft.h>
 
-void		ft_rbtree_remove_guard(t_rbtree **root, t_rbtree *x, t_rbtree *g);
+static char	*trim_name(char *s)
+{
+	char *s2;
 
-void		ft_rbtree_rotate_left(t_rbtree **root, t_rbtree *x);
+	if ((s2 = ft_strtrim(s, FT_SPACE "!")) && !*s2)
+		s2 = ft_memdel(s2);
+	ft_memdel(s);
+	return (s2);
+}
 
-void		ft_rbtree_rotate_right(t_rbtree **root, t_rbtree *y);
+int			main(void)
+{
+	char *s;
 
-t_rbtree	*ft_rbtree_set_guard(t_rbtree *z, t_rbtree *guard);
-
-void		ft_rbtree_transplant(t_rbtree **root, t_rbtree *u, t_rbtree *v);
-
-#endif
+	ft_putstr("Name: ");
+	if (ft_get_next_line(0, &s) >= 0 && (s = trim_name(s)))
+	{
+		ft_printf("Welcome, %s!\n", s);
+		ft_memdel(s);
+	}
+	else
+		ft_putendl_fd("error: Could not read your name!", 2);
+	return (0);
+}

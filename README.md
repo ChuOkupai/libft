@@ -13,8 +13,8 @@ My own C library for 42 School projects
 
 - [ft_bit](inc/libft/ft_bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
 - [ft_btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
-- [ft_ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
 - [ft_const](inc/libft/ft_const.h "libft/ft_const.h") - Contains some useful constants
+- [ft_ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
 - [ft_generic](inc/libft/ft_generic.h "libft/ft_generic.h") - Provide generic display functions for common standard data types
 - [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of linked lists
 - [ft_memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
@@ -44,12 +44,12 @@ It generates a static C library named libft.a.
 
 In order to install the libft on your system, you can use the command:
 ```shell
-make install
+sudo make install
 ```
 
 It can be removed with:
 ```shell
-make uninstall
+sudo make uninstall
 ```
 
 - ⚠️ Note that it requires access privileges
@@ -67,6 +67,16 @@ For example:
 ```c
 #include "libft/ft_string.h" // include only libft string functions like ft_strlen
 ```
+
+## Examples
+
+Code samples can be compiled with:
+```shell
+make test
+```
+
+Then, all compiled binaries are stored in the bin directory.
+You are free to test the programs and access the source code.
 
 ### Compile with libft
 
