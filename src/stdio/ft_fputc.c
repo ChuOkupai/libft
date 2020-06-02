@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.h                                 :+:      :+:    :+:   */
+/*   ft_fputc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 15:09:04 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/16 11:54:45 by asoursou         ###   ########.fr       */
+/*   Created: 2020/05/30 19:37:23 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/01 16:41:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
+#include "ft_stdio_utils.h"
+#include "ft_type.h"
 
-# define GNL_BUFF_SIZE 64
-
-typedef struct	s_file
+int	ft_fputc(int c, t_file *f)
 {
-	char	*buf;
-	int		fd;
-}				t_file;
+	t_u8 ch;
 
-#endif
+	ch = (t_u8)c;
+	if (!ft_fwrite(&ch, sizeof(t_u8), 1, f))
+		return (FT_EOF);
+	return (ch);
+}

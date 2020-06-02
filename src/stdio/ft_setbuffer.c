@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fclose.c                                        :+:      :+:    :+:   */
+/*   ft_setbuffer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/05/30 13:28:29 by asoursou         ###   ########.fr       */
+/*   Created: 2020/05/01 02:42:08 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/01 23:19:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
+#include <fcntl.h>
 #include "ft_memory.h"
 #include "ft_stdio_utils.h"
 
-int	ft_fclose(t_file *stream)
+void	ft_setbuffer(t_file *f, char *buf, size_t size)
 {
-	int v;
-
-	v = stream->flags & FT_FWRITE ? ft_fflush(stream) : 0;
-	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
-		v = FT_EOF;
-	if (stream->flags & FT_FALLOC)
-		ft_memdel(stream->buf);
-	free(stream);
-	return (v);
+	if (f->buf)
+		ft_bzero(f->buf, f->size);
+	if (f->flags & FT_FALLOC)
+	{
+		ft_memdel(f->buf);
+		f->flags &= ~FT_FALLOC;
+	}
+	if (f->mode & O_RDWR)
+		size = size > 0;
+	f->buf = size ? buf : NULL;
+	f->size = size;
+	f->start = 0;
+	f->left = f->flags & FT_FWRITE ? f->size : 0;
+	if (!buf)
+		f->flags |= FT_FALLOC;
 }

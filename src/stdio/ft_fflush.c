@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fclose.c                                        :+:      :+:    :+:   */
+/*   ft_fflush.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/05/30 13:28:29 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/30 02:09:27 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/01 16:46:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_memory.h"
+#include <errno.h>
+#include <fcntl.h>
 #include "ft_stdio_utils.h"
 
-int	ft_fclose(t_file *stream)
+int	ft_fflush(t_file *f)
 {
-	int v;
-
-	v = stream->flags & FT_FWRITE ? ft_fflush(stream) : 0;
-	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
-		v = FT_EOF;
-	if (stream->flags & FT_FALLOC)
-		ft_memdel(stream->buf);
-	free(stream);
-	return (v);
+	if (f->mode & O_RDONLY)
+	{
+		errno = EBADF;
+		return (FT_EOF);
+	}
+	else if (f->flags & FT_FWRITE && f->size - f->left)
+		return (ft_fwrite_internal(f, f->buf, f->size - f->left) ? 0 : FT_EOF);
+	return (0);
 }

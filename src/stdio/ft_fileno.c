@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fclose.c                                        :+:      :+:    :+:   */
+/*   ft_fileno.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/05/30 13:28:29 by asoursou         ###   ########.fr       */
+/*   Created: 2020/04/30 02:11:52 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/01 16:23:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_memory.h"
+#include <errno.h>
 #include "ft_stdio_utils.h"
 
-int	ft_fclose(t_file *stream)
+int	ft_fileno(t_file *stream)
 {
-	int v;
-
-	v = stream->flags & FT_FWRITE ? ft_fflush(stream) : 0;
-	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
-		v = FT_EOF;
-	if (stream->flags & FT_FALLOC)
-		ft_memdel(stream->buf);
-	free(stream);
-	return (v);
+	if (!stream)
+	{
+		errno = EBADF;
+		return (-1);
+	}
+	return (stream->fd);
 }

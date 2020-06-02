@@ -6,13 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/04/26 04:03:23 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/02 00:11:26 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # COMPILATION
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Ofast -fno-builtin
+CFLAGS	= -Wall -Wextra -Werror -Wvla -Ofast -fno-builtin
 DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
 IFLAGS	= -I./inc -I./inc/libft -I./inc/private
 
@@ -127,7 +127,8 @@ SUB_SRC	+= ft_rbtree_clear.c \
 		   ft_rbtree_search.c \
 		   ft_rbtree_size.c
 SRC		+= $(addprefix rbtree/, $(SUB_SRC))
-SUB_SRC	:= ft_printf_parse_cnos.c \
+SUB_SRC	:= ft_file_utils.c \
+		   ft_printf_parse_cnos.c \
 		   ft_printf_parse_dpux.c \
 		   ft_printf_parse_utils.c \
 		   ft_printf_parse.c \
@@ -135,10 +136,22 @@ SUB_SRC	:= ft_printf_parse_cnos.c \
 		   ft_printf_wchar.c
 SUB_SRC	:= $(addprefix $(PRV)/, $(SUB_SRC))
 SUB_SRC	+= ft_asprintf.c \
+		   ft_clearerr.c \
 		   ft_dprintf.c \
 		   ft_fclose.c \
+		   ft_feof.c \
+		   ft_ferror.c \
+		   ft_fflush.c \
+		   ft_fgetc.c \
+		   ft_fileno.c \
 		   ft_fopen.c \
+		   ft_fputc.c \
+		   ft_fputs.c \
+		   ft_fread.c \
+		   ft_fwrite.c \
 		   ft_get_next_line.c \
+		   ft_getdelim.c \
+		   ft_getline.c \
 		   ft_print_memory.c \
 		   ft_printf.c \
 		   ft_putchar.c \
@@ -155,6 +168,7 @@ SUB_SRC	+= ft_asprintf.c \
 		   ft_putrawstr_fd.c \
 		   ft_putstr.c \
 		   ft_putstr_fd.c \
+		   ft_setbuffer.c \
 		   ft_snprintf.c \
 		   ft_sprintf.c \
 		   ft_vasprintf.c \

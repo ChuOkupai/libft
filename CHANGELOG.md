@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_bit_to_string**
 - **ft_bit_unset**
 - **ft_compare_int**
+- **ft_clearerr**
+- **ft_fclose**
+- **ft_feof**
+- **ft_ferror**
+- **ft_fflush**
+- **ft_fgetc**
+- **ft_fileno**
+- **ft_fopen**
+- **ft_fputc**
+- **ft_fputs**
+- **ft_fread**
+- **ft_fwrite**
+- **ft_getdelim**
+- **ft_getline**
 - **ft_list_print**
 - **ft_list_print_fd**
 - **ft_memdup**
@@ -32,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_rbtree_prefix**
 - **ft_rbtree_print**
 - **ft_rbtree_print_fd**
+- **ft_setbuffer**
 - **ft_stpcpy**
 - **ft_stpncpy**
 - **ft_strtol**
@@ -52,8 +67,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - **ft_strtoul** sets errno correctly when the value is out of range
 - **ft_*_split** a segmentation fault occurred with non ASCII characters
-- **ft_btree_clear** content memory was not properly deallocated
-- **ft_rbtree_clear** content memory was not properly deallocated
 
 ## [1.1.1] - 2020-03-30
 

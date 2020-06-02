@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 13:03:14 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 04:18:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/01 20:47:47 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 ** It should not be used directly in your programs.
 */
 
-# ifdef FT_REQUIRE_TYPE_SIZE_T
+# if defined FT_REQUIRE_TYPE_SIZE_T
 #  undef FT_REQUIRE_TYPE_SIZE_T
 #  include <stddef.h>
+# endif
+
+# if defined FT_REQUIRE_TYPE_SSIZE_T
+#  undef FT_REQUIRE_TYPE_SSIZE_T
+#  include <sys/types.h>
 # endif
 
 # if defined FT_NEED_TYPE_VA_LIST
@@ -34,13 +39,6 @@
 #   define FT_TYPE_VA_LIST
 #  elif defined __VA_LIST_ ||defined __VA_LIST__
 #   define FT_TYPE_VA_LIST
-#  endif
-# endif
-
-# ifdef FT_REQUIRE_TYPE_EOF
-#  undef FT_REQUIRE_TYPE_EOF
-#  ifndef EOF
-#   define EOF	-1
 #  endif
 # endif
 

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fclose.c                                        :+:      :+:    :+:   */
+/*   ft_getline.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/05/30 13:28:29 by asoursou         ###   ########.fr       */
+/*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/02 00:14:38 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_memory.h"
 #include "ft_stdio_utils.h"
 
-int	ft_fclose(t_file *stream)
+ssize_t	ft_getline(char **line, t_file *stream)
 {
-	int v;
-
-	v = stream->flags & FT_FWRITE ? ft_fflush(stream) : 0;
-	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
-		v = FT_EOF;
-	if (stream->flags & FT_FALLOC)
-		ft_memdel(stream->buf);
-	free(stream);
-	return (v);
+	return (ft_getdelim(line, '\n', stream));
 }

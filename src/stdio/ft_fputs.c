@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fclose.c                                        :+:      :+:    :+:   */
+/*   ft_fputs.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/05/30 13:28:29 by asoursou         ###   ########.fr       */
+/*   Created: 2020/05/30 19:53:43 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/01 16:41:39 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "ft_memory.h"
 #include "ft_stdio_utils.h"
+#include "ft_string.h"
 
-int	ft_fclose(t_file *stream)
+int	ft_fputs(const char *s, t_file *f)
 {
-	int v;
+	size_t n;
 
-	v = stream->flags & FT_FWRITE ? ft_fflush(stream) : 0;
-	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
-		v = FT_EOF;
-	if (stream->flags & FT_FALLOC)
-		ft_memdel(stream->buf);
-	free(stream);
-	return (v);
+	if (!(n = ft_fwrite(s, sizeof(char), ft_strlen(s), f)))
+		return (FT_EOF);
+	return (n);
 }

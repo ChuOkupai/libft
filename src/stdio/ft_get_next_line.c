@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:58:29 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/01 23:57:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ft_list.h"
 #include "ft_memory.h"
 #include "ft_string.h"
-#include "ft_get_next_line.h"
+#include "ft_stdio_utils.h"
 
 static int	ft_filecmp(const void *a, const void *b)
 {
@@ -52,13 +52,13 @@ static char	*ft_join_line(t_file *f, char *b)
 
 static int	ft_read_line(t_file *f, char **line)
 {
-	char	buf[GNL_BUFF_SIZE + 1];
+	char	buf[FT_GNL_BSIZE + 1];
 	char	*b;
 	int		n;
 
 	n = 1;
 	b = f->buf ? ft_strchrnul(f->buf, '\n') : NULL;
-	while ((!b || !*b) && (n = read(f->fd, buf, GNL_BUFF_SIZE)) > 0)
+	while ((!b || !*b) && (n = read(f->fd, buf, FT_GNL_BSIZE)) > 0)
 	{
 		buf[n] = '\0';
 		b = f->buf;
@@ -82,7 +82,7 @@ int			ft_get_next_line(const int fd, char **line)
 		r = -1;
 	else if ((r = ft_read_line(l->content, line)) < 1)
 	{
-		ft_memdel((void**)&((t_file*)(l->content))->buf);
+		ft_memdel(((t_file*)(l->content))->buf);
 		ft_list_pop(&l, &free);
 	}
 	return (r);
