@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 11:22:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 16:57:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 17:30:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ struct	s_file
 	size_t		start;
 	size_t		left;
 };
+
+int		ft_parse_mode(const char *s, int *flags);
 
 int		ft_check_buffer(t_file *f, t_fflag write);
 

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 15:27:27 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 17:24:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ int		ft_dprintf(int fd, const char *format,
 ** Returns EOF on error.
 */
 int		ft_fclose(t_file *stream);
+
+/*
+** Associates a stream with an existing file descriptor.
+** The mode must be compatible with the mode of the file descriptor.
+** Modes "w" or "w+" do not cause truncation of the file.
+** The file descriptor is not closed with ft_fclose.
+** Returns NULL on error.
+*/
+t_file	*ft_fdopen(int fd, const char *mode);
 
 /*
 ** Returns a non zero if end-of-file has been reached.

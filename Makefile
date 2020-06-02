@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/02 16:41:25 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/02 17:32:00 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,6 +139,7 @@ SUB_SRC	+= ft_asprintf.c \
 		   ft_clearerr.c \
 		   ft_dprintf.c \
 		   ft_fclose.c \
+		   ft_fdopen.c \
 		   ft_feof.c \
 		   ft_ferror.c \
 		   ft_fflush.c \

@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_compare_int**
 - **ft_clearerr**
 - **ft_fclose**
+- **ft_fdopen**
 - **ft_feof**
 - **ft_ferror**
 - **ft_fflush**

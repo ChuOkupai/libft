@@ -6,14 +6,38 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 15:16:58 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/01 22:33:09 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/02 17:30:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "ft_stdio_utils.h"
+
+int		ft_parse_mode(const char *s, int *flags)
+{
+	int m;
+
+	if (*s == 'r')
+		m = O_RDONLY;
+	else if (*s == 'w')
+		m = O_WRONLY | O_CREAT | O_TRUNC;
+	else if (*s == 'a')
+		m = O_WRONLY | O_CREAT | O_APPEND;
+	else
+		return (errno = EINVAL);
+	if (*(++s) == '+')
+	{
+		m = (m & (O_TRUNC | O_APPEND)) | O_RDWR;
+		++s;
+	}
+	if (*s == 'x')
+		m |= O_EXCL;
+	*flags = m;
+	return (0);
+}
 
 int		ft_check_buffer(t_file *f, t_fflag write)
 {

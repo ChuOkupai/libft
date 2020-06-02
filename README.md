@@ -14,6 +14,7 @@ My own C library for 42 School projects
 - [ft_bit](inc/libft/ft_bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
 - [ft_btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
 - [ft_ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
+- [ft_const](inc/libft/ft_const.h "libft/ft_const.h") - Contains some useful constants
 - [ft_generic](inc/libft/ft_generic.h "libft/ft_generic.h") - Provide generic display functions for common standard data types
 - [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of linked lists
 - [ft_memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
