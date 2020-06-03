@@ -6,23 +6,30 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 01:45:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 20:20:48 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/03 12:35:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include "ft_ctype.h"
 #include "ft_stdio.h"
+#include "ft_type.h"
 
 void	ft_print_char_fd(const void *character, int fd)
 {
-	char c;
+	t_u32 c;
+	t_u32 p;
 
-	c = *((char*)character);
-	if (c == '\'')
-		ft_putstr_fd("'\\''", fd);
-	else if (ft_isascii(c))
-		ft_dprintf(fd, "'%c'", c);
+	c = (t_u8)(*((char*)character));
+	if (ft_isprint(c))
+	{
+		if (c == '\'')
+			ft_putstr_fd("'\\''", fd);
+		else
+			ft_dprintf(fd, "'%c'", c);
+	}
 	else
-		ft_dprintf(fd, "'\\x%02hhx'", c);
+	{
+		p = ft_toprint(c);
+		ft_dprintf(fd, (c == p ? "'\\x%hhx'" : "'\\%c'"), p);
+	}
 }

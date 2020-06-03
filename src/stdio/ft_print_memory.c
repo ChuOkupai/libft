@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 17:00:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/03 11:10:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_stdio.h"
 #include "ft_type.h"
 
-static void	ft_print_data(const unsigned char *s, size_t n)
+static void	ft_print_data(const t_u8 *s, size_t n)
 {
 	size_t i;
 

@@ -6,15 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:50:39 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:52:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/03 11:11:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "ft_type.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
 	while (len)
-		((unsigned char*)b)[--len] = (unsigned char)c;
+		((t_u8*)b)[--len] = (t_u8)c;
 	return (b);
 }

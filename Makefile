@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/02 22:15:55 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/03 12:41:59 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -221,6 +221,7 @@ DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
 OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
 SRC_BIN	:= cat.c \
 		   name.c \
+		   print_ascii.c \
 		   rbtree.c \
 		   split.c
 BIN		:= $(SRC_BIN:%.c=$(BIN_DIR)/%)

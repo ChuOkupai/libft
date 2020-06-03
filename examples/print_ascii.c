@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   print_ascii.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 11:17:48 by asoursou         ###   ########.fr       */
+/*   Created: 2020/06/03 11:25:49 by asoursou          #+#    #+#             */
+/*   Updated: 2020/06/03 12:40:50 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
-#include "ft_const.h"
-#include "ft_bit.h"
-#include "ft_memory.h"
-#include "ft_string.h"
+#include <libft.h>
 
-char	*ft_strtrim(const char *s1, const char *set)
+int	main(void)
 {
-	uint8_t	map[32];
-	size_t	n;
+	int		i;
+	char	c;
 
-	ft_bit_map(map, 32, (set ? set : FT_SPACE));
-	while (ft_bit_at(map, *s1))
-		++s1;
-	n = ft_strlen(s1);
-	while (n && ft_bit_at(map, s1[n - 1]))
-		++n;
-	return (ft_strsub(s1, 0, n));
+	i = -1;
+	while (++i < 128)
+	{
+		c = i;
+		ft_print_char(&c);
+		ft_putchar(i % 8 == 7 ? '\n' : '\t');
+	}
+	return (0);
 }

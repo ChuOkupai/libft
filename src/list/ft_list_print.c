@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 22:05:26 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 19:55:12 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/03 13:27:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 void	ft_list_print(t_list *l, t_gprint print)
 {
-	ft_putstr(FT_DS_BEGIN);
+	ft_putchar('[');
 	while (l)
 	{
 		print(l->content);
 		if ((l = l->next))
-			ft_printf(FT_DS_LINK);
+			ft_putstr(", ");
 	}
-	ft_putstr(FT_DS_END);
+	ft_putstr("]\n");
 }

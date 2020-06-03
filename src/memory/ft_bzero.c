@@ -6,12 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:31:01 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 16:45:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/03 11:10:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdint.h>
+#include "ft_type.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -37,5 +36,5 @@ void	ft_bzero(void *s, size_t n)
 		n -= sizeof(size_t);
 	}
 	while (n)
-		((unsigned char *)t)[--n] = 0;
+		((t_u8 *)t)[--n] = 0;
 }
