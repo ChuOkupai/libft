@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 01:45:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 12:35:21 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/08 02:35:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 void	ft_print_char_fd(const void *character, int fd)
 {
-	t_u32 c;
-	t_u32 p;
+	t_u32	c;
+	t_u8	p;
 
 	c = (t_u8)(*((char*)character));
 	if (ft_isprint(c))
