@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.1-pre] - 2020-06-24
+### Fixed
+- **ft_putnbr_base_fd** memory was initialized incorrectly
+- **ft_strtol** overflow and underflow detection are now fully functional
+- **ft_strtoul** parsing was not working properly for some strings
+- **ft_strtoul** errno was not set to EINVAL when the given string was invalid
 
 ## [1.2.0] - 2020-06-08
 
@@ -113,7 +118,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.2.0...dev
+[Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.2.1-pre...dev
+[1.2.1-pre]: https://github.com/ChuOkupai/libft/releases/tag/v1.2.1-pre
 [1.2.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.2.0
 [1.1.1]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.1
 [1.1.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.0
