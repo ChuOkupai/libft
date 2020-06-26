@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 00:04:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/23 23:41:17 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/26 21:19:26 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_u64	next_value(t_u64 c, t_u64 base)
 	if (ft_isdigit(c))
 		c -= '0';
 	else
-		c = ft_isalpha(c) ? ft_tolower(c) - 'a' + 10 : base;
+		c = ft_isalpha(c) ? (t_u64)ft_tolower(c) - 'a' + 10 : base;
 	return (c);
 }
 
