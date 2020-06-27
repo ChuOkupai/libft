@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 01:35:55 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 11:09:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/27 01:33:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n--)
 	{
 		*d++ = *s;
-		if (*d == (t_u8)c)
+		if (*s++ == (t_u8)c)
 			return (d);
-		++s;
 	}
 	return (NULL);
 }

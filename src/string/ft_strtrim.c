@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 11:17:48 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/27 01:39:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strtrim(const char *s1, const char *set)
 		++s1;
 	n = ft_strlen(s1);
 	while (n && ft_bit_at(map, s1[n - 1]))
-		++n;
-	return (ft_strsub(s1, 0, n));
+		--n;
+	return (ft_memdup(s1, n + 1, n));
 }

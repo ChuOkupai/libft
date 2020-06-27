@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 16:59:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/06/27 02:41:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static char		*join_line(t_file *f, char *line, size_t n1, size_t n2)
 
 	if (!n2)
 		return (line);
-	ft_printf("malloc of size: %lu\n", n1 + n2 + 1);
 	if (!(s = malloc((n1 + n2 + 1) * sizeof(char))))
 		return (ft_memdel(line));
 	ft_memcpy((t_u8 *)ft_memcpy(s, line, n1) + n1, f->buf, n2);

@@ -5,12 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2.1-pre] - 2020-06-26
+## [1.2.1-pre] - 2020-06-27
 ### Fixed
+- **ft_memccpy** now checks if the copied character causes its interruption
 - **ft_putnbr_base_fd** memory was initialized incorrectly
 - **ft_strtol** overflow and underflow detection are now fully functional
 - **ft_strtoul** parsing was not working properly for some strings
 - **ft_strtoul** errno was not set to EINVAL when the given string was invalid
+- **ft_strtrim** the right part of the string was not trimmed correctly
 
 ## [1.2.0] - 2020-06-08
 
