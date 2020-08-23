@@ -73,6 +73,7 @@ t_rbtree	*ft_rbtree_min(t_rbtree *root);
 
 /*
 ** Creates a new element with malloc.
+** Returns NULL on error.
 */
 t_rbtree	*ft_rbtree_new(void *content);
 

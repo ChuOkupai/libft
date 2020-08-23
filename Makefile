@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/03 12:41:59 by asoursou         ###   ########.fr        #
+#    Updated: 2020/06/21 02:06:27 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ SUB_SRC	:= ft_btree_clear.c \
 		   ft_btree_height.c \
 		   ft_btree_infix.c \
 		   ft_btree_insert.c \
+		   ft_btree_is_leaf.c \
+		   ft_btree_merge.c \
 		   ft_btree_new.c \
 		   ft_btree_postfix.c \
 		   ft_btree_prefix.c \

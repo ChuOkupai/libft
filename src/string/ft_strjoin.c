@@ -20,8 +20,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	n1;
 	size_t	n2;
 
-	n1 = ft_strlen(s1);
-	n2 = ft_strlen(s2) + 1;
+	n1 = s1 ? ft_strlen(s1) : 0;
+	n2 = s2 ? ft_strlen(s2) + 1 : 0;
 	if ((d = (char*)malloc((n1 + n2) * sizeof(char))))
 	{
 		ft_memcpy(d, s1, n1);

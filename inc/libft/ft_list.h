@@ -43,15 +43,17 @@ void	*ft_list_clear(t_list **list, t_gfunction del);
 t_list	*ft_list_extract(t_list **list, const void *reference, t_gcompare cmp);
 
 /*
-** Apply a function on each content from a list.
+** Apply a function to each content of a list.
 */
 void	ft_list_foreach(t_list *l, t_gfunction function);
 
 /*
 ** Insert an element in a sorted list.
+** The inserted element may be NULL.
 ** Comparison is done with a comparison fonction pointer.
+** Returns a pointer to the inserted element.
 */
-void	ft_list_insert(t_list **list, t_list *element, t_gcompare cmp);
+t_list	*ft_list_insert(t_list **list, t_list *element, t_gcompare cmp);
 
 /*
 ** Returns the last element if it exists.
@@ -60,6 +62,7 @@ t_list	*ft_list_last(t_list *l);
 
 /*
 ** Creates a new element with malloc.
+** Returns NULL on error.
 */
 t_list	*ft_list_new(void *content);
 
@@ -83,12 +86,14 @@ void	ft_list_print(t_list *l, t_gprint print);
 
 /*
 ** Add an element at the end of a list.
+** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
 t_list	*ft_list_push_back(t_list **list, t_list *element);
 
 /*
 ** Add an element at the beginning of a list.
+** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
 t_list	*ft_list_push(t_list **list, t_list *element);
@@ -121,7 +126,7 @@ t_list	*ft_list_search(t_list *list, const void *reference, t_gcompare cmp);
 size_t	ft_list_size(t_list *l);
 
 /*
-** Sort a list in O(nlogn) time.
+** Sort a list using the quick sort algorithm.
 ** Comparison is done with a comparison fonction pointer.
 */
 void	ft_list_sort(t_list **list, t_gcompare cmp);

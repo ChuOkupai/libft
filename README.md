@@ -1,16 +1,13 @@
 # libft
-
 My own C library for 42 School projects
 
 ### External functions used
-
 - free
 - malloc
 - read
 - write
 
 ## Content description
-
 - [ft_bit](inc/libft/ft_bit.h "libft/ft_bit.h") - Perform basic operations on bit arrays
 - [ft_btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
 - [ft_const](inc/libft/ft_const.h "libft/ft_const.h") - Contains some useful constants
@@ -24,15 +21,11 @@ My own C library for 42 School projects
 - [ft_type](inc/libft/ft_type.h "libft/ft_type.h") - Contains data types definition including generic functions pointers
 
 ## Features
-
 - A faster printf implementation (only conversions c, d, n, o, p, s, u, and x are supported)
-
 - ft_get_next_line can read a file descriptor line by line, either on standard input or on a file
-
 - Implementation of generic data structures that do not exist in the libc
 
 ## Build instructions
-
 This project can be compiled on both Linux and Mac by the following command in a terminal:
 ```shell
 make
@@ -41,7 +34,6 @@ make
 It generates a static C library named libft.a.
 
 ## Installation
-
 In order to install the libft on your system, you can use the command:
 ```shell
 sudo make install
@@ -55,7 +47,6 @@ sudo make uninstall
 - ⚠️ Note that it requires access privileges
 
 ## Usage
-
 All header files are located in the inc directory.
 
 The main header file is called libft.h, which can be included in your source files like this:
@@ -69,7 +60,6 @@ For example:
 ```
 
 ## Examples
-
 Code samples can be compiled with:
 ```shell
 make test
@@ -79,7 +69,6 @@ Then, all compiled binaries are stored in the bin directory.
 You are free to test the programs and access the source code.
 
 ### Compile with libft
-
 Assuming that you are using gcc as your compiler and *main.c* is located at the root of the directory:
 
 ```shell
@@ -90,7 +79,5 @@ gcc -I./inc main.c -L. -lft
 gcc main.c -lft
 ```
 
-
 ## License
-
 This project is licensed under the LGPLv3 License - see the [LICENSE](LICENSE) file for details

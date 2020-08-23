@@ -14,6 +14,8 @@
 
 t_list	*ft_list_push_back(t_list **l, t_list *elem)
 {
+	if (!elem)
+		return (NULL);
 	if (*l)
 		ft_list_last(*l)->next = elem;
 	else

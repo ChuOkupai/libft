@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+### Added
+- **ft_btree_is_leaf**
+- **ft_btree_merge**
+
+### Changed
+- **ft_list_insert** returns the inserted element and the element can be NULL
+- **ft_list_push_back** the element can be NULL
+- **ft_strjoin** the passed arguments can be NULL
+- Improved documentation
+- Typo fixes
+
 ## [1.2.1] - 2020-06-30
 ### Fixed
 - **ft_memccpy** now checks if the copied character causes its interruption

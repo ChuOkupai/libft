@@ -12,10 +12,21 @@
 
 #include "ft_list.h"
 
-void	ft_list_insert(t_list **l, t_list *elem, t_gcompare cmp)
+t_list	*ft_list_insert(t_list **l, t_list *elem, t_gcompare cmp)
 {
-	if (!*l || cmp(elem->content, (*l)->content) <= 0)
-		ft_list_push(l, elem);
-	else
-		ft_list_insert(&(*l)->next, elem, cmp);
+	t_list *prev;
+	t_list *i;
+
+	if (!elem)
+		return (NULL);
+	prev = NULL;
+	i = *l;
+	while (i && cmp(elem->content, i->content) > 0)
+	{
+		prev = i;
+		i = i->next;
+	}
+	if (prev)
+		prev->next = elem;
+	return (ft_list_push((prev ? &i : l), elem));
 }

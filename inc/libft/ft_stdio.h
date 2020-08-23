@@ -51,7 +51,7 @@ int		ft_dprintf(int fd, const char *format,
 
 /*
 ** Closes the file stream, emptying the buffer if necessary.
-** Returns EOF on error.
+** Returns FT_EOF on error.
 */
 int		ft_fclose(t_file *stream);
 

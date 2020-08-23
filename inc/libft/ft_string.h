@@ -103,6 +103,7 @@ void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 /*
 ** Allocates and returns a new string,
 ** result of the concatenation of s1 and s2.
+** The passed arguments can be NULL.
 */
 char		*ft_strjoin(const char *s1, const char *s2);
 

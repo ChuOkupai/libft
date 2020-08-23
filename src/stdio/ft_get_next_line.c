@@ -44,8 +44,7 @@ static char	*ft_join_line(t_file *f, char *b)
 		*b++ = '\0';
 	d = ft_strdup(f->buf ? f->buf : "");
 	b = b && d ? ft_strdup(b) : NULL;
-	if (f->buf)
-		free(f->buf);
+	ft_memdel(f->buf);
 	f->buf = b;
 	return (d);
 }
@@ -62,9 +61,8 @@ static int	ft_read_line(t_file *f, char **line)
 	{
 		buf[n] = '\0';
 		b = f->buf;
-		f->buf = ft_strjoin((f->buf ? f->buf : ""), buf);
-		if (b)
-			free(b);
+		f->buf = ft_strjoin(f->buf, buf);
+		ft_memdel(b);
 		if (!f->buf)
 			return (-1);
 		b = ft_strchrnul(f->buf, '\n');
