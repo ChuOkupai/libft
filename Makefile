@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/08/24 20:18:03 by asoursou         ###   ########.fr        #
+#    Updated: 2020/08/25 01:18:26 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,7 @@ SUB_SRC	:= ft_dlist_append.c \
 		   ft_dlist_clear.c \
 		   ft_dlist_first.c \
 		   ft_dlist_foreach.c \
+		   ft_dlist_insert.c \
 		   ft_dlist_last.c \
 		   ft_dlist_merge.c \
 		   ft_dlist_new.c \

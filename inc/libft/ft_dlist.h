@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 15:26:34 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 20:14:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/25 01:07:09 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,14 @@ t_dlist	*ft_dlist_first(t_dlist *l);
 ** Apply a function to each content of a doubly linked list from the given node.
 */
 void	ft_dlist_foreach(t_dlist *l, t_gfunction function);
+
+/*
+** Insert an element in a sorted doubly linked list.
+** The inserted element may be NULL.
+** Comparison is done with a comparison fonction pointer.
+** Returns a pointer to the inserted element.
+*/
+t_dlist	*ft_dlist_insert(t_dlist **list, t_dlist *element, t_gcompare cmp);
 
 /*
 ** Returns the last element if it exists.
