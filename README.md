@@ -12,8 +12,9 @@ My own C library for 42 School projects
 - [ft_btree](inc/libft/ft_btree.h "libft/ft_btree.h") - Implementation of binary trees
 - [ft_const](inc/libft/ft_const.h "libft/ft_const.h") - Contains some useful constants
 - [ft_ctype](inc/libft/ft_ctype.h "libft/ft_ctype.h") - Character tests and conversions
+- [ft_dlist](inc/libft/ft_dlist.h "libft/ft_dlist.h") - Implementation of doubly linked lists
 - [ft_generic](inc/libft/ft_generic.h "libft/ft_generic.h") - Provide generic display functions for common standard data types
-- [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of linked lists
+- [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of singly linked lists
 - [ft_memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
 - [ft_rbtree](inc/libft/ft_rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
 - [ft_stdio](inc/libft/ft_stdio.h "libft/ft_stdio.h") - Basic I/O interface

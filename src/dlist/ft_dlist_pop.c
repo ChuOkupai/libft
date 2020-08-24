@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_dlist_pop.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 03:08:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 17:19:02 by asoursou         ###   ########.fr       */
+/*   Created: 2020/08/24 16:35:11 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/24 16:44:52 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <stdlib.h>
+#include "ft_dlist.h"
 
-void	ft_list_remove_if(t_list **l, const void *ref, t_gcompare cmp,
-		t_gfunction del)
+void	*ft_dlist_pop(t_dlist **list, t_gfunction del)
 {
-	t_list *prev;
-	t_list *c;
+	t_dlist	*l;
+	void	*content;
 
-	prev = NULL;
-	c = *l;
-	while (c)
-		if (cmp(ref, c->content))
-		{
-			prev = c;
-			c = c->next;
-		}
-		else
-		{
-			ft_list_pop(&c, del);
-			if (prev)
-				prev->next = c;
-			else
-				*l = c;
-		}
+	l = *list;
+	*list = l->next;
+	if (del)
+	{
+		del(l->content);
+		content = NULL;
+	}
+	else
+		content = l->content;
+	if (l->prev)
+		l->prev->next = l->next;
+	if (l->next)
+		l->next->prev = l->prev;
+	free(l);
+	return (content);
 }

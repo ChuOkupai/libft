@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **ft_btree_is_leaf**
 - **ft_btree_merge**
+- **Doubly linked lists functions**
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL

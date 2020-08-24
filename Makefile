@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/06/21 02:06:27 by asoursou         ###   ########.fr        #
+#    Updated: 2020/08/24 20:18:03 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SUB_DIR += $(addsuffix /$(PRV), $(SUB_DIR))
 SUB_DIR	+= bit \
 		   btree \
 		   ctype \
+		   dlist \
 		   generic \
 		   list \
 		   memory \
@@ -75,6 +76,25 @@ SUB_SRC	:= ft_isalnum.c \
 		   ft_toprint.c \
 		   ft_toupper.c
 SRC		+= $(addprefix ctype/, $(SUB_SRC))
+SUB_SRC	:= ft_dlist_append.c \
+		   ft_dlist_at.c \
+		   ft_dlist_clear.c \
+		   ft_dlist_first.c \
+		   ft_dlist_foreach.c \
+		   ft_dlist_last.c \
+		   ft_dlist_merge.c \
+		   ft_dlist_new.c \
+		   ft_dlist_pop.c \
+		   ft_dlist_print.c \
+		   ft_dlist_print_fd.c \
+		   ft_dlist_push.c \
+		   ft_dlist_push_back.c \
+		   ft_dlist_remove_if.c \
+		   ft_dlist_rev.c \
+		   ft_dlist_search.c \
+		   ft_dlist_size.c \
+		   ft_dlist_split.c
+SRC		+= $(addprefix dlist/, $(SUB_SRC))
 SUB_SRC	:= ft_compare_int.c \
 		   ft_print_char.c \
 		   ft_print_char_fd.c \

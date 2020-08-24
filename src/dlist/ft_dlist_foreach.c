@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_dlist_foreach.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 03:08:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 17:19:02 by asoursou         ###   ########.fr       */
+/*   Created: 2020/08/24 16:28:31 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/24 16:29:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_dlist.h"
 
-void	ft_list_remove_if(t_list **l, const void *ref, t_gcompare cmp,
-		t_gfunction del)
+void	ft_dlist_foreach(t_dlist *l, t_gfunction function)
 {
-	t_list *prev;
-	t_list *c;
-
-	prev = NULL;
-	c = *l;
-	while (c)
-		if (cmp(ref, c->content))
-		{
-			prev = c;
-			c = c->next;
-		}
-		else
-		{
-			ft_list_pop(&c, del);
-			if (prev)
-				prev->next = c;
-			else
-				*l = c;
-		}
+	while (l)
+	{
+		function(l->content);
+		l = l->next;
+	}
 }

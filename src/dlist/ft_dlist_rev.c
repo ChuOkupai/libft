@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_remove_if.c                                :+:      :+:    :+:   */
+/*   ft_dlist_rev.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 03:08:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 17:19:02 by asoursou         ###   ########.fr       */
+/*   Created: 2020/08/24 17:23:49 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/24 18:40:11 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_dlist.h"
 
-void	ft_list_remove_if(t_list **l, const void *ref, t_gcompare cmp,
-		t_gfunction del)
+t_dlist	*ft_dlist_rev(t_dlist *l)
 {
-	t_list *prev;
-	t_list *c;
+	t_dlist *prev;
+	t_dlist *l2;
 
-	prev = NULL;
-	c = *l;
-	while (c)
-		if (cmp(ref, c->content))
-		{
-			prev = c;
-			c = c->next;
-		}
-		else
-		{
-			ft_list_pop(&c, del);
-			if (prev)
-				prev->next = c;
-			else
-				*l = c;
-		}
+	if (!l)
+		return (NULL);
+	prev = l->prev;
+	l->prev = NULL;
+	while (l)
+	{
+		l2 = ft_dlist_merge(l, l->next, l->prev);
+		l = l->prev;
+	}
+	if (prev)
+	{
+		l2->prev = prev;
+		prev->next = l2;
+	}
+	return (l2);
 }
