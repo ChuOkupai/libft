@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 16:19:55 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 16:20:42 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:23:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_type.h"
 
-const char	*ft_bit_to_string(t_bool b)
+const char	*ft_bit_to_string(bool b)
 {
 	return (b ? "true" : "false");
 }

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 23:23:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:48:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:22:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** The given array is supposed to be large enough.
 ** Returns a positive value if the bit is set to 1, 0 otherwise.
 */
-t_bool		ft_bit_at(const void *array, size_t index);
+bool		ft_bit_at(const void *array, size_t index);
 
 /*
 ** Map an array of bits from a set of characters.
@@ -40,7 +40,7 @@ void		ft_bit_set(void *array, size_t index);
 /*
 ** Returns "true" or "false" depending on the value of the boolean b.
 */
-const char	*ft_bit_to_string(t_bool b);
+const char	*ft_bit_to_string(bool b);
 
 /*
 ** Set a bit in an array of bits at the specified index to false.

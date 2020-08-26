@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 00:04:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/26 21:19:26 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:25:05 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_s64	check_limit(t_u64 c, t_u64 n, t_u64 cutoff, t_u64 cutlim)
 	return (n > cutoff || (n == cutoff && c > cutlim) ? -1 : 1);
 }
 
-static long		check_result(t_u64 n, t_s64 lim, t_bool neg)
+static long		check_result(t_u64 n, t_s64 lim, bool neg)
 {
 	if (!lim)
 		errno = EINVAL;
@@ -47,7 +47,7 @@ static long		check_result(t_u64 n, t_s64 lim, t_bool neg)
 	return (neg ? -n : n);
 }
 
-static long		parse(char *s, char **end, t_u64 base, t_bool neg)
+static long		parse(char *s, char **end, t_u64 base, bool neg)
 {
 	t_u64	cutoff;
 	t_u64	cutlim;
@@ -68,9 +68,9 @@ static long		parse(char *s, char **end, t_u64 base, t_bool neg)
 
 long			ft_strtol(const char *str, char **endptr, int base)
 {
-	char		*s;
-	t_s64		neg;
-	long		n;
+	char	*s;
+	t_s64	neg;
+	long	n;
 
 	s = (char *)ft_strwhile(str, &ft_isspace);
 	if ((neg = *s == '-') || *s == '+')

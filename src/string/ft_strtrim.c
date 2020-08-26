@@ -6,19 +6,18 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/27 01:39:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 15:59:52 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
-#include "ft_const.h"
 #include "ft_bit.h"
+#include "ft_const.h"
 #include "ft_memory.h"
 #include "ft_string.h"
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	uint8_t	map[32];
+	t_u8	map[32];
 	size_t	n;
 
 	ft_bit_map(map, 32, (set ? set : FT_SPACE));

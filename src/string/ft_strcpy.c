@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:07:17 by asoursou          #+#    #+#             */
-/*   Updated: 2019/08/13 20:12:53 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:03:50 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ char	*ft_strcpy(char *dst, const char *src)
 
 	d = dst;
 	while ((*d = *src++))
-		d++;
+		++d;
 	return (dst);
 }

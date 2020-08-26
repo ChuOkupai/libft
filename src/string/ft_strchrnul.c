@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/28 19:16:12 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/10 18:47:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:03:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchrnul(const char *s, int c)
 {
 	while (*s && *s != (char)c)
-		s++;
+		++s;
 	return ((char*)s);
 }

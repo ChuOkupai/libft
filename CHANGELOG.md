@@ -14,9 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
 - **ft_list_push_back** the element can be NULL
+- **ft_striter** has been replaced by **ft_strforeach**
 - **ft_strjoin** the passed arguments can be NULL
+- **t_bool** has been replaced by the standard boolean type from stdbool.h
 - Improved documentation
 - Typo fixes
+
+### Removed
+- **ft_striteri**
+- **ft_strmap**
 
 ## [1.2.1] - 2020-06-30
 ### Fixed

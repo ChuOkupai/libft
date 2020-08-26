@@ -6,21 +6,15 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 16:10:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 16:16:25 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:38:42 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_dlist.h"
 
-t_dlist	*ft_dlist_at(t_dlist *l, int i)
+t_dlist	*ft_dlist_at(t_dlist *l, size_t index)
 {
-	int d;
-
-	d = i > 0 ? -1 : 1;
-	while (i && l)
-	{
-		l = i < 0 ? l->prev : l->next;
-		i += d;
-	}
+	while (l && index--)
+		l = l->next;
 	return (l);
 }

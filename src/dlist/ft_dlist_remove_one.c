@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlist_merge.c                                   :+:      :+:    :+:   */
+/*   ft_dlist_remove_one.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 16:34:03 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 16:34:37 by asoursou         ###   ########.fr       */
+/*   Created: 2020/08/26 16:44:45 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/26 16:56:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_dlist.h"
 
-t_dlist	*ft_dlist_merge(t_dlist *l, t_dlist *prev, t_dlist *next)
+void	*ft_dlist_remove_one(t_dlist **list, const void *reference,
+		t_gcompare cmp, t_gfunction del)
 {
-	l->prev = prev;
-	l->next = next;
-	return (l);
+	t_dlist *l;
+
+	l = *list;
+	if (!l)
+		return (NULL);
+	if (!cmp(reference, l->content))
+		return (ft_dlist_pop(list, del));
+	return (ft_dlist_remove_one(&l, reference, cmp, del));
 }

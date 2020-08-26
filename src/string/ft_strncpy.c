@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:42:27 by asoursou          #+#    #+#             */
-/*   Updated: 2019/11/09 13:49:24 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 15:59:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	while (len && *src)
 	{
 		*d++ = *src++;
-		len--;
+		--len;
 	}
 	while (len)
 		d[--len] = '\0';

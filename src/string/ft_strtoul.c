@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/23 14:43:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/26 21:19:32 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:25:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_s64	check_limit(t_u64 c, t_u64 n, t_u64 cutoff, t_u64 cutlim)
 	return (n > cutoff || (n == cutoff && c > cutlim) ? -1 : 1);
 }
 
-static t_u64	parse(char *s, char **end, t_u64 base, t_bool neg)
+static t_u64	parse(char *s, char **end, t_u64 base, bool neg)
 {
 	t_u64	cutoff;
 	t_u64	cutlim;
@@ -60,9 +60,9 @@ static t_u64	parse(char *s, char **end, t_u64 base, t_bool neg)
 
 t_u64			ft_strtoul(const char *str, char **endptr, int base)
 {
-	char		*s;
-	t_s64		neg;
-	t_u64		n;
+	char	*s;
+	t_s64	neg;
+	t_u64	n;
 
 	s = (char *)ft_strwhile(str, &ft_isspace);
 	if ((neg = *s == '-') || *s == '+')

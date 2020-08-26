@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:49:11 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 15:47:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,11 @@ char		*ft_strdup(const char *s1);
 
 /*
 ** Apply a function on each characters of a string.
+** The function pointer can use one of the ctype functions,
+** for example ft_toupper.
+** Returns the string s.
 */
-void		ft_striter(char *s, void (*f)(char *));
-
-/*
-** Apply a function on each characters of a string with its index.
-*/
-void		ft_striteri(char *s, void (*f)(unsigned int, char *));
+char		*ft_strforeach(char *s, int (*f)(int));
 
 /*
 ** Allocates and returns a new string,
@@ -123,12 +121,6 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 ** Returns the length of the string s.
 */
 size_t		ft_strlen(const char *s);
-
-/*
-** Applies the function f to each character of the string s
-** to create a new string resulting from successive applications of f.
-*/
-char		*ft_strmap(const char *s, char (*f)(char));
 
 /*
 ** Applies the function f to each character of the string s
@@ -212,7 +204,6 @@ char		*ft_strstr(const char *haystack, const char *needle);
 /*
 ** Allocates and returns a substring from the string s.
 ** The substring begins at index start and is of maximum size len.
-** Behavior is undefined is len is greater the the length of string s.
 */
 char		*ft_strsub(const char *s, size_t start, size_t len);
 
@@ -263,7 +254,7 @@ char		*ft_strtrim(const char *s1, const char *set);
 ** Iterates over a string while the condition is met.
 ** Returns a pointer between the beginning and the end of the string,
 ** depending on the result of the loop.
-** The condition function pointer can use on of the ctype functions,
+** The condition function pointer can use one of the ctype functions,
 ** for example ft_islower.
 */
 const char	*ft_strwhile(const char *s, int (*condition)(int));
@@ -272,7 +263,7 @@ const char	*ft_strwhile(const char *s, int (*condition)(int));
 ** Iterates over a string while the condition is not met.
 ** Returns a pointer between the beginning and the end of the string,
 ** depending on the result of the loop.
-** The condition function pointer can use on of the ctype functions,
+** The condition function pointer can use one of the ctype functions,
 ** for example ft_islower.
 */
 const char	*ft_strwhilenot(const char *s, int (*condition)(int));

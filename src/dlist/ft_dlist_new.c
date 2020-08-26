@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 16:02:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 17:35:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 12:51:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_dlist	*ft_dlist_new(void *content)
 	if ((l = (t_dlist*)malloc(sizeof(t_dlist))))
 	{
 		l->content = content;
-		ft_dlist_merge(l, NULL, NULL);
+		l->prev = NULL;
+		l->next = NULL;
 	}
 	return (l);
 }

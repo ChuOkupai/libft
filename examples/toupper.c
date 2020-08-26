@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   toupper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 00:33:10 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Created: 2020/06/02 20:08:35 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/26 15:49:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_string.h"
+#include <libft.h>
 
-char	*ft_strmap(const char *s, char (*f)(char))
+int	main(int ac, char **av)
 {
-	char	*d;
-	size_t	n;
-
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
-	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(s[n]);
-	}
-	return (d);
+	if (ac == 2)
+		ft_putendl(ft_strforeach(av[1], &ft_toupper));
+	return (0);
 }

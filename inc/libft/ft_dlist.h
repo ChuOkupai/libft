@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 15:26:34 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/25 01:07:09 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:42:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ t_dlist	*ft_dlist_append(t_dlist *l1, t_dlist *l2);
 
 /*
 ** Returns the element at the given index if it exists.
-** The index can be negative if the element is located in a previous node.
 ** Returns NULL if the element does not exist.
 */
-t_dlist	*ft_dlist_at(t_dlist *list, int index);
+t_dlist	*ft_dlist_at(t_dlist *list, size_t index);
 
 /*
 ** Free a doubly linked list from the given node.
@@ -66,13 +65,6 @@ t_dlist	*ft_dlist_insert(t_dlist **list, t_dlist *element, t_gcompare cmp);
 ** Returns the last element if it exists.
 */
 t_dlist	*ft_dlist_last(t_dlist *l);
-
-/*
-** Set l values with the given prev and next node.
-** The prev and next pointer of l are overwritten by the new values.
-** Returns l.
-*/
-t_dlist	*ft_dlist_merge(t_dlist *l, t_dlist *prev, t_dlist *next);
 
 /*
 ** Creates a new element with malloc.
@@ -113,7 +105,7 @@ t_dlist	*ft_dlist_push_back(t_dlist **list, t_dlist *element);
 t_dlist	*ft_dlist_push(t_dlist **list, t_dlist *element);
 
 /*
-** Removes every elements matching the reference content from a singly linked
+** Removes every elements matching the reference content from a doubly linked
 ** list. Comparison is done with a comparison fonction pointer.
 ** The function pointer del can be NULL.
 */
@@ -121,8 +113,18 @@ void	ft_dlist_remove_if(t_dlist **list, const void *reference,
 		t_gcompare cmp, t_gfunction del);
 
 /*
-** Reverse the order of items in the doubly linked list.
-** Returns a pointer to the start of the doubly linked list.
+** Removes the first element matching the reference content from a doubly linked
+** list. Comparison is done with a comparison fonction pointer.
+** The function pointer del can be NULL.
+** If the function pointer del is NULL, content is returned if found,
+** NULL otherwise.
+*/
+void	*ft_dlist_remove_one(t_dlist **list, const void *reference,
+		t_gcompare cmp, t_gfunction del);
+
+/*
+** Reverse the order of items in the doubly linked list from the given node.
+** Returns a pointer to the start of the reversed doubly linked list.
 */
 t_dlist	*ft_dlist_rev(t_dlist *list);
 

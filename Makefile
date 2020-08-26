@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/08/25 01:18:26 by asoursou         ###   ########.fr        #
+#    Updated: 2020/08/26 16:44:11 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,6 @@ SUB_SRC	:= ft_dlist_append.c \
 		   ft_dlist_foreach.c \
 		   ft_dlist_insert.c \
 		   ft_dlist_last.c \
-		   ft_dlist_merge.c \
 		   ft_dlist_new.c \
 		   ft_dlist_pop.c \
 		   ft_dlist_print.c \
@@ -91,6 +90,7 @@ SUB_SRC	:= ft_dlist_append.c \
 		   ft_dlist_push.c \
 		   ft_dlist_push_back.c \
 		   ft_dlist_remove_if.c \
+		   ft_dlist_remove_one.c \
 		   ft_dlist_rev.c \
 		   ft_dlist_search.c \
 		   ft_dlist_size.c \
@@ -214,13 +214,11 @@ SUB_SRC	:= ft_atoi.c \
 		   ft_strcmp.c \
 		   ft_strcpy.c \
 		   ft_strdup.c \
-		   ft_striter.c \
-		   ft_striteri.c \
+		   ft_strforeach.c \
 		   ft_strjoin.c \
 		   ft_strlcat.c \
 		   ft_strlcpy.c \
 		   ft_strlen.c \
-		   ft_strmap.c \
 		   ft_strmapi.c \
 		   ft_strncat.c \
 		   ft_strncmp.c \
@@ -246,7 +244,8 @@ SRC_BIN	:= cat.c \
 		   name.c \
 		   print_ascii.c \
 		   rbtree.c \
-		   split.c
+		   split.c \
+		   toupper.c
 BIN		:= $(SRC_BIN:%.c=$(BIN_DIR)/%)
 
 $(NAME): $(OBJ)

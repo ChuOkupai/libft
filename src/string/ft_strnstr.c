@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:52:50 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:04:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			hlen = len;
 		while (hlen >= nlen && ft_strncmp(haystack, needle, nlen))
 		{
-			haystack++;
-			hlen--;
+			++haystack;
+			--hlen;
 		}
 		if (hlen < nlen)
 			return (NULL);

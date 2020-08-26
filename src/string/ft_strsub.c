@@ -6,17 +6,21 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:54:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 15:29:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_memory.h"
+#include "ft_string.h"
 
 char	*ft_strsub(const char *s, size_t start, size_t len)
 {
+	size_t n;
+
 	if (start > len)
 		start = len;
-	len -= start;
-	return (ft_memdup(s + start, len + 1, len));
+	s += start;
+	if ((n = ft_strlen(s)) > len)
+		n = len;
+	return (ft_memdup(s, n + 1, n));
 }

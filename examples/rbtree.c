@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 20:58:11 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 22:45:08 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:29:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void		edit_tree(t_rbtree **tree, char op)
 	char		*s;
 	int			n;
 	t_rbtree	*elem;
-	t_bool		confirm;
+	bool		confirm;
 
 	s = get_line("Enter a value: ");
 	n = s ? ft_atoi(s) : 0;

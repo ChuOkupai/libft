@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 15:30:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/21 02:06:06 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 14:23:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_btree	*ft_btree_insert(t_btree **root, t_btree *element, t_gcompare cmp);
 /*
 ** Returns true if the given node is a leaf.
 */
-t_bool	ft_btree_is_leaf(t_btree *node);
+bool	ft_btree_is_leaf(t_btree *node);
 
 /*
 ** Merge root with its left and right child.

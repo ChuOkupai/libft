@@ -6,18 +6,18 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:05:45 by asoursou          #+#    #+#             */
-/*   Updated: 2020/03/30 03:57:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/26 15:56:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
+#include "ft_type.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1 && *s1 == *s2)
 	{
-		s1++;
-		s2++;
+		++s1;
+		++s2;
 	}
-	return ((uint8_t)(*s1) - (uint8_t)(*s2));
+	return ((t_u8)(*s1) - (t_u8)(*s2));
 }
