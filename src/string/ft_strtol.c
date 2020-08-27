@@ -6,14 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 00:04:04 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 14:25:05 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/27 11:16:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <errno.h>
 #include <limits.h>
 #include "ft_ctype.h"
-#include "ft_string.h"
 #include "ft_type.h"
 
 static t_u64	next_value(t_u64 c, t_u64 base)
@@ -47,7 +46,7 @@ static long		check_result(t_u64 n, t_s64 lim, bool neg)
 	return (neg ? -n : n);
 }
 
-static long		parse(char *s, char **end, t_u64 base, bool neg)
+static long		parse(const char *s, const char **end, t_u64 base, bool neg)
 {
 	t_u64	cutoff;
 	t_u64	cutlim;
@@ -68,20 +67,22 @@ static long		parse(char *s, char **end, t_u64 base, bool neg)
 
 long			ft_strtol(const char *str, char **endptr, int base)
 {
-	char	*s;
-	t_s64	neg;
-	long	n;
+	const char	*s;
+	bool		neg;
+	long		n;
 
-	s = (char *)ft_strwhile(str, &ft_isspace);
+	s = str;
+	while (ft_isspace(*s))
+		++s;
 	if ((neg = *s == '-') || *s == '+')
 		++s;
-	if ((!base || base == 16) && *s == '0' && ft_tolower(s[1]) == 'x')
+	if ((!base || base == 16) && *s == '0' && (s[1] == 'x' || s[1] == 'X'))
 	{
 		str = s + 1;
 		s += 2;
 		base = 16;
 	}
-	if (!base)
+	else if (!base)
 		base = *s == '0' ? 8 : 10;
 	n = parse(s, &s, base, neg);
 	if (endptr)
