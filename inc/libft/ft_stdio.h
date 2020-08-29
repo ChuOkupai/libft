@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 19:22:06 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 20:31:12 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,12 +185,12 @@ void	ft_putchar_fd(int c, int fd);
 /*
 ** Outputs a string with a newline to standard output.
 */
-void	ft_putendl(char *s);
+void	ft_putendl(const char *s);
 
 /*
 ** Outputs a string with a newline to given file descriptor.
 */
-void	ft_putendl_fd(char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
 
 /*
 ** Outputs an integer to standard output.
@@ -205,12 +205,12 @@ void	ft_putnbr_fd(int n, int fd);
 /*
 ** Outputs an integer using a base to standard output.
 */
-void	ft_putnbr_base(int n, char const *base);
+void	ft_putnbr_base(int n, const char *base);
 
 /*
 ** Outputs an integer using a base to given file descriptor.
 */
-void	ft_putnbr_base_fd(int n, char const *base, int fd);
+void	ft_putnbr_base_fd(int n, const char *base, int fd);
 
 /*
 ** Outputs no more than n characters of a string to standard output.
@@ -225,12 +225,12 @@ void	ft_putnstr_fd(const char *s, size_t n, int fd);
 /*
 ** Outputs a string to standard output.
 */
-void	ft_putstr(char *s);
+void	ft_putstr(const char *s);
 
 /*
 ** Outputs a string to given file descriptor.
 */
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putstr_fd(const char *s, int fd);
 
 /*
 ** Requests a new buffer of size bytes for the given stream.

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 02:36:38 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/21 01:37:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 20:30:55 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "ft_stdio.h"
 #define BUFFER_SIZE 33
 
-void		ft_putnbr_base_fd(int n, char const *base, int fd)
+void		ft_putnbr_base_fd(int n, const char *base, int fd)
 {
 	uint8_t		buf[BUFFER_SIZE];
 	uint32_t	t;
