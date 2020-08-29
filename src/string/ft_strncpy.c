@@ -6,11 +6,11 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:42:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 15:59:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 20:06:14 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "ft_memory.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
@@ -22,7 +22,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		*d++ = *src++;
 		--len;
 	}
-	while (len)
-		d[--len] = '\0';
+	ft_bzero(d, len);
 	return (dst);
 }

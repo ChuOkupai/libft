@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/29 20:00:26 by asoursou         ###   ########.fr       */
+/*   Created: 2020/08/29 20:11:54 by asoursou          #+#    #+#             */
+/*   Updated: 2020/08/29 20:14:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bit.h"
-#include "ft_const.h"
 #include "ft_memory.h"
 #include "ft_string.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+char	*ft_strjoin3(const char *s1, const char *s2, const char *s3)
 {
-	t_u8	map[32];
-	size_t	n;
+	char	*d;
+	size_t	n1;
+	size_t	n2;
+	size_t	n3;
 
-	ft_bit_map(map, 32, (set ? set : FT_SPACE));
-	while (ft_bit_at(map, *s1))
-		++s1;
-	n = ft_strlen(s1);
-	while (n && ft_bit_at(map, s1[n - 1]))
-		--n;
-	return (ft_memdup(s1, n + 1, n, true));
+	n1 = s1 ? ft_strlen(s1) : 0;
+	n2 = s2 ? ft_strlen(s2) : 0;
+	n3 = s3 ? ft_strlen(s3) : 0;
+	if ((d = ft_memdup(s1, n1 + n2 + n3 + 1, n1, false)))
+	{
+		ft_memcpy(d + n1, s2, n2);
+		ft_memcpy(d + n1 + n2, s3, n3);
+		d[n1 + n2 + n3] = '\0';
+	}
+	return (d);
 }

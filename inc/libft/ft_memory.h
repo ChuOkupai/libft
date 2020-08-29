@@ -6,12 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/26 02:55:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 19:53:43 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MEMORY_H
 # define FT_MEMORY_H
+# define FT_REQUIRE_TYPE_BOOL
 # define FT_REQUIRE_TYPE_SIZE_T
 # include "private/ft_include.h"
 
@@ -65,10 +66,20 @@ void	*ft_memdeltab(void ***tab, size_t len);
 
 /*
 ** Allocates alloc_size bytes and does the copy of no more than copy_size
-** of the src pointer. The remainder is filled with 0.
+** of the src pointer. The remainder is filled with 0 if fill is set to true.
 ** Returns a pointer to the new allocated memory, or NULL on error.
 */
-void	*ft_memdup(const void *src, size_t alloc_size, size_t copy_size);
+void	*ft_memdup(const void *src, size_t alloc_size, size_t copy_size,
+		bool fill);
+
+/*
+** Finds the start of the first occurrence of the substring little of length
+** little_len in the memory area big of length big_len.
+** Returns a pointer to the beginning of the substring, or NULL if the substring
+** is not found.
+*/
+void	*ft_memmem(const void *big, size_t big_len, const void *little,
+		size_t little_len);
 
 /*
 ** Copies len bytes from src to dst without overlapping.

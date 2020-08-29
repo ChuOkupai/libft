@@ -6,28 +6,18 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 02:52:50 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 16:04:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 19:46:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_memory.h"
 #include "ft_string.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *h, const char *n, size_t l)
 {
-	size_t hlen;
-	size_t nlen;
+	size_t hl;
 
-	if ((nlen = ft_strlen(needle)))
-	{
-		if (len < (hlen = ft_strlen(haystack)))
-			hlen = len;
-		while (hlen >= nlen && ft_strncmp(haystack, needle, nlen))
-		{
-			++haystack;
-			--hlen;
-		}
-		if (hlen < nlen)
-			return (NULL);
-	}
-	return ((char*)haystack);
+	if ((hl = ft_strlen(h)) < l)
+		l = hl;
+	return (ft_memmem(h, l, n, ft_strlen(n)));
 }

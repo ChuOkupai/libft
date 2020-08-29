@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 15:47:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 20:18:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ char		*ft_strcpy(char *dst, const char *src);
 /*
 ** Allocates sufficient memory for a copy of the string s1,
 ** does the copy, and returns a pointer to it.
+** Returns NULL on error.
 */
 char		*ft_strdup(const char *s1);
 
@@ -102,8 +103,17 @@ char		*ft_strforeach(char *s, int (*f)(int));
 ** Allocates and returns a new string,
 ** result of the concatenation of s1 and s2.
 ** The passed arguments can be NULL.
+** Returns NULL on error.
 */
 char		*ft_strjoin(const char *s1, const char *s2);
+
+/*
+** Allocates and returns a new string,
+** result of the concatenation of s1, s2 and s3.
+** The passed arguments can be NULL.
+** Returns NULL on error.
+*/
+char		*ft_strjoin3(const char *s1, const char *s2, const char *s3);
 
 /*
 ** Appends string src to the end of dst.
@@ -146,8 +156,9 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
 
 /*
-** Copies at most n characters from the string s1 always NUL terminating
-** the copied string.
+** Allocates and copies at most n characters from the string s1 always
+** NULL terminating the copied string.
+** Returns NULL on error.
 */
 char		*ft_strndup(const char *s1, size_t n);
 
@@ -204,6 +215,7 @@ char		*ft_strstr(const char *haystack, const char *needle);
 /*
 ** Allocates and returns a substring from the string s.
 ** The substring begins at index start and is of maximum size len.
+** Returns NULL on error.
 */
 char		*ft_strsub(const char *s, size_t start, size_t len);
 

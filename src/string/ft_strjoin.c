@@ -6,11 +6,10 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 01:45:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/29 20:14:16 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_memory.h"
 #include "ft_string.h"
 
@@ -21,11 +20,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	size_t	n2;
 
 	n1 = s1 ? ft_strlen(s1) : 0;
-	n2 = s2 ? ft_strlen(s2) + 1 : 0;
-	if ((d = (char*)malloc((n1 + n2) * sizeof(char))))
+	n2 = s2 ? ft_strlen(s2) : 0;
+	if ((d = ft_memdup(s1, n1 + n2 + 1, n1, false)))
 	{
-		ft_memcpy(d, s1, n1);
 		ft_memcpy(d + n1, s2, n2);
+		d[n1 + n2] = '\0';
 	}
 	return (d);
 }

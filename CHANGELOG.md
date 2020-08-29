@@ -9,11 +9,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **ft_btree_is_leaf**
 - **ft_btree_merge**
-- **Doubly linked lists functions**
+- **ft_dlist_append**
+- **ft_dlist_at**
+- **ft_dlist_clear**
+- **ft_dlist_first**
+- **ft_dlist_foreach**
+- **ft_dlist_insert**
+- **ft_dlist_last**
+- **ft_dlist_new**
+- **ft_dlist_pop**
+- **ft_dlist_print**
+- **ft_dlist_print_fd**
+- **ft_dlist_push**
+- **ft_dlist_push_back**
+- **ft_dlist_remove_if**
+- **ft_dlist_remove_one**
+- **ft_dlist_rev**
+- **ft_dlist_search**
+- **ft_dlist_size**
+- **ft_dlist_split**
+- **ft_memmem**
+- **ft_strjoin3**
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
 - **ft_list_push_back** the element can be NULL
+- **ft_memdup** added a boolean variable to know if the allocated memory should be filled with 0
 - **ft_striter** has been replaced by **ft_strforeach**
 - **ft_strjoin** the passed arguments can be NULL
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
