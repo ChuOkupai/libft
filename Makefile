@@ -6,9 +6,22 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/08/29 20:20:41 by asoursou         ###   ########.fr        #
+#    Updated: 2020/08/30 13:49:03 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+ifneq ($(words $(MAKECMDGOALS)),1)
+.DEFAULT_GOAL = all
+%:
+	@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
+else
+ifndef ECHO
+	T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
+	-nrRf $(firstword $(MAKEFILE_LIST)) ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+	N := x
+	C = $(words $N)$(eval N := x $N)
+	ECHO = printf "%3d %% - %s\n" `expr $C '*' 100 / $T`
+endif
 
 # COMPILATION
 CC		= gcc
@@ -251,7 +264,7 @@ SRC_BIN	:= cat.c \
 BIN		:= $(SRC_BIN:%.c=$(BIN_DIR)/%)
 
 $(NAME): $(OBJ)
-	@echo 'Creation of $@'
+	@$(ECHO) 'Creation of $@'
 	@ar -rcs $@ $^
 
 all: $(NAME)
@@ -264,33 +277,37 @@ fclean: clean
 
 re: fclean all
 
-test: $(BIN)
-
 install: $(NAME)
 	install $< $(LOC_DIR)/lib
 	install -m 644 inc/$(FT).h $(LOC_DIR)/include
 	cp -r inc/$(FT) $(LOC_DIR)/include
+	chmod -R 644 $(LOC_DIR)/include/$(FT)
+	chmod 755 $(LOC_DIR)/include/$(FT) $(LOC_DIR)/include/$(FT)/private
 
 uninstall:
 	rm -f $(LOC_DIR)/lib/$(NAME)
 	rm -rf $(LOC_DIR)/include/$(FT) $(LOC_DIR)/include/$(FT).h
 
+test: $(BIN)
+
 $(BUILD):
-	@echo 'Creation of $@ directory'
+	@$(ECHO) 'Creation of $@ directory'
 	@mkdir $@ $(DIRS)
 
 $(OBJ_DIR)/%.o: src/%.c | $(BUILD)
-	@echo 'Compilation of $<'
+	@$(ECHO) 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(DFLAGS) $(IFLAGS) -c $< -o $@
 
 $(BIN_DIR):
-	@echo 'Creation of $@ directory'
+	@$(ECHO) 'Creation of $@ directory'
 	@mkdir $@
 
 $(BIN_DIR)/%: examples/%.c $(NAME) | $(BIN_DIR)
-	@echo 'Compilation of $<'
+	@$(ECHO) 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(IFLAGS) $< -o $@ $(LDFLAGS)
 
 -include $(DEP)
 
-.PHONY: all clean fclean re install uninstall
+.PHONY: all clean fclean re install uninstall test
+
+endif

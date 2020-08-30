@@ -6,49 +6,69 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 11:10:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/08/30 17:14:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "ft_ctype.h"
+#include "ft_memory.h"
 #include "ft_stdio.h"
-#include "ft_type.h"
 
-static void	ft_print_data(const t_u8 *s, size_t n)
+/*
+** Size of a row in bytes for display.
+** Must be strictly greater than 0 and divisible by 2.
+*/
+#define SIZE	16
+
+static char	*padding(char *b, size_t n)
+{
+	return (n ? (char*)ft_memset(b, ' ', n) + n : b);
+}
+
+static void	copy(const char *s, char *b, size_t n)
 {
 	size_t i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (n - i > 1)
-			ft_printf("%.2hhx%.2hhx ", s[i], s[i + 1]);
+		if (n - i >= 2)
+			b += ft_sprintf(b, "%.2hhx%.2hhx ", s[i], s[i + 1]);
 		else
-			ft_printf("%.2hhx   ", s[i]);
+			b += ft_sprintf(b, "%.2hhx   ", s[i]);
 		i += 2;
 	}
-	while ((i += 2) <= 16)
-		ft_putstr("     ");
-	while (n--)
+	b = padding(b, 5 * ((SIZE - i) / 2));
+	*b++ = '|';
+	i = 0;
+	while (i < n)
 	{
-		ft_putchar(ft_isprint(*s) ? *s : '.');
-		++s;
+		*b++ = ft_isprint(s[i]) ? s[i] : '.';
+		++i;
 	}
-	ft_putchar('\n');
+	b = padding(b, SIZE - i);
+	*b = '|';
 }
 
 void		*ft_print_memory(const void *s, size_t n)
 {
-	const t_u8	*t;
+	const char	*t;
+	char		b[2 * sizeof(size_t) + 3 * SIZE + (SIZE + 1) / 2 + 7];
 	size_t		i;
+	size_t		len;
 
+	len = 2 * sizeof(size_t) + 3 * SIZE + (SIZE + 1) / 2 + 7;
+	b[len - 1] = '\n';
 	t = s;
 	i = 0;
 	while (i < n)
 	{
-		ft_printf("%.16lx: ", (size_t)(t + i));
-		ft_print_data(t + i, (n - i < 16 ? n - i : 16));
-		i += 16;
+		copy(t, b + ft_sprintf(b, "0x%.*lx: ", (int)(2 * sizeof(size_t)),
+		(size_t)t), (n - i < SIZE ? n - i : SIZE));
+		(void)(write(STDOUT_FILENO, b, len) + 1);
+		t += SIZE;
+		i += SIZE;
 	}
 	return ((void*)s);
 }

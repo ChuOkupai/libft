@@ -30,11 +30,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_dlist_split**
 - **ft_memmem**
 - **ft_strjoin3**
+- A progress indicator in Makefile
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
 - **ft_list_push_back** the element can be NULL
 - **ft_memdup** added a boolean variable to know if the allocated memory should be filled with 0
+- **ft_print_memory** code optimization
 - **ft_striter** has been replaced by **ft_strforeach**
 - **ft_strjoin** the passed arguments can be NULL
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
