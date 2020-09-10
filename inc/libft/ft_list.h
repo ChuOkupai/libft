@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 16:17:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/10 13:03:59 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ t_list	*ft_list_insert(t_list **list, t_list *element, t_gcompare cmp);
 t_list	*ft_list_last(t_list *l);
 
 /*
+** Merge two lists.
+** Returns a pointer at the beginning of the new list.
+*/
+t_list	*ft_list_merge(t_list *l1, t_list *l2);
+
+/*
 ** Creates a new element with malloc.
 ** Returns NULL on error.
 */
@@ -108,6 +114,15 @@ void	ft_list_remove_if(t_list **list, const void *reference, t_gcompare cmp,
 		t_gfunction del);
 
 /*
+** Removes the first element matching the reference content from a singly linked
+** list. Comparison is done with a comparison fonction pointer.
+** If the function pointer del is NULL, content is returned only if found,
+** NULL otherwise.
+*/
+void	*ft_list_remove_one(t_list **list, const void *reference,
+		t_gcompare cmp, t_gfunction del);
+
+/*
 ** Reverse the order of items in the singly linked list.
 ** Returns a pointer to the start of the singly linked list.
 */
@@ -139,5 +154,13 @@ void	ft_list_sort(t_list **list, t_gcompare cmp);
 ** If insufficient memory is available or s is empty, NULL is returned.
 */
 t_list	*ft_list_split(const char *s, const char *set);
+
+/*
+** Allocates sufficient memory to store the content pointer of each of the
+** elements of  the list in an array.
+** The last element of the array is terminated by NULL.
+** If insufficient memory is available NULL is returned.
+*/
+void	**ft_list_to_array(t_list *l);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 16:57:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/06 12:27:58 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 
 # define PF_BUFF_SIZE			128
 # define PF_CONVERT_BUFF_SIZE	80
+
+# if PF_BUFF_SIZE < 2
+#  error "Illegal value set for variable PF_BUFF_SIZE"
+# endif
+# if PF_CONVERT_BUFF_SIZE < 2
+#  error "Illegal value set for variable PF_CONVERT_BUFF_SIZE"
+# endif
 
 enum		e_pflag
 {

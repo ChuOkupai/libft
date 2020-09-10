@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_list_remove_one.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/10 12:33:10 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/10 12:50:46 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/10 13:05:35 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bit.h"
-#include "ft_const.h"
-#include "ft_memory.h"
-#include "ft_string.h"
+#include "ft_list.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+void	*ft_list_remove_one(t_list **list, const void *ref, t_gcompare cmp,
+		t_gfunction del)
 {
-	t_u8	map[32];
-	size_t	n;
+	t_list	*prev;
+	t_list	*l;
+	void	*content;
 
-	ft_bit_map(map, 32, (set ? set : FT_SPACE));
-	while (ft_bit_at(map, *s1))
-		++s1;
-	n = ft_strlen(s1);
-	while (n && ft_bit_at(map, s1[n - 1]))
-		--n;
-	return (ft_memdup(s1, n, n + 1, true));
+	prev = NULL;
+	l = *list;
+	content = NULL;
+	while (l && cmp(ref, l->content))
+	{
+		prev = l;
+		l = l->next;
+	}
+	if (l)
+	{
+		content = ft_list_pop(&l, del);
+		if (prev)
+			prev->next = l;
+		else
+			*list = l;
+	}
+	return (content);
 }

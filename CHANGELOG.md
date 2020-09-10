@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.3.0] - 2020-09-10
 ### Added
 - **ft_btree_is_leaf**
 - **ft_btree_merge**
@@ -28,7 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_dlist_search**
 - **ft_dlist_size**
 - **ft_dlist_split**
+- **ft_list_merge**
+- **ft_list_remove_one**
+- **ft_list_to_array**
 - **ft_memmem**
+- **ft_memsize**
+- **ft_realloc**
 - **ft_strjoin3**
 - A progress indicator in Makefile
 
@@ -39,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_print_memory** code optimization
 - **ft_striter** has been replaced by **ft_strforeach**
 - **ft_strjoin** the passed arguments can be NULL
+- **ft_strstr/ft_strnstr** improved speed for small values
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
 - Improved documentation
 - Typo fixes
@@ -162,7 +168,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial version
 
-[Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.2.1...dev
+[Unreleased]: https://github.com/ChuOkupai/libft/compare/v1.3.0...dev
+[1.3.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.3.0
 [1.2.1]: https://github.com/ChuOkupai/libft/releases/tag/v1.2.1
 [1.2.0]: https://github.com/ChuOkupai/libft/releases/tag/v1.2.0
 [1.1.1]: https://github.com/ChuOkupai/libft/releases/tag/v1.1.1

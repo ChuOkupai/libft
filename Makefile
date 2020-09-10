@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/08/30 13:49:03 by asoursou         ###   ########.fr        #
+#    Updated: 2020/09/10 12:56:45 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,6 +121,7 @@ SUB_SRC	:= ft_list_at.c \
 		   ft_list_foreach.c \
 		   ft_list_insert.c \
 		   ft_list_last.c \
+		   ft_list_merge.c \
 		   ft_list_new.c \
 		   ft_list_pop.c \
 		   ft_list_print.c \
@@ -128,11 +129,13 @@ SUB_SRC	:= ft_list_at.c \
 		   ft_list_push.c \
 		   ft_list_push_back.c \
 		   ft_list_remove_if.c \
+		   ft_list_remove_one.c \
 		   ft_list_rev.c \
 		   ft_list_search.c \
 		   ft_list_size.c \
 		   ft_list_sort.c \
-		   ft_list_split.c
+		   ft_list_split.c \
+		   ft_list_to_array.c
 SRC		+= $(addprefix list/, $(SUB_SRC))
 SUB_SRC	:= ft_bzero.c \
 		   ft_calloc.c \
@@ -145,7 +148,9 @@ SUB_SRC	:= ft_bzero.c \
 		   ft_memdup.c \
 		   ft_memmem.c \
 		   ft_memmove.c \
-		   ft_memset.c
+		   ft_memset.c \
+		   ft_memsize.c \
+		   ft_realloc.c
 SRC		+= $(addprefix memory/, $(SUB_SRC))
 SUB_SRC	:= ft_rbtree_remove_guard.c \
 		   ft_rbtree_rotate_left.c \

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_list_to_array.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/15 03:07:21 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/10 12:33:10 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/06 11:44:46 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/06 11:56:08 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_bit.h"
-#include "ft_const.h"
-#include "ft_memory.h"
-#include "ft_string.h"
+#include <stdlib.h>
+#include "ft_list.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+void	**ft_list_to_array(t_list *l)
 {
-	t_u8	map[32];
-	size_t	n;
+	void	**t;
+	size_t	i;
 
-	ft_bit_map(map, 32, (set ? set : FT_SPACE));
-	while (ft_bit_at(map, *s1))
-		++s1;
-	n = ft_strlen(s1);
-	while (n && ft_bit_at(map, s1[n - 1]))
-		--n;
-	return (ft_memdup(s1, n, n + 1, true));
+	if (!(t = malloc((ft_list_size(l) + 1) * sizeof(void *))))
+		return (NULL);
+	i = 0;
+	while (l)
+	{
+		t[i++] = l->content;
+		l = l->next;
+	}
+	t[i] = NULL;
+	return (t);
 }

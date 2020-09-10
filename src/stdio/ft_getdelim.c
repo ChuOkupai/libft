@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/29 19:58:33 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/10 12:32:56 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static size_t	read_line(char **line, int delim, t_file *f)
 	char	*p;
 
 	size = f->left;
-	if (!(*line = ft_memdup(f->buf + f->start, size + 1, size, true)))
+	if (!(*line = ft_memdup(f->buf + f->start, size, size + 1, true)))
 		return (0);
 	while (ft_fread_internal(f, f->buf, f->size))
 	{
@@ -68,7 +68,7 @@ ssize_t			ft_getdelim(char **line, int delim, t_file *f)
 	else if ((p = ft_memchr(f->buf + f->start, delim, f->left)))
 	{
 		size = p - f->buf - f->start;
-		*line = ft_memdup(f->buf + f->start, size + 1, size, true);
+		*line = ft_memdup(f->buf + f->start, size, size + 1, true);
 		f->start += size + 1;
 		f->left -= size + 1;
 	}

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 11:22:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 17:30:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/06 12:28:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,24 @@
 # include "private/ft_include.h"
 # include "ft_stdio.h"
 
+/*
+** FT_FILE_BSIZE: Size of t_file buffer
+** FT_FILE_SAFEBSIZE: Size of t_file buffer when malloc failed
+** FT_GNL_BSIZE: Size of ft_get_next_line buffer
+*/
 # define FT_FILE_BSIZE		128
 # define FT_FILE_SAFEBSIZE	4
 # define FT_GNL_BSIZE		64
+
+# if FT_FILE_BSIZE < 2
+#  error "Illegal value set for variable FT_FILE_BSIZE"
+# endif
+# if FT_FILE_SAFEBSIZE < 2
+#  error "Illegal value set for variable FT_FILE_SAFEBSIZE"
+# endif
+# if FT_GNL_BSIZE < 2
+#  error "Illegal value set for variable FT_GNL_BSIZE"
+# endif
 
 /*
 ** FT_FOPEN: fd was opened by us

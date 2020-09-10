@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/18 00:38:37 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/30 17:14:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/06 12:19:53 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 ** Must be strictly greater than 0 and divisible by 2.
 */
 #define SIZE	16
+#if SIZE < 1 || SIZE % 2
+# error "Illegal value set for variable SIZE"
+#endif
 
 static char	*padding(char *b, size_t n)
 {

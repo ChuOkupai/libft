@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/30 12:45:16 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/10 12:33:32 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,11 @@ void	*ft_memdel(void *pointer);
 void	*ft_memdeltab(void ***tab, size_t len);
 
 /*
-** Allocates alloc_size bytes and does the copy of no more than copy_size
+** Allocates new_size bytes and does the copy of no more than size
 ** of the src pointer. The remainder is filled with 0 if fill is set to true.
 ** Returns a pointer to the new allocated memory, or NULL on error.
 */
-void	*ft_memdup(const void *src, size_t alloc_size, size_t copy_size,
-		bool fill);
+void	*ft_memdup(const void *src, size_t size, size_t new_size, bool fill);
 
 /*
 ** Finds the start of the first occurrence of the substring little of length
@@ -91,5 +90,19 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 ** Writes len bytes of value c to b.
 */
 void	*ft_memset(void *b, int c, size_t len);
+
+/*
+** Returns the size of an array of pointers.
+** The array of pointers must have a NULL pointer.
+*/
+size_t	ft_memsize(void **tab);
+
+/*
+** Allocates new_size bytes and does the copy of no more than size of the src
+** pointer. The remainder is filled with 0 if fill is set to true.
+** If no error occurs, free the src pointer.
+** Returns a pointer to the new allocated memory, or NULL on error.
+*/
+void	*ft_realloc(void *src, size_t size, size_t new_size, bool fill);
 
 #endif
