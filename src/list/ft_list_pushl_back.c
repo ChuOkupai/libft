@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_list_pushl_back.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 01:45:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/13 01:48:33 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/17 19:19:33 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/17 19:21:36 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_generic.h"
+#include "ft_list.h"
 
-void	ft_print_char(const void *content)
+t_list	*ft_list_pushl_back(t_list **l, t_list *elem)
 {
-	ft_print_char_fd(content, STDOUT_FILENO);
+	if (!elem)
+		return (NULL);
+	if (*l)
+		ft_list_last(*l)->next = elem;
+	else
+		*l = elem;
+	return (elem);
 }

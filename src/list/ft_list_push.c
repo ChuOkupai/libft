@@ -6,17 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 01:30:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 19:20:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/17 19:23:15 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_list_push(t_list **l, t_list *elem)
+t_list	*ft_list_push(t_list **l, void *content)
 {
-	if (!elem)
-		return (NULL);
-	elem->next = *l;
-	*l = elem;
-	return (elem);
+	return (ft_list_pushl(l, ft_list_new(content)));
 }

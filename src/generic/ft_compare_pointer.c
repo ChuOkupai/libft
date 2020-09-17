@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int.c                                     :+:      :+:    :+:   */
+/*   ft_compare_pointer.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 01:37:30 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 19:01:32 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/17 19:36:02 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/17 19:37:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_stdio.h"
-
-void	ft_print_int(const void *integer)
+int	ft_compare_pointer(const void *a, const void *b)
 {
-	ft_putnbr_fd(*((int*)integer), STDOUT_FILENO);
+	if (a < b)
+		return (-1);
+	return (a > b);
 }

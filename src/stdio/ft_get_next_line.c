@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/01 23:57:12 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/17 19:13:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	ft_file_set(t_list **l, int fd)
 	t_file *f;
 
 	if ((e = ft_list_extract(l, &fd, &ft_filecmp)))
-		return (ft_list_push(l, e) != NULL);
-	if (!(f = malloc(sizeof(t_file))) || !ft_list_push(l, ft_list_new(f)))
+		return (ft_list_pushl(l, e) != NULL);
+	if (!(f = malloc(sizeof(t_file))) || !ft_list_push(l, f))
 		return (ft_memdel(f) != NULL);
 	f->fd = fd;
 	f->buf = NULL;

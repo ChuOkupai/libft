@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/09/10 12:56:45 by asoursou         ###   ########.fr        #
+#    Updated: 2020/09/17 19:41:30 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,24 +110,25 @@ SUB_SRC	:= ft_dlist_append.c \
 		   ft_dlist_split.c
 SRC		+= $(addprefix dlist/, $(SUB_SRC))
 SUB_SRC	:= ft_compare_int.c \
-		   ft_print_char.c \
-		   ft_print_char_fd.c \
-		   ft_print_int.c \
-		   ft_print_int_fd.c
+		   ft_compare_pointer.c
 SRC		+= $(addprefix generic/, $(SUB_SRC))
 SUB_SRC	:= ft_list_at.c \
 		   ft_list_clear.c \
 		   ft_list_extract.c \
+		   ft_list_foreach_if.c \
 		   ft_list_foreach.c \
 		   ft_list_insert.c \
 		   ft_list_last.c \
 		   ft_list_merge.c \
 		   ft_list_new.c \
 		   ft_list_pop.c \
+		   ft_list_popl.c \
 		   ft_list_print.c \
+		   ft_list_push_back.c \
 		   ft_list_print_fd.c \
 		   ft_list_push.c \
-		   ft_list_push_back.c \
+		   ft_list_pushl_back.c \
+		   ft_list_pushl.c \
 		   ft_list_remove_if.c \
 		   ft_list_remove_one.c \
 		   ft_list_rev.c \

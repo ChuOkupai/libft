@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/10 12:33:32 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/17 18:59:36 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	*ft_memdel(void *pointer);
 ** All elements are passed to free().
 ** Returns NULL.
 */
-void	*ft_memdeltab(void ***tab, size_t len);
+void	*ft_memdeltab(void ***array, size_t len);
 
 /*
 ** Allocates new_size bytes and does the copy of no more than size
@@ -95,7 +95,7 @@ void	*ft_memset(void *b, int c, size_t len);
 ** Returns the size of an array of pointers.
 ** The array of pointers must have a NULL pointer.
 */
-size_t	ft_memsize(void **tab);
+size_t	ft_memsize(void **array);
 
 /*
 ** Allocates new_size bytes and does the copy of no more than size of the src

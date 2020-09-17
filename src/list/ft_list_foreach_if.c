@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_int_fd.c                                  :+:      :+:    :+:   */
+/*   ft_list_foreach_if.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/13 01:34:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 19:01:27 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/17 19:41:01 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/17 19:42:27 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "ft_stdio.h"
+#include "ft_list.h"
 
-void	ft_print_int_fd(const void *integer, int fd)
+void	ft_list_foreach_if(t_list *l, const void *reference, t_gcompare cmp,
+		t_gfunction function)
 {
-	ft_putnbr_fd(*((int*)integer), fd);
+	while (l)
+	{
+		if (!cmp(reference, l->content))
+			function(l->content);
+		l = l->next;
+	}
 }

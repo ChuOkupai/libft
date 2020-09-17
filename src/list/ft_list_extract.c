@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 11:44:16 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 16:35:00 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/17 20:17:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_list	*ft_list_extract(t_list **l, const void *reference, t_gcompare cmp)
 			p->next = e->next;
 		else
 			*l = NULL;
+		e->next = NULL;
 	}
 	return (e);
 }

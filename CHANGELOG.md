@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.0] - 2020-09-10
+## [1.3.0] - 2020-09-17
 ### Added
 - **ft_btree_is_leaf**
 - **ft_btree_merge**
@@ -29,6 +29,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_dlist_size**
 - **ft_dlist_split**
 - **ft_list_merge**
+- **ft_list_popl**
+- **ft_list_pushl_back**
+- **ft_list_pushl**
 - **ft_list_remove_one**
 - **ft_list_to_array**
 - **ft_memmem**
@@ -39,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
-- **ft_list_push_back** the element can be NULL
+- **ft_list_push/ft_list_push_back** is now taking the void* content instead of a t_list* element. The old functions still exists with **ft_list_pushl/ft_list_pushl_back**
 - **ft_memdup** added a boolean variable to know if the allocated memory should be filled with 0
 - **ft_print_memory** code optimization
 - **ft_striter** has been replaced by **ft_strforeach**
@@ -47,9 +50,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_strstr/ft_strnstr** improved speed for small values
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
 - Improved documentation
+- Renamed *tab* variable in ft_memory to avoid conflict with ncurses
 - Typo fixes
 
 ### Removed
+- **ft_print_char_fd**
+- **ft_print_char**
+- **ft_print_int_fd**
+- **ft_print_int**
 - **ft_striteri**
 - **ft_strmap**
 

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/10 13:03:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/17 19:40:50 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ void	*ft_list_clear(t_list **list, t_gfunction del);
 ** Comparison is done with a comparison fonction pointer.
 */
 t_list	*ft_list_extract(t_list **list, const void *reference, t_gcompare cmp);
+
+/*
+** Apply a function to each content of a singly linked list matching the
+** reference content. Comparison is done with a comparison fonction pointer.
+*/
+void	ft_list_foreach_if(t_list *l, const void *reference, t_gcompare cmp,
+		t_gfunction function);
 
 /*
 ** Apply a function to each content of a singly linked list.
@@ -80,6 +87,12 @@ t_list	*ft_list_new(void *content);
 void	*ft_list_pop(t_list **list, t_gfunction del);
 
 /*
+** Remove the first element of the list without deleting it in memory.
+** Returns the element, or NULL if the list is empty.
+*/
+t_list	*ft_list_popl(t_list **list);
+
+/*
 ** Display the contents of the singly linked list to given file descriptor.
 ** The print function is called to display the content of each item.
 */
@@ -92,18 +105,32 @@ void	ft_list_print_fd(t_list *l, t_gprint_fd print_fd, int fd);
 void	ft_list_print(t_list *l, t_gprint print);
 
 /*
+** Push content at the end of a singly linked list.
+** The inserted content may be NULL.
+** Returns a pointer to the inserted element.
+*/
+t_list	*ft_list_push_back(t_list **list, void *content);
+
+/*
+** Push content at the beginning of a singly linked list.
+** The inserted content may be NULL.
+** Returns a pointer to the inserted element.
+*/
+t_list	*ft_list_push(t_list **list, void *content);
+
+/*
 ** Add an element at the end of a singly linked list.
 ** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_list	*ft_list_push_back(t_list **list, t_list *element);
+t_list	*ft_list_pushl_back(t_list **list, t_list *element);
 
 /*
 ** Add an element at the beginning of a singly linked list.
 ** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_list	*ft_list_push(t_list **list, t_list *element);
+t_list	*ft_list_pushl(t_list **list, t_list *element);
 
 /*
 ** Removes every elements matching the reference content from a singly linked
