@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 11:25:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 19:46:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/22 22:47:28 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	print_char(int c)
 	else
 	{
 		p = ft_toprint(c);
-		ft_printf((c == p ? "'\\x%hhx'" : "'\\%c'"), p);
+		ft_printf((c == p ? "'\\x%x'" : "'\\%c'"), p);
 	}
 }
 
