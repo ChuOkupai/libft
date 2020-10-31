@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlist_append.c                                  :+:      :+:    :+:   */
+/*   ft_string_clear.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/24 16:04:06 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 16:09:20 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/29 16:41:46 by asoursou          #+#    #+#             */
+/*   Updated: 2020/10/31 15:48:19 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dlist.h"
+#include "ft_memory.h"
+#include "ft_string.h"
 
-t_dlist	*ft_dlist_append(t_dlist *l1, t_dlist *l2)
+t_string	*ft_string_clear(t_string *s)
 {
-	t_dlist *l;
-
-	l = ft_dlist_last(l1);
-	l2 = ft_dlist_first(l2);
-	if (l)
-		l->next = l2;
-	if (l2)
-		l2->prev = l;
-	return (ft_dlist_first(l1));
+	ft_delete(s->buf);
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/01/19 20:55:43 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/27 11:58:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		pf_parse_d(t_format *f, int64_t n)
 	pf_print(f, s, h);
 }
 
-void		pf_parse_p(t_format *f, uint64_t n)
+void		pf_parse_p(t_format *f, t_u128 n)
 {
 	const char *s;
 
@@ -59,7 +59,7 @@ void		pf_parse_p(t_format *f, uint64_t n)
 	pf_print(f, s, "0x");
 }
 
-void		pf_parse_u(t_format *f, uint64_t n)
+void		pf_parse_u(t_format *f, t_u128 n)
 {
 	const char *s;
 
@@ -68,7 +68,7 @@ void		pf_parse_u(t_format *f, uint64_t n)
 	pf_print(f, s, 0);
 }
 
-void		pf_parse_x(t_format *f, uint64_t n)
+void		pf_parse_x(t_format *f, t_u128 n)
 {
 	const char *s;
 

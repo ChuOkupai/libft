@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/24 17:35:03 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/23 13:30:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # include <libft/ft_generic.h>
 # include <libft/ft_list.h>
 # include <libft/ft_memory.h>
+# include <libft/ft_random.h>
 # include <libft/ft_rbtree.h>
 # include <libft/ft_stdio.h>
 # include <libft/ft_string.h>

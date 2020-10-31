@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:09:51 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/29 20:31:12 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/29 16:18:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ struct s_file;
 ** The allocated pointer should be passed to free.
 ** If sufficient space cannot be allocated, return -1 and set ret to be
 ** a NULL pointer.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_asprintf(char **ret, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2)));
@@ -43,8 +43,8 @@ void	ft_clearerr(t_file *stream);
 
 /*
 ** Outputs a formatted string to given file descriptor.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_dprintf(int fd, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2)));
@@ -242,16 +242,16 @@ void	ft_setbuffer(t_file *stream, char *buf, size_t size);
 
 /*
 ** Outputs a formatted string of maximum n characters to a string.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_snprintf(char *str, size_t n, const char *format,
 		...) __attribute__((format(printf,3,4),nonnull(3)));
 
 /*
 ** Outputs a formatted string to a string.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_sprintf(char *str, const char *format,
 	...) __attribute__((format(printf,2,3),nonnull(2),nonnull(1)));
@@ -269,24 +269,24 @@ int		ft_sprintf(char *str, const char *format,
 ** The allocated pointer should be passed to free.
 ** If sufficient space cannot be allocated, return -1 and set ret to be
 ** a NULL pointer.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_vasprintf(char **ret, const char *format,
 	va_list ap) __attribute__((format(printf,2,0),nonnull(2)));
 
 /*
 ** Outputs a formatted string to given file descriptor using an argument list.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_vdprintf(int fd, const char *format,
 	va_list ap) __attribute__((format(printf,2,0),nonnull(2)));
 
 /*
 ** Outputs a formatted string to standard output using an argument list.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_vprintf(const char *format,
 	va_list ap) __attribute__((format(printf,1,0),nonnull(1)));
@@ -294,16 +294,16 @@ int		ft_vprintf(const char *format,
 /*
 ** Outputs a formatted string of maximum n characters to a string using
 ** an argument list.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_vsnprintf(char *str, size_t n, const char *format,
 	va_list ap) __attribute__((format(printf,3,0),nonnull(3)));
 
 /*
 ** Outputs a formatted string to a string using an argument list.
-** Refer to the printf function to know the supported conversions, flags and
-** modifiers.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
 */
 int		ft_vsprintf(char *str, const char *format,
 	va_list ap) __attribute__((format(printf,2,0),nonnull(2),nonnull(1)));

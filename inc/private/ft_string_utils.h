@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_pushl.c                                    :+:      :+:    :+:   */
+/*   ft_string_utils.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 18:58:38 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 19:21:51 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/29 16:12:27 by asoursou          #+#    #+#             */
+/*   Updated: 2020/10/02 11:52:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_STRING_UTILS_H
+# define FT_STRING_UTILS_H
+# define FT_REQUIRE_TYPE_BOOL
+# include "private/ft_include.h"
+# include "ft_string.h"
 
-t_list	*ft_list_pushl(t_list **l, t_list *elem)
-{
-	if (!elem)
-		return (NULL);
-	elem->next = *l;
-	*l = elem;
-	return (elem);
-}
+# define FT_STRING_BUF_INIT_SIZE	16
+
+/*
+** Checks if the capacity is sufficiently large to stores size more bytes.
+** If not, it reallocates the buffer.
+** Returns false on error.
+*/
+bool	ft_string_check_capacity(t_string *s, size_t size);
+
+#endif

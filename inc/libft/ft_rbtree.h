@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 10:54:52 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 19:13:39 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/02 14:02:37 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,9 @@ void		*ft_rbtree_clear(t_rbtree **root, t_gfunction del);
 
 /*
 ** Remove an element in a red black tree.
-** If the function pointer del is NULL, content is returned, NULL otherwise.
+** Returns its content.
 */
-void		*ft_rbtree_delete(t_rbtree **root, t_rbtree *element,
-			t_gfunction del);
+void		*ft_rbtree_delete(t_rbtree **root, t_rbtree *element);
 
 /*
 ** Apply the given function to all nodes in infix order

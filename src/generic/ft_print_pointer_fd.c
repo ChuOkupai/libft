@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_pushl_back.c                               :+:      :+:    :+:   */
+/*   ft_print_pointer_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/17 19:19:33 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 19:21:36 by asoursou         ###   ########.fr       */
+/*   Created: 2020/09/29 14:21:10 by asoursou          #+#    #+#             */
+/*   Updated: 2020/09/29 14:21:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "ft_stdio.h"
 
-t_list	*ft_list_pushl_back(t_list **l, t_list *elem)
+void	ft_print_pointer_fd(const void *pointer, int fd)
 {
-	if (!elem)
-		return (NULL);
-	if (*l)
-		ft_list_last(*l)->next = elem;
-	else
-		*l = elem;
-	return (elem);
+	ft_dprintf(fd, "%p", pointer);
 }

@@ -6,12 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:12:27 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/29 20:18:53 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/31 17:57:40 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STRING_H
 # define FT_STRING_H
+# define FT_REQUIRE_TYPE_BOOL
 # define FT_REQUIRE_TYPE_SIZE_T
 # define FT_REQUIRE_TYPE_UNSIGNED
 # include "private/ft_include.h"
@@ -50,12 +51,14 @@ char		*ft_stpcpy(char *dst, const char *src);
 ** len characters long, the remainder of dst is filled with '\0' characters.
 ** Returns a pointer to the terminating '\0' character of dst or dst[n],
 ** which does not necessarily refer to a valid memory location.
+** Returns dst.
 */
 char		*ft_stpncpy(char *dst, const char *src, size_t len);
 
 /*
 ** Append a copy of the null-terminated string s2 to the end
 ** of the null-terminated string s1, then add a terminating '\0'.
+** Returns s1.
 */
 char		*ft_strcat(char *s1, const char *s2);
 
@@ -81,6 +84,7 @@ int			ft_strcmp(const char *s1, const char *s2);
 
 /*
 ** Copy the string src to dst.
+** Returns dst.
 */
 char		*ft_strcpy(char *dst, const char *src);
 
@@ -89,7 +93,7 @@ char		*ft_strcpy(char *dst, const char *src);
 ** does the copy, and returns a pointer to it.
 ** Returns NULL on error.
 */
-char		*ft_strdup(const char *s1);
+char		*ft_strdup(const char *s);
 
 /*
 ** Apply a function on each characters of a string.
@@ -97,12 +101,18 @@ char		*ft_strdup(const char *s1);
 ** for example ft_toupper.
 ** Returns the string s.
 */
-char		*ft_strforeach(char *s, int (*f)(int));
+char		*ft_strforeach(char *s, int (*function)(int));
+
+/*
+** NULL protected.
+** Returns true if the string s is empty.
+*/
+bool		ft_strisempty(const char *s);
 
 /*
 ** Allocates and returns a new string,
 ** result of the concatenation of s1 and s2.
-** The passed arguments can be NULL.
+** NULL protected.
 ** Returns NULL on error.
 */
 char		*ft_strjoin(const char *s1, const char *s2);
@@ -110,7 +120,7 @@ char		*ft_strjoin(const char *s1, const char *s2);
 /*
 ** Allocates and returns a new string,
 ** result of the concatenation of s1, s2 and s3.
-** The passed arguments can be NULL.
+** NULL protected.
 ** Returns NULL on error.
 */
 char		*ft_strjoin3(const char *s1, const char *s2, const char *s3);
@@ -129,6 +139,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
 /*
 ** Returns the length of the string s.
+** To check whether the string is non-empty, it is faster to use ft_strisempty.
+** NULL protected.
 */
 size_t		ft_strlen(const char *s);
 
@@ -260,7 +272,7 @@ t_u64		ft_strtoul(const char *str, char **endptr, int base);
 ** specified in the set at the beginning and the end of the string.
 ** If the given set is empty, all spaces are delimiters by default.
 */
-char		*ft_strtrim(const char *s1, const char *set);
+char		*ft_strtrim(const char *s1, const char *charset);
 
 /*
 ** Iterates over a string while the condition is met.
@@ -279,5 +291,111 @@ const char	*ft_strwhile(const char *s, int (*condition)(int));
 ** for example ft_islower.
 */
 const char	*ft_strwhilenot(const char *s, int (*condition)(int));
+
+/*
+** t_string must be initialized with ft_bzero of ft_calloc before use.
+*/
+
+typedef struct s_string	t_string;
+struct		s_string
+{
+	char	*buf;
+	size_t	size;
+	size_t	capacity;
+};
+
+/*
+** Clears a string object.
+** This function must be called before the end of scope of the object.
+** Returns the pointer passed as argument.
+*/
+t_string	*ft_string_clear(t_string *string);
+
+/*
+** Copy a string.
+** dst must not have been initialized.
+** Returns dst.
+*/
+t_string	*ft_string_copy(t_string *dst, t_string *src);
+
+/*
+** Returns the value of the character at the index i, or '\0' if out of bound.
+*/
+char		ft_string_at(const t_string *string, size_t i);
+
+/*
+** Appends a copy of a NULL terminated list of t_string * to the end of the
+** string s.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_concat(t_string *s, ...);
+
+/*
+** Gets the content of the string object.
+** Returns a valid pointer, even if an error has occurred.
+*/
+const char	*ft_string_cstr(const t_string *string);
+
+/*
+** Removes the character at the index i.
+** The capacity of the buffer remains unchanged.
+*/
+void		ft_string_erase_at(t_string *string, size_t i);
+
+/*
+** Removes the characters in the range [first, last).
+** The capacity of the buffer remains unchanged.
+*/
+void		ft_string_erase(t_string *string, size_t first, size_t last);
+
+/*
+** Inserts the string at the given position i using the given format.
+** If index is higher than the string length, str is concatenated.
+** Refer to the ft_printf function to know the supported conversions, flags
+** and modifiers.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_insert_format(t_string *string, size_t i, const char *fmt,
+			...) __attribute__((format(printf,3,4),nonnull(3)));
+
+/*
+** Inserts the string str at the given position i.
+** If index is higher than the string length, str is concatenated.
+** NULL protected.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_insert_str(t_string *string, size_t i, const char *str);
+
+/*
+** Inserts character c at the given position i.
+** If index is higher than the string length, c is concatenated.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_insert_c(t_string *string, size_t i, char c);
+
+/*
+** Inserts the string s at the given position i.
+** If index is higher than the string length, str is concatenated.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_insert(t_string *string, size_t i, const t_string *s);
+
+/*
+** Gets the length of the string object.
+** Returns the number of characters.
+*/
+size_t		ft_string_length(const t_string *string);
+
+/*
+** Appends character c to the end of the string object.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_push_back(t_string *string, char c);
+
+/*
+** Appends character c to the beginning of the string object.
+** Returns -1 on error, else 0.
+*/
+int			ft_string_push(t_string *string, char c);
 
 #endif

@@ -16,6 +16,7 @@ My own C library for 42 School projects
 - [ft_generic](inc/libft/ft_generic.h "libft/ft_generic.h") - Provide generic functions for common standard data types
 - [ft_list](inc/libft/ft_list.h "libft/ft_list.h") - Implementation of singly linked lists
 - [ft_memory](inc/libft/ft_memory.h "libft/ft_memory.h") - Functions concerning memory manipulation
+- [ft_random](inc/libft/ft_random.h "libft/ft_random.h") - Pseudorandom number generator
 - [ft_rbtree](inc/libft/ft_rbtree.h "libft/ft_rbtree.h") - Implementation of red black trees
 - [ft_stdio](inc/libft/ft_stdio.h "libft/ft_stdio.h") - Basic I/O interface
 - [ft_string](inc/libft/ft_string.h "libft/ft_string.h") - Fonctions concerning string manipulation
@@ -25,6 +26,8 @@ My own C library for 42 School projects
 - A faster printf implementation (only conversions c, d, n, o, p, s, u, and x are supported)
 - ft_get_next_line can read a file descriptor line by line, either on standard input or on a file
 - Implementation of generic data structures that do not exist in the libc
+- A better rand function, using the Xoroshiro256** algorithm
+- String implementation with dynamic buffer
 
 ## Build instructions
 This project can be compiled on both Linux and Mac by the following command in a terminal:
@@ -66,7 +69,7 @@ Code samples can be compiled with:
 make test
 ```
 
-Then, all compiled binaries are stored in the bin directory.
+Then, all compiled binaries are stored in the examples/bin directory.
 You are free to test the programs and access the source code.
 
 ### Compile with libft

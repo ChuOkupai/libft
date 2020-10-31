@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:02:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 19:40:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/02 13:23:20 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ t_list	*ft_list_at(t_list *list, size_t index);
 ** Returns NULL.
 */
 void	*ft_list_clear(t_list **list, t_gfunction del);
+
+/*
+** Copy all elements of the list in a new list.
+** It does not makes a deep copy of the content.
+** Returns the copy of the list, or NULL on error if the list was not empty.
+*/
+t_list	*ft_list_copy(t_list *list);
 
 /*
 ** Extracts an element from a singly linked list which matches the reference
@@ -69,6 +76,15 @@ t_list	*ft_list_insert(t_list **list, t_list *element, t_gcompare cmp);
 t_list	*ft_list_last(t_list *l);
 
 /*
+** Merge sublist to list at the given position.
+** If the position is larger than the list size, sublist will be added at the
+** end of list.
+** The inserted element may be NULL.
+** Returns a pointer to the new list.
+*/
+t_list	*ft_list_merge_at(t_list *list, t_list *sublist, size_t position);
+
+/*
 ** Merge two lists.
 ** Returns a pointer at the beginning of the new list.
 */
@@ -82,9 +98,9 @@ t_list	*ft_list_new(void *content);
 
 /*
 ** Destroy the first element from a singly linked list if it exists.
-** If the function pointer del is NULL, content is returned, NULL otherwise.
+** Returns its content.
 */
-void	*ft_list_pop(t_list **list, t_gfunction del);
+void	*ft_list_pop(t_list **list);
 
 /*
 ** Remove the first element of the list without deleting it in memory.
@@ -96,41 +112,27 @@ t_list	*ft_list_popl(t_list **list);
 ** Display the contents of the singly linked list to given file descriptor.
 ** The print function is called to display the content of each item.
 */
-void	ft_list_print_fd(t_list *l, t_gprint_fd print_fd, int fd);
+void	ft_list_print_fd(t_list *list, t_gprint_fd print_fd, int fd);
 
 /*
 ** Display the contents of the singly linked list on standard output.
 ** The print function is called to display the content of each item.
 */
-void	ft_list_print(t_list *l, t_gprint print);
-
-/*
-** Push content at the end of a singly linked list.
-** The inserted content may be NULL.
-** Returns a pointer to the inserted element.
-*/
-t_list	*ft_list_push_back(t_list **list, void *content);
-
-/*
-** Push content at the beginning of a singly linked list.
-** The inserted content may be NULL.
-** Returns a pointer to the inserted element.
-*/
-t_list	*ft_list_push(t_list **list, void *content);
+void	ft_list_print(t_list *list, t_gprint print);
 
 /*
 ** Add an element at the end of a singly linked list.
 ** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_list	*ft_list_pushl_back(t_list **list, t_list *element);
+t_list	*ft_list_push_back(t_list **list, t_list *element);
 
 /*
 ** Add an element at the beginning of a singly linked list.
 ** The inserted element may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_list	*ft_list_pushl(t_list **list, t_list *element);
+t_list	*ft_list_push(t_list **list, t_list *element);
 
 /*
 ** Removes every elements matching the reference content from a singly linked
@@ -142,12 +144,10 @@ void	ft_list_remove_if(t_list **list, const void *reference, t_gcompare cmp,
 
 /*
 ** Removes the first element matching the reference content from a singly linked
-** list. Comparison is done with a comparison fonction pointer.
-** If the function pointer del is NULL, content is returned only if found,
-** NULL otherwise.
+** list.
+** Returns its content.
 */
-void	*ft_list_remove_one(t_list **list, const void *reference,
-		t_gcompare cmp, t_gfunction del);
+void	*ft_list_remove_one(t_list **list, const void *reference);
 
 /*
 ** Reverse the order of items in the singly linked list.
@@ -183,10 +183,15 @@ void	ft_list_sort(t_list **list, t_gcompare cmp);
 t_list	*ft_list_split(const char *s, const char *set);
 
 /*
+** Exchanges the contents of l1 with those of l2 if not NULL.
+*/
+void	ft_list_swap(t_list *l1, t_list *l2);
+
+/*
 ** Allocates sufficient memory to store the content pointer of each of the
 ** elements of  the list in an array.
-** The last element of the array is terminated by NULL.
-** If insufficient memory is available NULL is returned.
+** Returns a NULL terminated array of pointers or NULL if insufficient memory
+** is available.
 */
 void	**ft_list_to_array(t_list *l);
 

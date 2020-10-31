@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 11:25:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/22 22:47:28 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/29 15:24:56 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,26 @@
 
 static void	print_char(int c)
 {
-	int p;
+	int d;
 
-	if (ft_isprint(c))
-	{
-		if (c == '\'')
-			ft_putstr("'\\''");
-		else
-			ft_printf("'%c'", c);
-	}
+	if (ft_isprint(c) && c != ' ')
+		ft_putchar(c);
 	else
 	{
-		p = ft_toprint(c);
-		ft_printf((c == p ? "'\\x%x'" : "'\\%c'"), p);
+		d = ft_toprint(c);
+		ft_printf((c == d ? "\\x%x" : "\\%c"), d);
 	}
 }
 
 int			main(void)
 {
-	int		i;
-	char	c;
+	int i;
 
-	i = -1;
-	while (++i < 128)
+	i = 0;
+	while (i < 128)
 	{
-		c = i;
-		print_char(c);
-		ft_putchar(i % 8 == 7 ? '\n' : '\t');
+		print_char(i);
+		ft_putchar('\t' + !(++i % 8));
 	}
 	return (0);
 }

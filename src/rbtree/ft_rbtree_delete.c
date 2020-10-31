@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:38:46 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/24 22:16:18 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/02 14:03:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,7 @@ static t_rbtree	*ft_rbtree_delete_case2children(t_rbtree **root, t_rbtree *z,
 	return (x);
 }
 
-void			*ft_rbtree_delete(t_rbtree **root, t_rbtree *z,
-				t_gfunction del)
+void			*ft_rbtree_delete(t_rbtree **root, t_rbtree *z)
 {
 	t_rbtree	guard;
 	t_rbtree	*x;
@@ -125,9 +124,7 @@ void			*ft_rbtree_delete(t_rbtree **root, t_rbtree *z,
 	if (ycolor == RB_BLACK && *root != &guard)
 		ft_rbtree_fixup(root, NULL, x);
 	ft_rbtree_remove_guard(root, x, &guard);
-	content = del ? z->content : NULL;
-	if (del)
-		del(z->content);
+	content = z->content;
 	free(z);
 	return (content);
 }

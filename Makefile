@@ -6,39 +6,25 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/09/17 19:41:30 by asoursou         ###   ########.fr        #
+#    Updated: 2020/10/31 17:24:52 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-ifneq ($(words $(MAKECMDGOALS)),1)
-.DEFAULT_GOAL = all
-%:
-	@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
-else
-ifndef ECHO
-	T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
-	-nrRf $(firstword $(MAKEFILE_LIST)) ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
-	N := x
-	C = $(words $N)$(eval N := x $N)
-	ECHO = printf "%3d %% - %s\n" `expr $C '*' 100 / $T`
-endif
 
 # COMPILATION
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -Wpedantic -Wvla -Ofast -fno-builtin
-DFLAGS	= -MP -MMD -MF $(DEP_DIR)/$*.d -MT $@
-IFLAGS	= -I./inc -I./inc/libft -I./inc/private
+DFLAGS	= -MP -MMD -MF $(BUILD)/$*.d -MT $@
+IFLAGS	= -I./inc -I./inc/libft -I./inc/$(PRV)
 LDFLAGS	= -L. -lft
 
 # DIRECTORIES
 BUILD	:= .build
-BIN_DIR	:= bin
-DEP_DIR	:= $(BUILD)/dep
-OBJ_DIR	:= $(BUILD)/obj
-LOC_DIR := /usr/local
 PRV		:= private
+BIN_DIR	:= examples/bin
+LOC_DIR := /usr/local
 SUB_DIR	:= rbtree \
-		   stdio
+		   stdio \
+		   string
 SUB_DIR += $(addsuffix /$(PRV), $(SUB_DIR))
 SUB_DIR	+= bit \
 		   btree \
@@ -47,9 +33,8 @@ SUB_DIR	+= bit \
 		   generic \
 		   list \
 		   memory \
-		   string
-DIRS	:= $(DEP_DIR) $(addprefix $(DEP_DIR)/, $(SUB_DIR)) \
-		   $(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
+		   random
+SUB_DIR := $(addprefix $(BUILD)/, $(SUB_DIR))
 
 # FILES
 FT		:= libft
@@ -89,13 +74,13 @@ SUB_SRC	:= ft_isalnum.c \
 		   ft_toprint.c \
 		   ft_toupper.c
 SRC		+= $(addprefix ctype/, $(SUB_SRC))
-SUB_SRC	:= ft_dlist_append.c \
-		   ft_dlist_at.c \
+SUB_SRC	:= ft_dlist_at.c \
 		   ft_dlist_clear.c \
 		   ft_dlist_first.c \
 		   ft_dlist_foreach.c \
 		   ft_dlist_insert.c \
 		   ft_dlist_last.c \
+		   ft_dlist_merge.c \
 		   ft_dlist_new.c \
 		   ft_dlist_pop.c \
 		   ft_dlist_print.c \
@@ -110,25 +95,26 @@ SUB_SRC	:= ft_dlist_append.c \
 		   ft_dlist_split.c
 SRC		+= $(addprefix dlist/, $(SUB_SRC))
 SUB_SRC	:= ft_compare_int.c \
-		   ft_compare_pointer.c
+		   ft_compare_pointer.c \
+		   ft_print_pointer_fd.c \
+		   ft_print_pointer.c
 SRC		+= $(addprefix generic/, $(SUB_SRC))
 SUB_SRC	:= ft_list_at.c \
 		   ft_list_clear.c \
-		   ft_list_extract.c \
+		   ft_list_copy.c \
 		   ft_list_foreach_if.c \
 		   ft_list_foreach.c \
 		   ft_list_insert.c \
 		   ft_list_last.c \
+		   ft_list_merge_at.c \
 		   ft_list_merge.c \
 		   ft_list_new.c \
 		   ft_list_pop.c \
 		   ft_list_popl.c \
+		   ft_list_print_fd.c \
 		   ft_list_print.c \
 		   ft_list_push_back.c \
-		   ft_list_print_fd.c \
 		   ft_list_push.c \
-		   ft_list_pushl_back.c \
-		   ft_list_pushl.c \
 		   ft_list_remove_if.c \
 		   ft_list_remove_one.c \
 		   ft_list_rev.c \
@@ -136,23 +122,29 @@ SUB_SRC	:= ft_list_at.c \
 		   ft_list_size.c \
 		   ft_list_sort.c \
 		   ft_list_split.c \
+		   ft_list_swap.c \
 		   ft_list_to_array.c
 SRC		+= $(addprefix list/, $(SUB_SRC))
 SUB_SRC	:= ft_bzero.c \
 		   ft_calloc.c \
+		   ft_delete.c \
+		   ft_deletetab.c \
 		   ft_memccpy.c \
 		   ft_memchr.c \
 		   ft_memcmp.c \
 		   ft_memcpy.c \
-		   ft_memdel.c \
-		   ft_memdeltab.c \
 		   ft_memdup.c \
 		   ft_memmem.c \
 		   ft_memmove.c \
 		   ft_memset.c \
 		   ft_memsize.c \
+		   ft_new.c \
 		   ft_realloc.c
 SRC		+= $(addprefix memory/, $(SUB_SRC))
+SUB_SRC	:= ft_rand.c \
+		   ft_xorshiro256ss_init.c \
+		   ft_xorshiro256ss_next.c
+SRC		+= $(addprefix random/, $(SUB_SRC))
 SUB_SRC	:= ft_rbtree_remove_guard.c \
 		   ft_rbtree_rotate_left.c \
 		   ft_rbtree_rotate_right.c \
@@ -222,7 +214,9 @@ SUB_SRC	+= ft_asprintf.c \
 		   ft_vsnprintf.c \
 		   ft_vsprintf.c
 SRC		+= $(addprefix stdio/, $(SUB_SRC))
-SUB_SRC	:= ft_atoi.c \
+SUB_SRC	:= ft_string_check_capacity.c
+SUB_SRC	:= $(addprefix $(PRV)/, $(SUB_SRC))
+SUB_SRC	+= ft_atoi.c \
 		   ft_atol.c \
 		   ft_itoa.c \
 		   ft_itoa_base.c \
@@ -235,6 +229,21 @@ SUB_SRC	:= ft_atoi.c \
 		   ft_strcpy.c \
 		   ft_strdup.c \
 		   ft_strforeach.c \
+		   ft_string_at.c \
+		   ft_string_clear.c \
+		   ft_string_concat.c \
+		   ft_string_copy.c \
+		   ft_string_cstr.c \
+		   ft_string_erase_at.c \
+		   ft_string_erase.c \
+		   ft_string_insert_c.c \
+		   ft_string_insert_cstr.c \
+		   ft_string_insert_format.c \
+		   ft_string_insert.c \
+		   ft_string_length.c \
+		   ft_string_push.c \
+		   ft_string_push_back.c \
+		   ft_strisempty.c \
 		   ft_strjoin.c \
 		   ft_strjoin3.c \
 		   ft_strlcat.c \
@@ -259,18 +268,18 @@ SUB_SRC	:= ft_atoi.c \
 		   ft_strwhile.c \
 		   ft_strwhilenot.c
 SRC		+= $(addprefix string/, $(SUB_SRC))
-DEP		:= $(SRC:%.c=$(DEP_DIR)/%.d)
-OBJ		:= $(SRC:%.c=$(OBJ_DIR)/%.o)
+OBJ		:= $(SRC:%.c=$(BUILD)/%.o)
 SRC_BIN	:= cat.c \
 		   name.c \
 		   print_ascii.c \
+		   rand.c \
 		   rbtree.c \
 		   split.c \
 		   toupper.c
 BIN		:= $(SRC_BIN:%.c=$(BIN_DIR)/%)
 
 $(NAME): $(OBJ)
-	@$(ECHO) 'Creation of $@'
+	@echo 'Creation of $@'
 	@ar -rcs $@ $^
 
 all: $(NAME)
@@ -288,32 +297,31 @@ install: $(NAME)
 	install -m 644 inc/$(FT).h $(LOC_DIR)/include
 	cp -r inc/$(FT) $(LOC_DIR)/include
 	chmod -R 644 $(LOC_DIR)/include/$(FT)
-	chmod 755 $(LOC_DIR)/include/$(FT) $(LOC_DIR)/include/$(FT)/private
+	chmod 755 $(LOC_DIR)/include/$(FT) $(LOC_DIR)/include/$(FT)/$(PRV)
 
 uninstall:
 	rm -f $(LOC_DIR)/lib/$(NAME)
 	rm -rf $(LOC_DIR)/include/$(FT) $(LOC_DIR)/include/$(FT).h
 
 test: $(BIN)
+	@echo 'Test binaries are located in $(BIN_DIR)'
 
 $(BUILD):
-	@$(ECHO) 'Creation of $@ directory'
-	@mkdir $@ $(DIRS)
+	@echo 'Creation of $@ directory'
+	@mkdir $(BUILD) $(SUB_DIR)
 
-$(OBJ_DIR)/%.o: src/%.c | $(BUILD)
-	@$(ECHO) 'Compilation of $<'
+$(BUILD)/%.o: src/%.c | $(BUILD)
+	@echo 'Compilation of $*.c'
 	@$(CC) $(CFLAGS) $(DFLAGS) $(IFLAGS) -c $< -o $@
 
 $(BIN_DIR):
-	@$(ECHO) 'Creation of $@ directory'
+	@echo 'Creation of $@ directory'
 	@mkdir $@
 
 $(BIN_DIR)/%: examples/%.c $(NAME) | $(BIN_DIR)
-	@$(ECHO) 'Compilation of $<'
+	@echo 'Compilation of $<'
 	@$(CC) $(CFLAGS) $(IFLAGS) $< -o $@ $(LDFLAGS)
 
--include $(DEP)
+-include $(SRC:%.c=$(BUILD)/%.d)
 
 .PHONY: all clean fclean re install uninstall test
-
-endif

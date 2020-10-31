@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 00:01:29 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 19:35:38 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/29 14:23:13 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,15 @@ int		ft_compare_int(const void *a, const void *b);
 ** less than b or even 0 if a == b.
 */
 int		ft_compare_pointer(const void *a, const void *b);
+
+/*
+** Prints the address of the pointer to the standard output.
+*/
+void	ft_print_pointer(const void *pointer);
+
+/*
+** Prints the address of the pointer to the given file descriptor.
+*/
+void	ft_print_pointer_fd(const void *pointer, int fd);
 
 #endif

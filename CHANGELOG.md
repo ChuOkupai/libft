@@ -5,55 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.3.0] - 2020-09-17
+## [1.3.0] - Unreleased
 ### Added
-- **ft_btree_is_leaf**
-- **ft_btree_merge**
-- **ft_dlist_append**
-- **ft_dlist_at**
-- **ft_dlist_clear**
-- **ft_dlist_first**
-- **ft_dlist_foreach**
-- **ft_dlist_insert**
-- **ft_dlist_last**
-- **ft_dlist_new**
-- **ft_dlist_pop**
-- **ft_dlist_print**
-- **ft_dlist_print_fd**
-- **ft_dlist_push**
-- **ft_dlist_push_back**
-- **ft_dlist_remove_if**
-- **ft_dlist_remove_one**
-- **ft_dlist_rev**
-- **ft_dlist_search**
-- **ft_dlist_size**
-- **ft_dlist_split**
-- **ft_list_merge**
-- **ft_list_popl**
-- **ft_list_pushl_back**
-- **ft_list_pushl**
-- **ft_list_remove_one**
-- **ft_list_to_array**
-- **ft_memmem**
-- **ft_memsize**
-- **ft_realloc**
-- **ft_strjoin3**
-- A progress indicator in Makefile
+- Added **t_string** object
+- Added more functions for **t_btree**
+- Added more functions for **t_list**
+- Added more functions in **ft_generic**
+- Added **t_dlist**, a doubly linked list implementation
+- Added the **Xoroshiro256** algorithm, a PRNG
+- Added more functions for **ft_memory**, including a random memory allocation failure simulation mechanism with **ft_new**
+- Added **ft_strisempty** and **ft_strjoin3** in **ft_string.h**
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
-- **ft_list_push/ft_list_push_back** is now taking the void* content instead of a t_list* element. The old functions still exists with **ft_list_pushl/ft_list_pushl_back**
+- **ft_memdel** renamed to **ft_delete**
+- **ft_memdeltab** renamed to **ft_deletetab**
 - **ft_memdup** added a boolean variable to know if the allocated memory should be filled with 0
-- **ft_print_memory** code optimization
+- **ft_print_memory** code optimization with less syscalls for faster rendering
 - **ft_striter** has been replaced by **ft_strforeach**
 - **ft_strjoin** the passed arguments can be NULL
+- **ft_strlen** is now NULL protected
 - **ft_strstr/ft_strnstr** improved speed for small values
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
-- Improved documentation
+- All allocated memory is now handled by ft_memalloc
 - Renamed *tab* variable in ft_memory to avoid conflict with ncurses
-- Typo fixes
+
+### Fixed
+- **ft_\*printf** hh and h modifiers were not handled correctly
+- Typo fix in documentation
 
 ### Removed
+- **ft_list_extract**
 - **ft_print_char_fd**
 - **ft_print_char**
 - **ft_print_int_fd**

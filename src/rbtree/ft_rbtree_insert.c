@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:11:49 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 19:10:44 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/27 15:34:10 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rbtree_utils.h"
 
-static t_rbtree	*ft_fixup_left(t_rbtree **root, t_rbtree *x)
+static t_rbtree	*fixup_left(t_rbtree **root, t_rbtree *x)
 {
 	if (x->parent->parent->right && x->parent->parent->right->color == RB_RED)
 	{
@@ -32,7 +32,7 @@ static t_rbtree	*ft_fixup_left(t_rbtree **root, t_rbtree *x)
 	return (x);
 }
 
-static t_rbtree	*ft_fixup_right(t_rbtree **root, t_rbtree *x)
+static t_rbtree	*fixup_right(t_rbtree **root, t_rbtree *x)
 {
 	if (x->parent->parent->left && x->parent->parent->left->color == RB_RED)
 	{
@@ -52,7 +52,7 @@ static t_rbtree	*ft_fixup_right(t_rbtree **root, t_rbtree *x)
 	return (x);
 }
 
-t_rbtree		*ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
+t_rbtree		*insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
 {
 	int			d;
 	t_rbtree	*x;
@@ -74,9 +74,14 @@ t_rbtree		*ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
 		y->right = e;
 	while (e != *root && e->parent->color == RB_RED)
 		if (e->parent == e->parent->parent->left)
-			e = ft_fixup_left(root, e);
+			e = fixup_left(root, e);
 		else
-			e = ft_fixup_right(root, e);
+			e = fixup_right(root, e);
 	(*root)->color = RB_BLACK;
 	return (e);
+}
+
+t_rbtree		*ft_rbtree_insert(t_rbtree **root, t_rbtree *e, t_gcompare cmp)
+{
+	return (e ? insert(root, e, cmp) : NULL);
 }

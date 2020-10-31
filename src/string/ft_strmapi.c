@@ -6,25 +6,26 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/02 12:12:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
-#include <stdlib.h>
+#include "ft_memory.h"
 #include "ft_string.h"
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char		*d;
-	uint32_t	n;
+	char	*d;
+	t_u32	i;
 
-	n = ft_strlen(s);
-	if ((d = (char*)malloc((n + 1) * sizeof(char))))
+	if (!(d = (char*)ft_new((ft_strlen(s) + 1) * sizeof(char))))
+		return (NULL);
+	i = 0;
+	while (s[i])
 	{
-		d[n] = '\0';
-		while (n--)
-			d[n] = f(n, s[n]);
+		d[i] = f(i, s[i]);
+		++i;
 	}
+	d[i] = '\0';
 	return (d);
 }

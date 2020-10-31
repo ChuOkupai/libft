@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/27 12:02:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void		pf_parse(t_format *f)
 		else if (*f->s == 'o')
 			pf_parse_o(f, pf_va_arg_unsigned(f->flags, f->l));
 		else if (*f->s == 'p')
-			pf_parse_p(f, (uint64_t)va_arg(f->l, void*));
+			pf_parse_p(f, (t_u128)va_arg(f->l, void*));
 		else if (*f->s == 'n')
 			pf_parse_n(f, va_arg(f->l, int64_t*));
 }

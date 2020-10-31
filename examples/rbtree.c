@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/02 20:58:11 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/17 20:09:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/02 14:06:31 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void		edit_tree(t_rbtree **tree, char op)
 
 	s = get_line("Enter a value: ");
 	n = (void *)(s ? ft_strtoul(s, NULL, 10) : 0);
-	ft_memdel(s);
+	ft_delete(s);
 	elem = ft_rbtree_search(*tree, n, &ft_compare_pointer);
 	confirm = true;
 	if (op == 'a')
@@ -50,11 +50,11 @@ static void		edit_tree(t_rbtree **tree, char op)
 			confirm = false;
 	}
 	else if (elem)
-		confirm = ft_rbtree_delete(tree, elem, NULL) == NULL;
+		confirm = ft_rbtree_delete(tree, elem) == NULL;
 	else
 		ft_putendl_fd("error: Value not found!", 2);
 	if (confirm)
-		ft_memdel(get_line(CONTINUE));
+		ft_delete(get_line(CONTINUE));
 }
 
 static void		show_tree(t_rbtree *tree)
@@ -66,7 +66,7 @@ static void		show_tree(t_rbtree *tree)
 		ft_printf("min: %lu\n", (t_u64)(ft_rbtree_min(tree)->content));
 		ft_printf("max: %lu\n", (t_u64)(ft_rbtree_max(tree)->content));
 	}
-	ft_memdel(get_line(CONTINUE));
+	ft_delete(get_line(CONTINUE));
 }
 
 int				main(void)
@@ -85,7 +85,7 @@ int				main(void)
 		if ((r = ft_get_next_line(0, &s)) >= 0)
 		{
 			c = *s && !s[1] ? *s : '\0';
-			ft_memdel(s);
+			ft_delete(s);
 			if (c == 'a' || c == 'd')
 				edit_tree(&tree, c);
 			else if (c == 'v')

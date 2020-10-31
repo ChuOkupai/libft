@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:41:00 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/06 12:27:58 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/27 12:06:03 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <stddef.h>
-# include <stdint.h>
+# include "ft_type.h"
 
 # define PF_BUFF_SIZE			128
 # define PF_CONVERT_BUFF_SIZE	80
@@ -72,7 +72,7 @@ struct		s_format
 	int			width;
 };
 
-char		*pf_convert(t_format *f, uint64_t n, int base, int lower);
+char		*pf_convert(t_format *f, t_u128 n, int base, int lower);
 
 void		pf_flush_buffer(t_format *f);
 
@@ -84,15 +84,15 @@ void		pf_parse_d(t_format *f, int64_t n);
 
 void		pf_parse_n(t_format *f, int64_t *size);
 
-void		pf_parse_o(t_format *f, uint64_t n);
+void		pf_parse_o(t_format *f, t_u128 n);
 
-void		pf_parse_p(t_format *f, uint64_t n);
+void		pf_parse_p(t_format *f, t_u128 n);
 
 void		pf_parse_s(t_format *f, char *s);
 
-void		pf_parse_u(t_format *f, uint64_t n);
+void		pf_parse_u(t_format *f, t_u128 n);
 
-void		pf_parse_x(t_format *f, uint64_t n);
+void		pf_parse_x(t_format *f, t_u128 n);
 
 void		pf_parse(t_format *f);
 
@@ -108,9 +108,9 @@ void		pf_putstr(t_format *f, const char *s);
 
 void		pf_putwchar(t_format *f, const wchar_t c);
 
-int64_t		pf_va_arg(t_flag f, va_list l);
+t_s128		pf_va_arg(t_flag f, va_list l);
 
-uint64_t	pf_va_arg_unsigned(t_flag f, va_list l);
+t_u128		pf_va_arg_unsigned(t_flag f, va_list l);
 
 int			pf_wclen(const wchar_t c);
 

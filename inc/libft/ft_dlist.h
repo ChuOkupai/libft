@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 15:26:34 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 16:42:41 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/30 14:37:01 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ struct	s_dlist
 	t_dlist	*prev;
 	t_dlist	*next;
 };
-
-/*
-** Appends the start of l2 to the end of l1.
-** Returns a pointer to the first element of the doubly linked list.
-*/
-t_dlist	*ft_dlist_append(t_dlist *l1, t_dlist *l2);
 
 /*
 ** Returns the element at the given index if it exists.
@@ -67,6 +61,12 @@ t_dlist	*ft_dlist_insert(t_dlist **list, t_dlist *element, t_gcompare cmp);
 t_dlist	*ft_dlist_last(t_dlist *l);
 
 /*
+** Appends the start of l2 to the end of l1.
+** Returns a pointer to the first element of the doubly linked list.
+*/
+t_dlist	*ft_dlist_merge(t_dlist *l1, t_dlist *l2);
+
+/*
 ** Creates a new element with malloc.
 ** Returns NULL on error.
 */
@@ -91,18 +91,18 @@ void	ft_dlist_print_fd(t_dlist *l, t_gprint_fd print_fd, int fd);
 void	ft_dlist_print(t_dlist *l, t_gprint print);
 
 /*
-** Add an element at the end of a doubly linked list.
-** The inserted element may be NULL.
+** Push content at the end of a doubly linked list.
+** The inserted content may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_dlist	*ft_dlist_push_back(t_dlist **list, t_dlist *element);
+t_dlist	*ft_dlist_push_back(t_dlist **list, void *content);
 
 /*
-** Add an element at the given position of a doubly linked list.
-** The inserted element may be NULL.
+** Push content at the given position of a doubly linked list.
+** The inserted content may be NULL.
 ** Returns a pointer to the inserted element.
 */
-t_dlist	*ft_dlist_push(t_dlist **list, t_dlist *element);
+t_dlist	*ft_dlist_push(t_dlist **list, void *element);
 
 /*
 ** Removes every elements matching the reference content from a doubly linked

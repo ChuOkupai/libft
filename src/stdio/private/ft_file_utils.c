@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/28 15:16:58 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/02 17:30:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/10/04 12:08:02 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "ft_memory.h"
 #include "ft_stdio_utils.h"
 
 int		ft_parse_mode(const char *s, int *flags)
@@ -42,7 +43,7 @@ int		ft_parse_mode(const char *s, int *flags)
 int		ft_check_buffer(t_file *f, t_fflag write)
 {
 	if (!f->buf && f->size && (f->flags & FT_FALLOC) &&
-	!(f->buf = calloc(1, f->size)))
+	!(f->buf = ft_calloc(1, f->size)))
 		ft_setbuffer(f, f->safe_buf, FT_FILE_SAFEBSIZE);
 	if (((f->flags ^ write) & FT_FWRITE))
 	{

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 12:13:20 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/09/27 11:58:45 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		pf_parse_n(t_format *f, int64_t *size)
 		*((int*)size) = f->size;
 }
 
-void		pf_parse_o(t_format *f, uint64_t n)
+void		pf_parse_o(t_format *f, t_u128 n)
 {
 	const char	*s;
 	int			t;
