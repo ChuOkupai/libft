@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/10/31 17:24:52 by asoursou         ###   ########.fr        #
+#    Updated: 2020/11/02 16:38:12 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -239,6 +239,7 @@ SUB_SRC	+= ft_atoi.c \
 		   ft_string_insert_c.c \
 		   ft_string_insert_cstr.c \
 		   ft_string_insert_format.c \
+		   ft_string_insert_str.c \
 		   ft_string_insert.c \
 		   ft_string_length.c \
 		   ft_string_push.c \
