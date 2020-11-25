@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/11/02 16:38:12 by asoursou         ###   ########.fr        #
+#    Updated: 2020/11/25 12:05:44 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -271,6 +271,7 @@ SUB_SRC	+= ft_atoi.c \
 SRC		+= $(addprefix string/, $(SUB_SRC))
 OBJ		:= $(SRC:%.c=$(BUILD)/%.o)
 SRC_BIN	:= cat.c \
+		   failed_alloc.c \
 		   name.c \
 		   print_ascii.c \
 		   rand.c \

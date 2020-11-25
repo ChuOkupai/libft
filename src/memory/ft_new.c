@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 13:45:03 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 13:58:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/25 12:05:18 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #define PRECISION 1e6
 
 static t_u64 g_prb = 0;
+static void (*g_handler)(void) = NULL;
 
 bool	ft_new_canfail(void)
 {
@@ -33,12 +34,23 @@ void	ft_new_setfail(double p)
 	g_prb = p * (double)PRECISION;
 }
 
+void	ft_new_sethook(void (*handler)(void))
+{
+	g_handler = handler;
+}
+
 void	*ft_new(size_t size)
 {
+	void *data;
+
 	if (g_prb && ft_rand() % (t_u64)PRECISION < g_prb)
 	{
 		errno = ENOMEM;
-		return (NULL);
+		data = NULL;
 	}
-	return (malloc(size));
+	else
+		data = malloc(size);
+	if (!data && g_handler)
+		g_handler();
+	return (data);
 }

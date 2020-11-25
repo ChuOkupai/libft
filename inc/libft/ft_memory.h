@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 18:06:57 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:39:29 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/25 12:05:07 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,12 @@ bool	ft_new_canfail(void);
 ** malloc in ft_new and a false failed malloc can happens.
 ** ft_seed must be called before any calls to ft_new.
 */
-int		ft_new_setfail(double probability);
+void	ft_new_setfail(double probability);
+
+/*
+** Sets a custom function to call if ft_new fail (NULL by default).
+*/
+void	ft_new_sethook(void (*handler)(void));
 
 /*
 ** Allocates size bytes and returns a pointer to the allocated memory.
