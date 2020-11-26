@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 12:04:47 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/06 12:05:37 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 16:31:57 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 size_t	ft_memsize(void **tab)
 {
-	size_t i;
-
-	i = 0;
-	while (*tab++)
-		++i;
-	return (i);
+	if (!*tab)
+		return (0);
+	return (1 + ft_memsize(tab + 1));
 }

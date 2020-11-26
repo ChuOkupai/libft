@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 23:28:09 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:08:56 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 size_t	ft_list_size(t_list *l)
 {
-	size_t i;
-
-	i = 0;
-	while (l)
-	{
-		l = l->next;
-		i++;
-	}
-	return (i);
+	if (!l)
+		return (0);
+	return (1 + ft_list_size(l->next));
 }

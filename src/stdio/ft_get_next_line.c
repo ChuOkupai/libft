@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 14:56:36 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 14:52:49 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:37:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static t_file	*search_file(t_list **list, int fd)
 
 	if ((e = ft_list_search(*list, &fd, &compare_fd)))
 		return (e->content);
-	if (!(f = ft_new(sizeof(t_file))) || !ft_list_push(list, ft_list_new(f)))
-		return (ft_delete(f));
+	if (!(f = ft_malloc(sizeof(t_file))) || !ft_list_push(list, ft_list_new(f)))
+		return (ft_free(f));
 	f->fd = fd;
 	f->buf = NULL;
 	return (f);
@@ -43,7 +43,7 @@ static char		*join_line(t_file *f, char *b)
 		*b++ = '\0';
 	d = ft_strdup(f->buf ? f->buf : "");
 	b = b && d ? ft_strdup(b) : NULL;
-	ft_delete(f->buf);
+	ft_free(f->buf);
 	f->buf = b;
 	return (d);
 }
@@ -61,7 +61,7 @@ static int		read_line(t_file *f, char **line)
 		buf[n] = '\0';
 		b = f->buf;
 		f->buf = ft_strjoin((f->buf ? f->buf : ""), buf);
-		ft_delete(b);
+		ft_free(b);
 		if (!f->buf)
 			return (-1);
 		b = ft_strchrnul(f->buf, '\n');
@@ -80,8 +80,8 @@ int				ft_get_next_line(const int fd, char **line)
 		r = -1;
 	else if ((r = read_line(f, line)) < 1)
 	{
-		ft_delete(f->buf);
-		ft_delete(ft_list_remove_one(&l, f));
+		ft_free(f->buf);
+		ft_free(ft_list_remove_one(&l, f));
 	}
 	return (r);
 }

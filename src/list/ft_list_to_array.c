@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/06 11:44:46 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:12:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:28:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	**ft_list_to_array(t_list *l)
 	void	**t;
 	size_t	i;
 
-	if (!(t = ft_new((ft_list_size(l) + 1) * sizeof(void *))))
+	if (!(t = ft_malloc((ft_list_size(l) + 1) * sizeof(void *))))
 		return (NULL);
 	i = 0;
 	while (l)

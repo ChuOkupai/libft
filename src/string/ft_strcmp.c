@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 05:05:45 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 15:56:07 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 16:34:04 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	while (*s1 && *s1 == *s2)
-	{
-		++s1;
-		++s2;
-	}
-	return ((t_u8)(*s1) - (t_u8)(*s2));
+	if (!*s1 || *s1 != *s2)
+		return ((t_u8)(*s1) - (t_u8)(*s2));
+	return (ft_strcmp(s1 + 1, s2 + 1));
 }

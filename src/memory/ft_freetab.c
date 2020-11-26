@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_delete.c                                        :+:      :+:    :+:   */
+/*   ft_freetab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/12 02:47:22 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:28:19 by asoursou         ###   ########.fr       */
+/*   Created: 2019/12/03 11:07:31 by asoursou          #+#    #+#             */
+/*   Updated: 2020/11/26 16:59:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_memory.h"
 
-void	*ft_delete(void *pointer)
+void	*ft_freetab(void **t, size_t n)
 {
-	if (pointer)
-		free(pointer);
-	return (NULL);
+	if (!t)
+		return (t);
+	while (n)
+		ft_free(t[--n]);
+	return (ft_free(t));
 }

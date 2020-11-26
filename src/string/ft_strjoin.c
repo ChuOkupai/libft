@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 01:45:07 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/31 15:42:43 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:28:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	n1 = ft_strlen(s1);
 	n2 = ft_strlen(s2);
-	if ((d = ft_new(n1 + n2 + 1)))
+	if ((d = ft_malloc(n1 + n2 + 1)))
 	{
 		ft_memcpy(d, s1, n1);
 		ft_memcpy(d + n1, s2, n2);

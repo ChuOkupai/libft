@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 05:23:26 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/12 18:24:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:25:41 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_list_at(t_list *l, size_t index)
 {
-	while (l && index--)
-		l = l->next;
-	return (l);
+	if (!l || !index)
+		return (l);
+	return (ft_list_at(l->next, index - 1));
 }

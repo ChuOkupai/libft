@@ -6,7 +6,7 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2020/11/25 12:05:44 by asoursou         ###   ########.fr        #
+#    Updated: 2020/11/26 13:17:20 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LDFLAGS	= -L. -lft
 # DIRECTORIES
 BUILD	:= .build
 PRV		:= private
-BIN_DIR	:= examples/bin
+BIN_DIR	:= bin
 LOC_DIR := /usr/local
 SUB_DIR	:= rbtree \
 		   stdio \
@@ -127,8 +127,8 @@ SUB_SRC	:= ft_list_at.c \
 SRC		+= $(addprefix list/, $(SUB_SRC))
 SUB_SRC	:= ft_bzero.c \
 		   ft_calloc.c \
-		   ft_delete.c \
-		   ft_deletetab.c \
+		   ft_freetab.c \
+		   ft_malloc.c \
 		   ft_memccpy.c \
 		   ft_memchr.c \
 		   ft_memcmp.c \
@@ -138,7 +138,6 @@ SUB_SRC	:= ft_bzero.c \
 		   ft_memmove.c \
 		   ft_memset.c \
 		   ft_memsize.c \
-		   ft_new.c \
 		   ft_realloc.c
 SRC		+= $(addprefix memory/, $(SUB_SRC))
 SUB_SRC	:= ft_rand.c \

@@ -6,27 +6,26 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/16 01:24:13 by asoursou          #+#    #+#             */
-/*   Updated: 2020/09/10 13:00:59 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:29:30 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_list.h"
 
-void	*ft_list_clear(t_list **list, t_gfunction del)
+static void	clear(t_list *l, const t_gfunction del)
 {
-	t_list *l;
-	t_list *next;
+	if (!l)
+		return ;
+	clear(l->next, del);
+	if (del)
+		del(l->content);
+	free(l);
+}
 
-	l = *list;
+void		*ft_list_clear(t_list **list, t_gfunction del)
+{
+	clear(*list, del);
 	*list = NULL;
-	while (l)
-	{
-		if (del)
-			del(l->content);
-		next = l->next;
-		free(l);
-		l = next;
-	}
 	return (NULL);
 }

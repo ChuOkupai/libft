@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/26 04:03:35 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:15:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:37:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_fclose(t_file *stream)
 	if ((stream->flags & FT_FOPEN) && close(stream->fd) < 0)
 		v = FT_EOF;
 	if (stream->flags & FT_FALLOC)
-		ft_delete(stream->buf);
+		ft_free(stream->buf);
 	free(stream);
 	return (v);
 }

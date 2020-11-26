@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 13:03:14 by asoursou          #+#    #+#             */
-/*   Updated: 2020/08/26 16:33:06 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:51:21 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,11 @@ typedef void	(*t_gprint)(const void *content);
 ** Generic display to file descriptor function pointer.
 */
 typedef void	(*t_gprint_fd)(const void *content, int fd);
+
+/*
+** Generic function with no arguments and return value.
+*/
+typedef void	(*t_ghandler)(void);
 # endif
 # undef FT_INCLUDE_H
 #endif

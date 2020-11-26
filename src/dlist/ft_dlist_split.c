@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 17:33:15 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:15:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:37:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_dlist			*ft_dlist_split(const char *s, const char *set)
 		s2 = ft_memdup(s, n, n + 1, true);
 		if (!s2 || !ft_dlist_push(&l, ft_dlist_new(s2)))
 		{
-			s2 = ft_delete(s2);
+			s2 = ft_free(s2);
 			return (ft_dlist_clear(&l, &free));
 		}
 		s += n;

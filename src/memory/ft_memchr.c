@@ -6,22 +6,22 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/14 01:56:14 by asoursou          #+#    #+#             */
-/*   Updated: 2020/06/03 11:09:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 17:24:13 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_type.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+static void	*chr(const t_u8 *s, t_u8 c, size_t n)
 {
-	const t_u8 *t;
+	if (!n)
+		return (NULL);
+	if (*s == c)
+		return ((void*)s);
+	return (chr(s + 1, c, n - 1));
+}
 
-	t = s;
-	while (n--)
-	{
-		if (*t == (t_u8)c)
-			return ((void *)t);
-		++t;
-	}
-	return (NULL);
+void		*ft_memchr(const void *s, int c, size_t n)
+{
+	return (chr(s, c, n));
 }

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:12:04 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:28:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	char	*d;
 	t_u32	i;
 
-	if (!(d = (char*)ft_new((ft_strlen(s) + 1) * sizeof(char))))
+	if (!(d = (char*)ft_malloc((ft_strlen(s) + 1) * sizeof(char))))
 		return (NULL);
 	i = 0;
 	while (s[i])

@@ -13,13 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added more functions in **ft_generic**
 - Added **t_dlist**, a doubly linked list implementation
 - Added the **Xoroshiro256** algorithm, a PRNG
-- Added more functions for **ft_memory**, including a random memory allocation failure simulation mechanism with **ft_new**
+- Added more functions for **ft_memory.h**, including a random memory allocation failure simulation mechanism and collector with **ft_malloc**
 - Added **ft_strisempty** and **ft_strjoin3** in **ft_string.h**
 
 ### Changed
 - **ft_list_insert** returns the inserted element and the element can be NULL
-- **ft_memdel** renamed to **ft_delete**
-- **ft_memdeltab** renamed to **ft_deletetab**
+- **ft_memdel** renamed to **ft_free**
+- **ft_memdeltab** renamed to **ft_freetab**
 - **ft_memdup** added a boolean variable to know if the allocated memory should be filled with 0
 - **ft_print_memory** code optimization with less syscalls for faster rendering
 - **ft_striter** has been replaced by **ft_strforeach**
@@ -27,8 +27,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ft_strlen** is now NULL protected
 - **ft_strstr/ft_strnstr** improved speed for small values
 - **t_bool** has been replaced by the standard boolean type from stdbool.h
-- All allocated memory is now handled by ft_memalloc
-- Renamed *tab* variable in ft_memory to avoid conflict with ncurses
+- All allocated memory is now handled by **ft_malloc**
+- Renamed *tab* variable in **ft_memory.h** to avoid conflict with ncurses
 
 ### Fixed
 - **ft_\*printf** hh and h modifiers were not handled correctly

@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 02:42:08 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/02 12:15:31 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:37:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_setbuffer(t_file *f, char *buf, size_t size)
 		ft_bzero(f->buf, f->size);
 	if (f->flags & FT_FALLOC)
 	{
-		ft_delete(f->buf);
+		ft_free(f->buf);
 		f->flags &= ~FT_FALLOC;
 	}
 	if (f->mode & O_RDWR)

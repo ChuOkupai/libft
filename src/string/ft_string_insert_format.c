@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:13:55 by asoursou          #+#    #+#             */
-/*   Updated: 2020/10/31 16:41:19 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/11/26 12:37:17 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	ft_string_insert_format(t_string *s, size_t i, const char *format, ...)
 	if (n < 0)
 		return (-1);
 	n = ft_string_insert_str(s, i, s2);
-	ft_delete(s2);
+	ft_free(s2);
 	return (n);
 }
