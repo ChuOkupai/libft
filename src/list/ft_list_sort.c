@@ -6,11 +6,22 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 23:34:59 by asoursou          #+#    #+#             */
-/*   Updated: 2020/04/25 17:06:27 by asoursou         ###   ########.fr       */
+/*   Updated: 2020/12/02 17:08:49 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+
+static t_list	*ft_cut(t_list *l)
+{
+	t_list *next;
+
+	if (!l || !l->next)
+		return (NULL);
+	next = l->next;
+	l->next = NULL;
+	return (next);
+}
 
 static t_list	*merge(t_list *l1, t_list *l2, t_gcompare cmp)
 {
@@ -29,21 +40,10 @@ static t_list	*merge(t_list *l1, t_list *l2, t_gcompare cmp)
 
 void			ft_list_sort(t_list **l, t_gcompare cmp)
 {
-	t_list *prev;
-	t_list *next;
+	t_list *right;
 
-	if (!*l || !(*l)->next)
+	if (!(right = ft_cut(*l)))
 		return ;
-	prev = *l;
-	next = prev->next;
-	while (next && (next = next->next))
-	{
-		prev = prev->next;
-		next = next->next;
-	}
-	next = prev->next;
-	prev->next = NULL;
-	ft_list_sort(&(*l), cmp);
-	ft_list_sort(&next, cmp);
-	*l = merge(*l, next, cmp);
+	ft_list_sort(&right, cmp);
+	*l = merge(*l, right, cmp);
 }
