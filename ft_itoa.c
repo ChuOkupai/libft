@@ -6,13 +6,13 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/09 17:11:37 by asoursou          #+#    #+#             */
-/*   Updated: 2023/03/27 06:36:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:32:24 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_u32	as_unsigned(int n)
+static unsigned int	as_unsigned(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -21,8 +21,8 @@ static t_u32	as_unsigned(int n)
 
 static size_t	count_digits(int n)
 {
-	t_u32	m;
-	size_t	i;
+	unsigned int	m;
+	size_t			i;
 
 	m = as_unsigned(n);
 	i = 1;
@@ -38,9 +38,9 @@ static size_t	count_digits(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*s;
-	t_u32	i;
-	t_u32	t;
+	char			*s;
+	unsigned int	i;
+	unsigned int	t;
 
 	i = count_digits(n);
 	t = as_unsigned(n);

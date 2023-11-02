@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
-/*   Updated: 2023/03/27 06:49:50 by asoursou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:32:33 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	char	*d;
-	t_u32	i;
+	char			*d;
+	unsigned int	i;
 
 	d = malloc(ft_strlen(s) + 1);
 	if (d)

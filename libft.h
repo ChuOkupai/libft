@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:25:58 by asoursou          #+#    #+#             */
-/*   Updated: 2023/03/27 07:27:20 by asoursou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:30:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-
-typedef unsigned char	t_u8;
-typedef unsigned short	t_u16;
-typedef unsigned int	t_u32;
-typedef unsigned long	t_u64;
 
 typedef struct s_list
 {

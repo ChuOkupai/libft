@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/15 00:42:30 by asoursou          #+#    #+#             */
-/*   Updated: 2023/03/27 06:55:01 by asoursou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:23:25 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_u32	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])

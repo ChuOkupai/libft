@@ -6,12 +6,13 @@
 #    By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 21:22:22 by asoursou          #+#    #+#              #
-#    Updated: 2023/03/27 07:53:39 by asoursou         ###   ########.fr        #
+#    Updated: 2023/11/02 16:30:57 by asoursou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	:= -Wall -Wextra -Werror -MMD -MP
 NAME	:= libft.a
+CC		:= cc
+CFLAGS	:= -Wall -Wextra -Werror -MMD -MP
 SRC		:= ft_atoi \
 	ft_bound_size_t \
 	ft_bzero \

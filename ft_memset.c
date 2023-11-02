@@ -6,7 +6,7 @@
 /*   By: asoursou <asoursou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 02:50:39 by asoursou          #+#    #+#             */
-/*   Updated: 2023/03/27 05:36:08 by asoursou         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:23:00 by asoursou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	t_u8	*t;
+	unsigned char	*t;
 
 	t = s;
 	while (n--)
